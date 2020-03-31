@@ -31,7 +31,7 @@ Repository for the final project of Software Engineering.
 ## Developers
 - [Valentina Orejuela](https://github.com/valentina-orejuela). 
 
-- [Andrés Mauricio](https://github.com/andres990127).
+- [Andrés Mauricio Gutiérrez Rojas](https://github.com/andres990127).
 
 - [Fabian Mauricio Gutiérrez]().
 
