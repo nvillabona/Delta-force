@@ -6,12 +6,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { PaginaPrincipalComponent } from './pagina-principal/pagina-principal.component';
+import { ActualizarEmprendedoresComponent } from './actualizar-emprendedores/actualizar-emprendedores.component';
+import { ConsultarEmprenddedoresComponent } from './consultar-emprenddedores/consultar-emprenddedores.component';
+import { EmprendedoresComponent } from './emprendedores/emprendedores.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    PaginaPrincipalComponent
+    PaginaPrincipalComponent,
+    ActualizarEmprendedoresComponent,
+    ConsultarEmprenddedoresComponent,
+    EmprendedoresComponent
   ],
   imports: [
     BrowserModule,
