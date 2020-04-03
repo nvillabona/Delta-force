@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { PaginaPrincipalComponent } from './pagina-principal/pagina-principal.component';
 import { CalendarioComponent } from './calendario/calendario.component';
+import { FullCalendarModule } from '@fullcalendar/angular'; // for FullCalendar!
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { CalendarioComponent } from './calendario/calendario.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FullCalendarModule, // for FullCalendar!
     AccordionModule.forRoot(), /* Añadido manualmente -- Importo animacion acordeon Bootstrap -- forRoot() para funcionar en toda la aplicacion */
     BrowserAnimationsModule /* Añadido manualmente -- Modulo para Animaciones Bootstrap */
   ],
