@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { PaginaPrincipalComponent } from './pagina-principal/pagina-principal.component';
 import { LoginComponent } from './login/login.component';
 import { CalendarioComponent } from './calendario/calendario.component';
+import { CrearEmprendedorComponent } from './crear-emprendedor/crear-emprendedor.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,9 @@ const routes: Routes = [
   },
   {
     path:'calendario', component: CalendarioComponent /* Importo componente "calendario" */
+  },
+  {
+    path:'crear-emprendedor', component: CrearEmprendedorComponent /* Importo el componente "crear-emprendedor" */
   }
 ];
 
