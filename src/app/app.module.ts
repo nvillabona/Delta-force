@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { PaginaPrincipalComponent } from './pagina-principal/pagina-principal.component';
+import { EliminarEmprendedorComponent } from './eliminar-emprendedor/eliminar-emprendedor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    PaginaPrincipalComponent
+    PaginaPrincipalComponent,
+    EliminarEmprendedorComponent
   ],
   imports: [
     BrowserModule,
