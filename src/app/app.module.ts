@@ -7,14 +7,16 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { PaginaPrincipalComponent } from './pagina-principal/pagina-principal.component';
 import { CalendarioComponent } from './calendario/calendario.component';
-import { FullCalendarModule } from '@fullcalendar/angular'; // for FullCalendar!
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { CrearEmprendedorComponent } from './crear-emprendedor/crear-emprendedor.component'; // for FullCalendar!
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     PaginaPrincipalComponent,
-    CalendarioComponent
+    CalendarioComponent,
+    CrearEmprendedorComponent
   ],
   imports: [
     BrowserModule,
