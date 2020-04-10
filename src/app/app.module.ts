@@ -7,9 +7,9 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { PaginaPrincipalComponent } from './pagina-principal/pagina-principal.component';
 import { EliminarEmprendedorComponent } from './eliminar-emprendedor/eliminar-emprendedor.component';
-import { CalendarioComponent } from './calendario/calendario.component';
+// import { CalendarioComponent } from './calendario/calendario.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
-import { CrearEmprendedorComponent } from './crear-emprendedor/crear-emprendedor.component'; // for FullCalendar!
+// import { CrearEmprendedorComponent } from './crear-emprendedor/crear-emprendedor.component'; // for FullCalendar!
 
 
 @NgModule({
@@ -18,8 +18,8 @@ import { CrearEmprendedorComponent } from './crear-emprendedor/crear-emprendedor
     LoginComponent,
     PaginaPrincipalComponent,
     EliminarEmprendedorComponent,
-    CalendarioComponent,
-    CrearEmprendedorComponent
+    // CalendarioComponent,
+    // CrearEmprendedorComponent
   ],
   imports: [
     BrowserModule,
