@@ -26,7 +26,8 @@ const routes: Routes = [
    },
   {
     path:'crear-emprendedor', component: CrearEmprendedorComponent /* Importo el componente "crear-emprendedor" */
-   }
+   },
+   {
     path:'pagina-principal', component: PaginaPrincipalComponent
   },
   {

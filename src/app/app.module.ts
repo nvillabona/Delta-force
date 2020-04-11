@@ -26,7 +26,7 @@ import { EmprendedoresComponent } from './emprendedores/emprendedores.component'
     EliminarEmprendedorComponent,
     CalendarioComponent,
     CrearEmprendedorComponent,
-    SidebarComponent
+    SidebarComponent,
     ActualizarEmprendedoresComponent,
     ConsultarEmprenddedoresComponent,
     EmprendedoresComponent
