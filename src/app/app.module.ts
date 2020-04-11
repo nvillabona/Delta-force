@@ -7,14 +7,14 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { PaginaPrincipalComponent } from './pagina-principal/pagina-principal.component';
 import { EliminarEmprendedorComponent } from './eliminar-emprendedor/eliminar-emprendedor.component';
-// import { CalendarioComponent } from './calendario/calendario.component';
+import { CalendarioComponent } from './calendario/calendario.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
-// import { CrearEmprendedorComponent } from './crear-emprendedor/crear-emprendedor.component'; // for FullCalendar!
-
-
+import { CrearEmprendedorComponent } from './crear-emprendedor/crear-emprendedor.component';
+import { SidebarComponent } from './sidebar/sidebar.component'; // for FullCalendar!
 import { ActualizarEmprendedoresComponent } from './actualizar-emprendedores/actualizar-emprendedores.component';
 import { ConsultarEmprenddedoresComponent } from './consultar-emprenddedores/consultar-emprenddedores.component';
 import { EmprendedoresComponent } from './emprendedores/emprendedores.component';
+
 
 
 @NgModule({
@@ -24,8 +24,9 @@ import { EmprendedoresComponent } from './emprendedores/emprendedores.component'
     PaginaPrincipalComponent,
 
     EliminarEmprendedorComponent,
-    // CalendarioComponent,
-    // CrearEmprendedorComponent
+    CalendarioComponent,
+    CrearEmprendedorComponent,
+    SidebarComponent
     ActualizarEmprendedoresComponent,
     ConsultarEmprenddedoresComponent,
     EmprendedoresComponent
