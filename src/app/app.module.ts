@@ -12,14 +12,24 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 // import { CrearEmprendedorComponent } from './crear-emprendedor/crear-emprendedor.component'; // for FullCalendar!
 
 
+import { ActualizarEmprendedoresComponent } from './actualizar-emprendedores/actualizar-emprendedores.component';
+import { ConsultarEmprenddedoresComponent } from './consultar-emprenddedores/consultar-emprenddedores.component';
+import { EmprendedoresComponent } from './emprendedores/emprendedores.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     PaginaPrincipalComponent,
+
     EliminarEmprendedorComponent,
     // CalendarioComponent,
     // CrearEmprendedorComponent
+    ActualizarEmprendedoresComponent,
+    ConsultarEmprenddedoresComponent,
+    EmprendedoresComponent
+
   ],
   imports: [
     BrowserModule,
