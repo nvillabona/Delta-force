@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PaginaPrincipalComponent } from './pagina-principal/pagina-principal.component';
-import { LoginComponent } from './login/login.component';
-import { CalendarioComponent } from './calendario/calendario.component';
-import { CrearEmprendedorComponent } from './crear-emprendedor/crear-emprendedor.component';
+import { PaginaPrincipalComponent } from './components/pagina-principal/pagina-principal.component';
+import { LoginComponent } from './components/login/login.component';
+import { CalendarioComponent } from './components/calendario/calendario.component';
+import { CrearEmprendedorComponent } from './components/crear-emprendedor/crear-emprendedor.component';
 
 
 const routes: Routes = [
