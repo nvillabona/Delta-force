@@ -33,10 +33,6 @@ const routes: Routes = [
   },
 
   {
-    path: 'pagina-principal', component: PaginaPrincipalComponent /* Importo componente pagina principal" */
-  },
-
-  {
     path: 'actualizar-emprendedores', component: ActualizarEmprendedoresComponent /* Importo componente "ActualizarEmprendedores" */
   },
 
