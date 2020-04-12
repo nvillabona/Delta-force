@@ -1,52 +1,4 @@
 
-  <body class="d-flex flex-column h-100">
-    <header>
-  
-
-
-<div class="wrapper">
-    <!-- Sidebar -->
-    <nav id="sidebar" navbar navbar-expand-md navbar-light fixed-top>
-        <div class="sidebar-header">
-            <h3>Sinapsis Uao</h3>
-        </div>
-        <ul class="list-unstyled components">
-            <p>Hola, Diana!</p>
-            <li class="active">
-            <li>
-                <a href="#">Calendario</a>
-            </li>
-            <li>
-                <a href="#">Consultorías</a>
-            </li>
-            <li>
-                <a href="#">Consultores</a>
-            </li>
-            <li>
-                <a href="#">Empredimientos</a>
-            </li>
-            <li>
-                <a routerLink="/emprendedores">Emprendedores</a>
-            </li>
-            <li>
-                <a href="#">Otros...</a>
-            </li>
-        </ul>
-        <ul class="list-unstyled CTAs">
-            <li>
-                <a href="#" class="download">Salir</a>
-            </li>
-        </ul>
-    </nav> <!-- Fin Sidebar -->
-
-    <div class="container mt-5"> 
-        <!-- El contenido de la pagina debe ser desarrollado adentro de este div -->
-        <label for="">Hola estas en emprendedores</label>
-    </div>
-
-</div>
-
-
 <!-- INICIA EMPRENDEDORES NAVBAR -->
 <div class="container">
 
@@ -111,7 +63,13 @@
                 <button class="btn btn-outline-success my-2 my-sm-0" id="boton_buscar" type="submit" >Buscar</button>
             </form>
             </div>
-        </td>    
+        </td> 
+        <td></td>
+        <td></td>
+        <td>
+            <button type="button" class="btn btn-outline-warning my-2 my-sm-0">Agregar
+            </button>
+        </td>  
     </tr>
    </table>
   </nav>
@@ -131,7 +89,17 @@
               </h3>
               <div class="mb-1 text-muted">Nov 12</div>
               <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-              <a href="#">Continue reading</a>
+              <table>
+                  <tr>
+                    <td>
+                        <a routerLink="/actualizar-emprendedores">Editar</a>
+                    </td>
+                    <td></td><td></td><td></td>
+                    <td>
+                        <a routerLink="/eliminar-emprendedores">Eliminar</a>
+                    </td>
+                  </tr>
+              </table>
             </div>
             <img class="card-img-right flex-auto d-none d-md-block" src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png" alt="Card image cap" id="imagen_usuario" width="200" height="200">
           </div>
