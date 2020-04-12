@@ -22,11 +22,10 @@ import { EmprendedoresComponent } from './emprendedores/emprendedores.component'
     AppComponent,
     LoginComponent,
     PaginaPrincipalComponent,
-
     EliminarEmprendedorComponent,
     CalendarioComponent,
     CrearEmprendedorComponent,
-    SidebarComponent
+    SidebarComponent,
     ActualizarEmprendedoresComponent,
     ConsultarEmprenddedoresComponent,
     EmprendedoresComponent

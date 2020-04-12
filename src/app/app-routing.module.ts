@@ -7,37 +7,51 @@ import { CrearEmprendedorComponent } from './crear-emprendedor/crear-emprendedor
 import { ActualizarEmprendedoresComponent } from './actualizar-emprendedores/actualizar-emprendedores.component';
 import { ConsultarEmprenddedoresComponent } from './consultar-emprenddedores/consultar-emprenddedores.component';
 import { EmprendedoresComponent } from './emprendedores/emprendedores.component';
+import { EliminarEmprendedorComponent } from './eliminar-emprendedor/eliminar-emprendedor.component';
 
 
 
 const routes: Routes = [
   {
-    path:'', redirectTo: 'login', pathMatch: 'full' /* El path vacio significa que es la primera en mostrarse, el redirectTo significa que si esta vacio lo redirecciona a ese componente */
+    path: '', redirectTo: 'login', pathMatch: 'full' /* El path vacio significa que es la primera en mostrarse, el redirectTo significa que si esta vacio lo redirecciona a ese componente */
   },
-  {
-    path:'login', component: LoginComponent /* Importo componente "login" */
-  },
-  {
 
-    path:'pagina-principal', component: PaginaPrincipalComponent /* Importo componente "pagina principal" */
-  },
   {
-    path:'calendario', component: CalendarioComponent /* Importo componente "calendario" */
-   },
-  {
-    path:'crear-emprendedor', component: CrearEmprendedorComponent /* Importo el componente "crear-emprendedor" */
-   }
-    path:'pagina-principal', component: PaginaPrincipalComponent
+    path: 'login', component: LoginComponent /* Importo componente "login" */
   },
+
   {
-    path:'actualizar-emprendedores', component: ActualizarEmprendedoresComponent /* Importo componente "ActualizarEmprendedores" */
+    path: 'pagina-principal', component: PaginaPrincipalComponent /* Importo componente "pagina principal" */
   },
+
   {
-    path:'consultar-emprendedores', component: ConsultarEmprenddedoresComponent /* Importo componente "ConsultarEmprenddedores" */
+    path: 'calendario', component: CalendarioComponent /* Importo componente "calendario" */
   },
+
   {
-    path:'emprendedores', component: EmprendedoresComponent /* Importo componente "ConsultarEmprenddedores" */
+    path: 'crear-emprendedor', component: CrearEmprendedorComponent /* Importo el componente "crear-emprendedor" */
   },
+
+  {
+    path: 'pagina-principal', component: PaginaPrincipalComponent /* Importo componente pagina principal" */
+  },
+
+  {
+    path: 'actualizar-emprendedores', component: ActualizarEmprendedoresComponent /* Importo componente "ActualizarEmprendedores" */
+  },
+
+  {
+    path: 'consultar-emprendedores', component: ConsultarEmprenddedoresComponent /* Importo componente "ConsultarEmprenddedores" */
+  },
+
+  {
+    path: 'emprendedores', component: EmprendedoresComponent /* Importo componente "ConsultarEmprenddedores" */
+  },
+
+  {
+    path: 'eliminar-emprendedores', component: EliminarEmprendedorComponent
+  }
+
 ];
 
 @NgModule({
