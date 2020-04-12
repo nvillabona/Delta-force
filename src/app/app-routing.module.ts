@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PaginaPrincipalComponent } from './pagina-principal/pagina-principal.component';
-import { LoginComponent } from './login/login.component';
-import { CalendarioComponent } from './calendario/calendario.component';
-import { CrearEmprendedorComponent } from './crear-emprendedor/crear-emprendedor.component';
-import { ActualizarEmprendedoresComponent } from './actualizar-emprendedores/actualizar-emprendedores.component';
-import { ConsultarEmprenddedoresComponent } from './consultar-emprenddedores/consultar-emprenddedores.component';
-import { EmprendedoresComponent } from './emprendedores/emprendedores.component';
-import { EliminarEmprendedorComponent } from './eliminar-emprendedor/eliminar-emprendedor.component';
+import { PaginaPrincipalComponent } from './components/pagina-principal/pagina-principal.component';
+import { LoginComponent } from './components/login/login.component';
+import { CalendarioComponent } from './components/calendario/calendario.component';
+import { CrearEmprendedorComponent } from './components/crear-emprendedor/crear-emprendedor.component';
+import { ActualizarEmprendedoresComponent } from './components/actualizar-emprendedores/actualizar-emprendedores.component';
+import { ConsultarEmprenddedoresComponent } from './components/consultar-emprenddedores/consultar-emprenddedores.component';
+import { EmprendedoresComponent } from './components/emprendedores/emprendedores.component';
+import { EliminarEmprendedorComponent } from './components/eliminar-emprendedor/eliminar-emprendedor.component';
 
 
 
