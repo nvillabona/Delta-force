@@ -14,6 +14,12 @@ import { SidebarComponent } from './components/sidebar/sidebar.component'; // fo
 import { ActualizarEmprendedoresComponent } from './components/actualizar-emprendedores/actualizar-emprendedores.component';
 import { ConsultarEmprenddedoresComponent } from './components/consultar-emprenddedores/consultar-emprenddedores.component';
 import { EmprendedoresComponent } from './components/emprendedores/emprendedores.component';
+import { ConsultoresComponent } from './components/consultores/consultores.component';
+import { ActualizarConsultorComponent } from './components/actualizar-consultor/actualizar-consultor.component';
+import { EliminarConsultorComponent } from './components/eliminar-consultor/eliminar-consultor.component';
+import { ConsultarConsultoriasComponent } from './components/consultar-consultorias/consultar-consultorias.component';
+import { ConsultarEmprendimientosComponent } from './components/consultar-emprendimientos/consultar-emprendimientos.component';
+import { CrearConsultorComponent } from './components/crear-consultor/crear-consultor.component';
 
 
 
@@ -28,7 +34,13 @@ import { EmprendedoresComponent } from './components/emprendedores/emprendedores
     SidebarComponent,
     ActualizarEmprendedoresComponent,
     ConsultarEmprenddedoresComponent,
-    EmprendedoresComponent
+    EmprendedoresComponent,
+    ConsultoresComponent,
+    ActualizarConsultorComponent,
+    EliminarConsultorComponent,
+    ConsultarConsultoriasComponent,
+    ConsultarEmprendimientosComponent,
+    CrearConsultorComponent
 
   ],
   imports: [
