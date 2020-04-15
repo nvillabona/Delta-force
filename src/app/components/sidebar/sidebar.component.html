@@ -1,3 +1,6 @@
+<!-- Componente que contiene el codigo HTML la barra de navegacion 
+    vertical en a la izquierda de la pantalla -->
+
 <div class="wrapper">
     <!-- Sidebar -->
     <nav id="sidebar">
@@ -11,28 +14,25 @@
                 <a routerLink="/calendario">Calendario</a> <!-- Redirecciono a componente calendario -->
             </li>
             <li>
-                <a href="#">Consultorías</a>
+                <a routerLink="/consultar-consultorias">Consultorías</a>
             </li>
             <li>
-                <a href="#">Consultores</a>
+                <a routerLink="/consultores">Consultores</a>
             </li>
             <li>
-                <a href="#">Empredimientos</a>
+                <a routerLink="/consultar-emprendimientos">Empredimientos</a>
             </li>
             <li>
                 <a routerLink="/emprendedores">Emprendedores</a>
             </li>
-            <li>
-                <a href="#">Otros...</a>
-            </li>
         </ul>
         <ul class="list-unstyled CTAs">
             <li>
-                <a href="#" class="download">Salir</a>
+                <a routerLink="/login" class="download">Salir</a>
             </li>
         </ul>
     </nav> <!-- Fin Sidebar -->
 
-            <router-outlet></router-outlet>
+            <router-outlet></router-outlet> <!-- Aqui se ejecutan todos los demás componentes -->
 
 </div>
