@@ -4,9 +4,7 @@ import { PaginaPrincipalComponent } from './components/pagina-principal/pagina-p
 import { LoginComponent } from './components/login/login.component';
 import { CalendarioComponent } from './components/calendario/calendario.component';
 import { CrearEmprendedorComponent } from './components/crear-emprendedor/crear-emprendedor.component';
-
 import { ActualizarEmprendedoresComponent } from './components/actualizar-emprendedores/actualizar-emprendedores.component';
-import { ConsultarEmprenddedoresComponent } from './components/consultar-emprenddedores/consultar-emprenddedores.component';
 import { EmprendedoresComponent } from './components/emprendedores/emprendedores.component';
 import { EliminarEmprendedorComponent } from './components/eliminar-emprendedor/eliminar-emprendedor.component';
 import { ConsultoresComponent } from './components/consultores/consultores.component';
@@ -41,10 +39,6 @@ const routes: Routes = [
 
   {
     path: 'actualizar-emprendedores', component: ActualizarEmprendedoresComponent /* Importo componente para actualizar emprendedor*/
-  },
-
-  {
-    path: 'consultar-emprendedores', component: ConsultarEmprenddedoresComponent /* Importo componente para consultar emprendedores */
   },
 
   {
