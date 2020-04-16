@@ -13,7 +13,7 @@ import { EliminarEmprendedorComponent } from './components/eliminar-emprendedor/
 import { CalendarioComponent } from './components/calendario/calendario.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { CrearEmprendedorComponent } from './components/crear-emprendedor/crear-emprendedor.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component'; // for FullCalendar!
+import { SidebarComponent } from "./components/sidebar/sidebar.component"; // for FullCalendar!
 import { ActualizarEmprendedoresComponent } from './components/actualizar-emprendedores/actualizar-emprendedores.component';
 import { ConsultarEmprenddedoresComponent } from './components/consultar-emprenddedores/consultar-emprenddedores.component';
 import { EmprendedoresComponent } from './components/emprendedores/emprendedores.component';
@@ -31,7 +31,8 @@ import { EmprendedoresComponent } from './components/emprendedores/emprendedores
     SidebarComponent,
     ActualizarEmprendedoresComponent,
     ConsultarEmprenddedoresComponent,
-    EmprendedoresComponent
+    EmprendedoresComponent,
+
 
   ],
   imports: [
