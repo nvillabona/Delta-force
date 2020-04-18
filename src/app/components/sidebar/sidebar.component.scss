@@ -59,8 +59,8 @@ a:focus {
     min-width: 250px;
     max-width: 250px;
     min-height: 100vh;
-    background: #7386D5;
-    color: #fff;
+    background: white;
+    color: grey;
     transition: all 0.3s;
 }
 
@@ -70,16 +70,16 @@ a:focus {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #6d7fcc;
+    background: white;
 }
 
 #sidebar ul.components {
-    padding: 20px 0;
+    padding: 20px 20px;
     border-bottom: 1px solid #47748b;
 }
 
 #sidebar ul p {
-    color: #fff;
+    color: grey;
     padding: 10px;
 }
 
@@ -168,3 +168,8 @@ a.article:hover {
     }
 }
                                 /* FIN CODIGO ESTILOS SIDEBAR BOOTSTRAP */
+
+
+.sidebar-header .logo{
+width: 70%;
+}
