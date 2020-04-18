@@ -125,10 +125,6 @@
           }
         }
       }
-    }
-  },
-  "defaultProject": "SinapsisUao",
-  "cli": {
-    "analytics": "2f22b48e-d61d-4a7e-9ca1-82fc22fe69eb"
-  }
+    }},
+  "defaultProject": "SinapsisUao"
 }
