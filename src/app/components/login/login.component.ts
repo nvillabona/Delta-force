@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginUsuario } from "../../models/login.usuario";
-import { Router, ActivatedRoute, Params } from "@angular/router";
+import { Router} from "@angular/router";
 import { LoginService } from "../../services/login.service";
-import { Global } from "../../services/global";
 
 
 @Component({
@@ -12,11 +11,12 @@ import { Global } from "../../services/global";
   providers: [LoginService]
 })
 export class LoginComponent implements OnInit {
+
+
   public logUsuario: LoginUsuario;
 
 
   constructor(
-    private _route: ActivatedRoute,
     private _router: Router,
     private _loginService: LoginService
   ) {
@@ -28,21 +28,19 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this._loginService.getUsers().subscribe(
-      res => console.log(res),
+      res => //console.log(res),
       err => console.log(err)
       
       
     );
 
-
+    
   }
-
-
 
   onSubmit(form){
     var logUsuario = this.logUsuario;
-    console.log("evento submit finalizado");
-    console.log(logUsuario);
+    //console.log("evento submit finalizado");
+    //console.log(logUsuario);
 
     var email = logUsuario.email;
     var password = logUsuario.password;
@@ -52,6 +50,7 @@ export class LoginComponent implements OnInit {
         const resultado = res;
         if (resultado) {
           this._router.navigate(['/pagina-principal']);
+          
         }else{
           form.reset();
           alert("Usuario o contraseña incorrectas");
@@ -63,14 +62,6 @@ export class LoginComponent implements OnInit {
         
       }
     )
-
-
-    /* if (logUsuario.email == "admin@uao.edu.co" && logUsuario.password =="admin") {
-      this._router.navigate(['/pagina-principal']);
-    }else{
-      form.reset();
-      alert("Usuario o contraseña incorrectas");
-    } */
 
   }
 
