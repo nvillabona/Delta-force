@@ -1,5 +1,39 @@
-
+<!-- 
         <full-calendar defaultView="dayGridMonth" [plugins]="calendarPlugins"></full-calendar>
   
 
 
+ -->
+ <div class="row">
+         <div class="col-12 consultar">
+                <form>
+                        <div class="form-group has-search">
+                            <span class="fa fa-search form-control-feedback"></span>
+                            <input type="text" class="form-control" placeholder="Buscar en el calendario">
+                          </div>
+                      </form>
+         </div>
+
+ </div>
+ <div class="row botonesCrear">
+         <div class="col-12">
+                <button type="button" class="btn btn-consultoria btn-lg">+ Crear consultoría</button>
+                <button type="button" class="btn btn-evento btn-lg">+ Crear evento</button>
+                <button type="button" class="btn btn-formulario btn-lg">+ Crear formulario</button>
+         </div>
+ </div>
+
+ <div class="emprendedor-cont">
+
+        <div class="row">
+            <div class="col-12">
+                <h1  href="#">Calendario</h1>
+    
+                <hr>
+
+            </div>
+            <div class="col-md-12 list-emp">
+                <full-calendar defaultView="dayGridMonth" [plugins]="calendarPlugins"></full-calendar>
+            </div>
+        </div>
+    </div>

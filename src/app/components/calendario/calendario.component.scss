@@ -1,6 +1,6 @@
-                             /* INICIO CODIGO ESTILOS SIDEBAR BOOTSTRAP */
+/*                              /* INICIO CODIGO ESTILOS SIDEBAR BOOTSTRAP */
 
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+/* @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
@@ -42,12 +42,12 @@ a:focus {
     height: 1px;
     border-bottom: 1px dashed #ddd;
     margin: 40px 0;
-}
+} */
 
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
-
+/* 
 .wrapper {
     display: flex;
     width: 100%;
@@ -138,23 +138,23 @@ a.article,
 a.article:hover {
     background: #6d7fcc !important;
     color: #fff !important;
-}
+} */
 
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
-
+/* 
 #content {
     width: 100%;
     padding: 20px;
     min-height: 100vh;
     transition: all 0.3s;
-}
+} */
 
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
-
+/* 
 @media (max-width: 768px) {
     #sidebar {
         margin-left: -250px;
@@ -165,5 +165,165 @@ a.article:hover {
     #sidebarCollapse span {
         display: none;
     }
-}
+} */
                                 /* FIN CODIGO ESTILOS SIDEBAR BOOTSTRAP */
+
+h1{
+  font-size: 20px;
+}
+
+.emprendedor-cont{
+  width: 96%;
+  background: white;
+  margin: 2% 2% 2% 2%;
+  margin-top: 2%;
+  padding: 40px;
+  border-radius: 6px;
+}
+img#imagen_usuario {
+
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 100px;
+}
+
+#cuadro_info{
+  border-radius: 6px;
+  -webkit-box-shadow: 4px 3px 21px -8px rgba(0,0,0,0.13);
+  -moz-box-shadow: 4px 3px 21px -8px rgba(0,0,0,0.13);
+  box-shadow: 4px 3px 21px -8px rgba(0,0,0,0.13);
+}
+
+.cont-filtro {
+  width: 100%;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 40px;
+}
+
+.list-emp{
+  width: 100%;
+}
+
+select.form-control.form-control-lg {
+  outline: 0;
+  border-width: 0 0 1px;
+  border-color: #e2e2e2;
+  border-radius: 0px;
+  font-size: 14px;
+}
+
+.boton {
+  margin-bottom: 40px;
+}
+
+.btnE{
+  color: #fff;
+  background-color: #9A66A8;
+  border-color: #9A66A8;
+}
+
+.btnE:hover{
+  color: #fff;
+  background-color: #7e4b8c;
+  border-color: #9A66A8;
+}
+
+.btnSearch{
+  color:white;
+  background: #c1c1c1
+  
+}
+
+.btnSearch:hover{
+  color:white;
+  background: #909090;
+  
+}
+
+.otrosbtn.float-right {
+  margin-left: 80px;
+}
+
+.otrosbtn a {
+  color: gray;
+}
+
+.otrosbtn a:hover {
+  color: #9A66A8;
+}
+
+.plus img:hover{
+  opacity: 0.7;
+}
+
+.back{
+  margin:20px
+}
+
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+    background: #f5f5f5;
+  }
+  
+  .has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+  }
+
+.btn-consultoria{
+    width: 250px;
+    padding: 20px 30px 20px 30px;
+    background: #9066A6;
+    font-size: 15px;
+    color: white;
+    margin-right: 20px;
+}
+
+.btn-consultoria:hover{
+
+    background: #7b578e;
+
+}
+
+.btn-evento{
+    width: 250px;
+    padding: 20px 30px 20px 30px;
+    background: #20529F;
+    font-size: 15px;
+    color: white;
+    margin-right: 20px;
+}
+
+.btn-evento:hover{
+
+    background: #1a417d;
+
+}
+
+.btn-formulario{
+    width: 250px;
+    padding: 20px 30px 20px 30px;
+    background: #EE7202;
+    font-size: 15px;
+    color: white;
+    margin-right: 20px;
+}
+
+.btn-formulario:hover{
+
+    background: #e26c01;
+
+}
+
+.botonesCrear{
+    margin: 20px 30px 20px 20px;
+}
