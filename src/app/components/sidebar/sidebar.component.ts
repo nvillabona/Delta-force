@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @Component({
   selector: 'app-sidebar',
@@ -12,6 +13,18 @@ export class SidebarComponent implements OnInit {
   
   ngOnInit() {
     
+  }
+  exit(){
+    Swal.fire({
+      title: 'Estás saliendo',
+      text: '¿Deseas salir?',
+      icon: 'warning',
+      confirmButtonText: 'Sí',
+      cancelButtonText: 'No',
+      confirmButtonColor: '#6d6e71',
+      cancelButtonColor: '#f47920',
+      showCancelButton: true
+    })
   }
 
 
