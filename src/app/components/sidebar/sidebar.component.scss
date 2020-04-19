@@ -91,9 +91,12 @@ a:focus {
 
 #sidebar ul li a:hover {
     color: #7386D5;
-    background: #fff;
+    background: #E9ECEF;
+    border-radius: 25px;
 }
-
+.list-component-selected{
+    color: #EE7202;
+}
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
     color: #fff;
