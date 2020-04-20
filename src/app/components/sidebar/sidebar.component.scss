@@ -95,7 +95,7 @@ a:focus {
     background: #E9ECEF;
     border-radius: 25px;
 }
-.list-component-selected{
+.active{
     color: #EE7202;
 }
 
@@ -189,4 +189,12 @@ a.article:hover {
 
 .sidebar-header .logo{
 width: 70%;
+}
+
+/* ---------------------------------------------------
+    SweetAlert
+----------------------------------------------------- */
+
+.swal-button--cancel{
+    color: yellow;
 }

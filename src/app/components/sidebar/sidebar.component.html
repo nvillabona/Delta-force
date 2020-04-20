@@ -11,25 +11,27 @@
             <p>Hola, pepito!</p>
             <li class="active">
             <li>
-                <a routerLink="/calendario" routerLinkActive="list-component-selected"  routerLinkActiveOptions="{exact:true}">Calendario</a> <!-- Redirecciono a componente calendario -->
+                <a routerLink="/calendario">Calendario</a> <!-- Redirecciono a componente calendario -->
             </li>
             <li>
-                <a routerLink="/consultar-consultorias" routerLinkActive="list-component-selected"  >Consultorías</a>
+                <a routerLink="/consultar-consultorias" routerLinkActive="active" routerLinkActiveOptions="{exact:true}"  >Consultorías</a>
             </li>
             <li>
-                <a routerLink="/consultores" routerLinkActive="list-component-selected"  >Consultores</a>
+                <a routerLink="/consultores" routerLinkActive="active"  >Consultores</a>
             </li>
             <li>
-                <a routerLink="/consultar-emprendimientos" routerLinkActive="list-component-selected"  >Emprendimientos</a>
+                <a routerLink="/consultar-emprendimientos" routerLinkActive="active"  >Emprendimientos</a>
             </li>
             <li>
-                <a routerLink="/emprendedores" routerLinkActive="list-component-selected"  >Emprendedores</a>
+                <a routerLink="/emprendedores" routerLinkActive="active"  >Emprendedores</a>
             </li>
         </ul>
         <hr/>
+        
         <ul class="list-unstyled CTAs">
+
             <li>
-                <a routerLink="/login" class="exit">Salir</a>
+                <a  routerLink="/login" class="exit" (click)="exit()">Salir</a>
             </li>
         </ul>
     </nav> <!-- Fin Sidebar -->
