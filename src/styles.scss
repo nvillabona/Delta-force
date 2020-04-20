@@ -1,3 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@fullcalendar/core/main.css'; /* For calendar */
 @import '~@fullcalendar/daygrid/main.css'; /* For calendar */
+
+
+body{
+    background: #e9ecef;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    color: #4c4c4ccc;
+
+}

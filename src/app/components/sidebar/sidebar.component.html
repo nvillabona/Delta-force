@@ -5,7 +5,7 @@
     <!-- Sidebar -->
     <nav id="sidebar">
         <div class="sidebar-header">
-            <h3>Sinapsis Uao</h3>
+            <img class="logo" src="https://sinapsis.uao.edu.co/wp-content/uploads/sites/13/2019/10/FINAL_SinapsisUAO_Mesa-de-trabajo-1-copia-2.png" alt="" srcset="">
         </div>
         <ul class="list-unstyled components">
             <p>Hola, pepito!</p>
@@ -14,21 +14,24 @@
                 <a routerLink="/calendario">Calendario</a> <!-- Redirecciono a componente calendario -->
             </li>
             <li>
-                <a routerLink="/consultar-consultorias">Consultorías</a>
+                <a routerLink="/consultar-consultorias" routerLinkActive="active" routerLinkActiveOptions="{exact:true}"  >Consultorías</a>
             </li>
             <li>
-                <a routerLink="/consultores">Consultores</a>
+                <a routerLink="/consultores" routerLinkActive="active"  >Consultores</a>
             </li>
             <li>
-                <a routerLink="/consultar-emprendimientos">Empredimientos</a>
+                <a routerLink="/consultar-emprendimientos" routerLinkActive="active"  >Emprendimientos</a>
             </li>
             <li>
-                <a routerLink="/emprendedores">Emprendedores</a>
+                <a routerLink="/emprendedores" routerLinkActive="active"  >Emprendedores</a>
             </li>
         </ul>
+        <hr/>
+        
         <ul class="list-unstyled CTAs">
+
             <li>
-                <a routerLink="/login" class="download">Salir</a>
+                <a  routerLink="/login" class="exit" (click)="exit()">Salir</a>
             </li>
         </ul>
     </nav> <!-- Fin Sidebar -->
