@@ -4,7 +4,6 @@ import { PaginaPrincipalComponent } from './components/pagina-principal/pagina-p
 import { LoginComponent } from './components/login/login.component';
 import { CalendarioComponent } from './components/calendario/calendario.component';
 import { CrearEmprendedorComponent } from './components/crear-emprendedor/crear-emprendedor.component';
-
 import { ActualizarEmprendedoresComponent } from './components/actualizar-emprendedores/actualizar-emprendedores.component';
 import { ConsultarEmprenddedoresComponent } from './components/consultar-emprenddedores/consultar-emprenddedores.component';
 import { EmprendedoresComponent } from './components/emprendedores/emprendedores.component';
