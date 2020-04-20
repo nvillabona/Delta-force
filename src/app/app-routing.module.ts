@@ -14,7 +14,6 @@ import { ConsultarConsultoriasComponent } from './components/consultar-consultor
 import { ConsultarEmprendimientosComponent } from './components/consultar-emprendimientos/consultar-emprendimientos.component';
 import { CrearConsultorComponent } from './components/crear-consultor/crear-consultor.component';
 
-
 /* Aqui se enlazan los componentes con una ruta en especifica para la pagina web */
 const routes: Routes = [
   {
