@@ -36,7 +36,6 @@ import { CrearConsultorComponent } from './components/crear-consultor/crear-cons
     CrearEmprendedorComponent,
     SidebarComponent,
     ActualizarEmprendedoresComponent,
-    ConsultarEmprenddedoresComponent,
     EmprendedoresComponent,
     ConsultoresComponent,
     ActualizarConsultorComponent,
