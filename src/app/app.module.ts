@@ -43,7 +43,8 @@ import { CrearConsultorComponent } from './components/crear-consultor/crear-cons
     EliminarConsultorComponent,
     ConsultarConsultoriasComponent,
     ConsultarEmprendimientosComponent,
-    CrearConsultorComponent
+    CrearConsultorComponent,
+    TestComponent
 
   ],
   imports: [

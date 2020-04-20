@@ -75,7 +75,7 @@ a:focus {
 
 #sidebar ul.components {
     padding: 20px 20px;
-    border-bottom: 1px solid #47748b;
+    
 }
 
 #sidebar ul p {
@@ -87,12 +87,29 @@ a:focus {
     padding: 10px;
     font-size: 1.1em;
     display: block;
+    
 }
 
 #sidebar ul li a:hover {
     color: #7386D5;
-    background: #fff;
+    background: #E9ECEF;
+    border-radius: 25px;
 }
+.active{
+    color: #EE7202;
+}
+
+.exit{
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    color: white !important;
+    background: #7386D5 !important;
+}
+.exit:hover{
+    opacity: 0.7 !important;
+}
+
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
@@ -172,4 +189,12 @@ a.article:hover {
 
 .sidebar-header .logo{
 width: 70%;
+}
+
+/* ---------------------------------------------------
+    SweetAlert
+----------------------------------------------------- */
+
+.swal-button--cancel{
+    color: yellow;
 }
