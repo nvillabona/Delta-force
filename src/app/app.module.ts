@@ -9,13 +9,11 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { PaginaPrincipalComponent } from './components/pagina-principal/pagina-principal.component';
 import { EliminarEmprendedorComponent } from './components/eliminar-emprendedor/eliminar-emprendedor.component';
-
 import { CalendarioComponent } from './components/calendario/calendario.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { CrearEmprendedorComponent } from './components/crear-emprendedor/crear-emprendedor.component';
 import { SidebarComponent } from "./components/sidebar/sidebar.component"; // for FullCalendar!
 import { ActualizarEmprendedoresComponent } from './components/actualizar-emprendedores/actualizar-emprendedores.component';
-import { ConsultarEmprenddedoresComponent } from './components/consultar-emprenddedores/consultar-emprenddedores.component';
 import { EmprendedoresComponent } from './components/emprendedores/emprendedores.component';
 import { ConsultoresComponent } from './components/consultores/consultores.component';
 import { ActualizarConsultorComponent } from './components/actualizar-consultor/actualizar-consultor.component';
@@ -38,7 +36,6 @@ import { CrearConsultoriaComponent } from './components/crear-consultoria/crear-
     CrearEmprendedorComponent,
     SidebarComponent,
     ActualizarEmprendedoresComponent,
-    ConsultarEmprenddedoresComponent,
     EmprendedoresComponent,
     ConsultoresComponent,
     ActualizarConsultorComponent,

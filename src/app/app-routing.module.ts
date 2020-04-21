@@ -4,9 +4,7 @@ import { PaginaPrincipalComponent } from './components/pagina-principal/pagina-p
 import { LoginComponent } from './components/login/login.component';
 import { CalendarioComponent } from './components/calendario/calendario.component';
 import { CrearEmprendedorComponent } from './components/crear-emprendedor/crear-emprendedor.component';
-
 import { ActualizarEmprendedoresComponent } from './components/actualizar-emprendedores/actualizar-emprendedores.component';
-import { ConsultarEmprenddedoresComponent } from './components/consultar-emprenddedores/consultar-emprenddedores.component';
 import { EmprendedoresComponent } from './components/emprendedores/emprendedores.component';
 import { EliminarEmprendedorComponent } from './components/eliminar-emprendedor/eliminar-emprendedor.component';
 import { ConsultoresComponent } from './components/consultores/consultores.component';
@@ -16,7 +14,6 @@ import { ConsultarConsultoriasComponent } from './components/consultar-consultor
 import { ConsultarEmprendimientosComponent } from './components/consultar-emprendimientos/consultar-emprendimientos.component';
 import { CrearConsultorComponent } from './components/crear-consultor/crear-consultor.component';
 import { CrearConsultoriaComponent } from './components/crear-consultoria/crear-consultoria.component';
-
 
 
 /* Aqui se enlazan los componentes con una ruta en especifica para la pagina web */
@@ -43,10 +40,6 @@ const routes: Routes = [
 
   {
     path: 'actualizar-emprendedores', component: ActualizarEmprendedoresComponent /* Importo componente para actualizar emprendedor*/
-  },
-
-  {
-    path: 'consultar-emprendedores', component: ConsultarEmprenddedoresComponent /* Importo componente para consultar emprendedores */
   },
 
   {
