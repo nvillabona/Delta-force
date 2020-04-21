@@ -23,6 +23,8 @@ import { EliminarConsultorComponent } from './components/eliminar-consultor/elim
 import { ConsultarConsultoriasComponent } from './components/consultar-consultorias/consultar-consultorias.component';
 import { ConsultarEmprendimientosComponent } from './components/consultar-emprendimientos/consultar-emprendimientos.component';
 import { CrearConsultorComponent } from './components/crear-consultor/crear-consultor.component';
+import { CrearConsultoriaComponent } from './components/crear-consultoria/crear-consultoria.component';
+
 
 
 
@@ -44,7 +46,8 @@ import { CrearConsultorComponent } from './components/crear-consultor/crear-cons
     ConsultarConsultoriasComponent,
     ConsultarEmprendimientosComponent,
     CrearConsultorComponent,
-    TestComponent
+    CrearConsultoriaComponent,
+
 
   ],
   imports: [
