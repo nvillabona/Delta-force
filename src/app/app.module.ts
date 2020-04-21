@@ -22,6 +22,7 @@ import { ConsultarConsultoriasComponent } from './components/consultar-consultor
 import { ConsultarEmprendimientosComponent } from './components/consultar-emprendimientos/consultar-emprendimientos.component';
 import { CrearConsultorComponent } from './components/crear-consultor/crear-consultor.component';
 import { CrearConsultoriaComponent } from './components/crear-consultoria/crear-consultoria.component';
+import { Pagina404Component } from './components/pagina404/pagina404.component';
 
 
 
@@ -44,6 +45,7 @@ import { CrearConsultoriaComponent } from './components/crear-consultoria/crear-
     ConsultarEmprendimientosComponent,
     CrearConsultorComponent,
     CrearConsultoriaComponent,
+    Pagina404Component,
 
 
   ],
