@@ -21,7 +21,9 @@ import { EliminarConsultorComponent } from './components/eliminar-consultor/elim
 import { ConsultarConsultoriasComponent } from './components/consultar-consultorias/consultar-consultorias.component';
 import { ConsultarEmprendimientosComponent } from './components/consultar-emprendimientos/consultar-emprendimientos.component';
 import { CrearConsultorComponent } from './components/crear-consultor/crear-consultor.component';
+import { CrearConsultoriaComponent } from './components/crear-consultoria/crear-consultoria.component';
 import { Pagina404Component } from './components/pagina404/pagina404.component';
+
 
 
 
@@ -42,6 +44,7 @@ import { Pagina404Component } from './components/pagina404/pagina404.component';
     ConsultarConsultoriasComponent,
     ConsultarEmprendimientosComponent,
     CrearConsultorComponent,
+    CrearConsultoriaComponent,
     Pagina404Component,
 
 

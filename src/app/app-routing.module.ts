@@ -13,7 +13,9 @@ import { EliminarConsultorComponent } from './components/eliminar-consultor/elim
 import { ConsultarConsultoriasComponent } from './components/consultar-consultorias/consultar-consultorias.component';
 import { ConsultarEmprendimientosComponent } from './components/consultar-emprendimientos/consultar-emprendimientos.component';
 import { CrearConsultorComponent } from './components/crear-consultor/crear-consultor.component';
+import { CrearConsultoriaComponent } from './components/crear-consultoria/crear-consultoria.component';
 import { Pagina404Component } from './components/pagina404/pagina404.component';
+
 
 /* Aqui se enlazan los componentes con una ruta en especifica para la pagina web */
 const routes: Routes = [
@@ -72,6 +74,10 @@ const routes: Routes = [
   {
     path: 'crear-consultor', component: CrearConsultorComponent  /* Importo componente para crear consultor */
   },
+  {
+    path: 'crear-consultoria', component: CrearConsultoriaComponent /* Importo componente para crear consultoría */
+  },
+
 
   { /* ¡¡ Debe ser siempre el ultimo !! */
     path: '**', component: Pagina404Component /* El path con '**' significa que cualquier URL desconocida se redirecciona al componente 'Login', aqui se puede colocar el componente de ERROR 404*/
