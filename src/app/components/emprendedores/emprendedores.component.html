@@ -42,28 +42,30 @@ al dar click en el boton emprededores de la sidebar -->
             <h1>Total: 55</h1>
 
             <br>
-            <div class="row mb-2" id="caja_info">
+            <div class="row mb-2" id="caja_info" >
                 <div class="col-md-12">
-                  <div class="card flex-md-row mb-4 box-shadow h-md-250 d-flex" id="cuadro_info">
+                  <div class="card flex-md-row mb-4 box-shadow h-md-250 d-flex" id="cuadro_info"  *ngFor="let emprendedor of emprendedores">
                     <img class="card-img-left flex-auto d-none d-md-block justify-content-center align-self-center" src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png" alt="Card image cap" id="imagen_usuario">
                     <div class="card-body  align-items-start" >
                         <div class="row">
                             <div class="col-8">
-                                <strong class="text-muted">Andres Fernando</strong>
+                                <ul>
+                                </ul>
+                                <strong class="text-muted">{{emprendedor.nombres}} {{emprendedor.apellidos}}</strong>
                                 <div class="row">
                                     <div class="col-6">
-                                        <p class="text-muted">Ingeníero Multimedia</p>
+                                        <p class="text-muted">{{emprendedor.programa_academico}}</p>
                                     </div>
                                     <div class="col-6">
-                                        <div class="mb-1 text-muted float-left"><b>Correo:</b> a.f@uao.edu.co</div>
+                                        <div class="mb-1 text-muted float-left"><b>Correo:</b> {{emprendedor.email}}</div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-6">
-                                        <p class="text-muted"><b>Teléfono:</b> 315 666 66 66</p>
+                                        <p class="text-muted"><b>Teléfono:</b> {{emprendedor.telefono}}</p>
                                     </div>
                                     <div class="col-6">
-                                        <div class="mb-1 text-muted float-left"><b>Dirección:</b> Calle 53 # 33-33</div>
+                                        <div class="mb-1 text-muted float-left"><b>Dirección:</b> {{emprendedor.direccion}}</div>
                                     </div>
                                 </div>
                             </div>
@@ -73,8 +75,8 @@ al dar click en el boton emprededores de la sidebar -->
                                    
                                     <div class="otrosbtn float-right" >
                                     
-                                        <a routerLink="/actualizar-emprendedores"><span class="fa fa-pencil"></span> Editar</a> &nbsp;&nbsp;
-                                        <a routerLink="/eliminar-emprendedores"><span class="fa fa-trash"></span> Eliminar</a>
+                                        <a class="nodelete" routerLink="/actualizar-emprendedores"><span class="fa fa-pencil"></span> Editar</a> &nbsp;&nbsp;
+                                        <a class="delete" (click)="deleteEmprendedor(emprendedor.cedula_emprendedor, emprendedor.nombres, emprendedor.apellidos)"><span class="fa fa-trash"></span> Eliminar</a>
                                    
                                         </div>
                                 
