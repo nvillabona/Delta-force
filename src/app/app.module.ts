@@ -21,6 +21,8 @@ import { EliminarConsultorComponent } from './components/eliminar-consultor/elim
 import { ConsultarConsultoriasComponent } from './components/consultar-consultorias/consultar-consultorias.component';
 import { ConsultarEmprendimientosComponent } from './components/consultar-emprendimientos/consultar-emprendimientos.component';
 import { CrearConsultorComponent } from './components/crear-consultor/crear-consultor.component';
+import { DetalleEmprendimientoComponent } from './components/detalle-emprendimiento/detalle-emprendimiento.component';
+import { CrearEmprendimientoComponent } from './components/crear-emprendimiento/crear-emprendimiento.component';
 
 
 
@@ -41,6 +43,8 @@ import { CrearConsultorComponent } from './components/crear-consultor/crear-cons
     ConsultarConsultoriasComponent,
     ConsultarEmprendimientosComponent,
     CrearConsultorComponent,
+    DetalleEmprendimientoComponent,
+    CrearEmprendimientoComponent,
 
 
   ],

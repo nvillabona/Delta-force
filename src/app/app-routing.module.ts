@@ -13,6 +13,8 @@ import { EliminarConsultorComponent } from './components/eliminar-consultor/elim
 import { ConsultarConsultoriasComponent } from './components/consultar-consultorias/consultar-consultorias.component';
 import { ConsultarEmprendimientosComponent } from './components/consultar-emprendimientos/consultar-emprendimientos.component';
 import { CrearConsultorComponent } from './components/crear-consultor/crear-consultor.component';
+import { DetalleEmprendimientoComponent } from './components/detalle-emprendimiento/detalle-emprendimiento.component';
+import { CrearEmprendimientoComponent } from './components/crear-emprendimiento/crear-emprendimiento.component';
 
 /* Aqui se enlazan los componentes con una ruta en especifica para la pagina web */
 const routes: Routes = [
@@ -70,6 +72,14 @@ const routes: Routes = [
 
   {
     path: 'crear-consultor', component: CrearConsultorComponent  /* Importo componente para crear consultor */
+  },
+
+  {
+    path: 'detalle-emprendimiento', component: DetalleEmprendimientoComponent  /* Importo componente para ver el detalle de un emprendimiento */
+  },
+
+  {
+    path: 'crear-emprendimiento', component: CrearEmprendimientoComponent  /* Importo componente para crear un emprendimiento */
   },
 
   { /* ¡¡ Debe ser siempre el ultimo !! */
