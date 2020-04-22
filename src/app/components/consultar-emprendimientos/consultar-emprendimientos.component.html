@@ -1,121 +1,105 @@
+<!-- Aquí se encuentra el código HTML del componente "emprendedores" que se ejecuta
+al dar click en el boton emprededores de la sidebar -->
 
-<!-- INICIA EMPRENDIMIENTOS NAVBAR -->
-<div class="container">
+<i class="fa fa-arrow-circle-left"></i>
 
-
-    <nav class="navbar navbar-expand-md navbar-light fixed-top" id="nav_emp" >
-      <table>
-       <tr> 
-            <td> 
-                <h1 class="navbar-brand" href="#">Emprendimientos</h1>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-            </td> 
-        </tr>
-        <tr >
-            <td colspan="2000">
-                <hr />
-            </td>
-            
-        </tr>
-        <tr>
-            <td>
-                <h4 class="navbar-brand" href="#">Filtro</h4>
-            </td>
-        </tr>
-        <tr> 
-            <td colspan="3">
-                <div>
-                    <select class="form-control form-control-md" >
-                        <option>Small select</option>
-                        <option>Small select</option>
-                        <option>Small select</option>
-                      </select>   
-                  </div>
-                
-            </td>
-            <td>
-                <div>
-                    <select class="form-control form-control-md" >
-                        <option>Small select</option>
-                        <option>Small select</option>
-                        <option>Small select</option>
-                      </select>   
-                  </div>
-            </td>
-            <td>
-                <div>
-                    <select class="form-control form-control-md" >
-                        <option>Small select</option>
-                        <option>Small select</option>
-                        <option>Small select</option>
-                      </select>   
-                  </div>
-            </td>
-            <td>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                </ul>
-                <form class="form-inline mt-2 mt-md-0">
-                    <div  class="inner-addon right-addon">
-                        <i class="glyphicon glyphicon-search"></i>
-                        <input type="text" class="form-control" placeholder="Search" />
-                        <!-- <input class="form-control mr-sm-2" type="text" class="form-control" placeholder="Search" aria-label="Search"/> -->
-                      </div>
-                    <button class="btn btn-outline-success my-2 my-sm-0" id="boton_buscar" type="submit" >Buscar</button>
-                </form>
-                </div>
-            </td>  
-            <td></td>
-            <td></td>
-            <td>
-                <button type="button" class="btn btn-warning">AGREGAR
-                </button>
-            </td>
-        </tr>
-       </table>
-      </nav>
+<div class="emprendedor-cont">
     
-    </div>
-     <!----------TERMINA EMPRENDEDORES NAVBAR------------------------>
-    <div id="total">
-        <hr>
-           <h4 href="#">Total:01</h4>
-       <hr>
-    </div>
-    <!----------EMPIEZA CAJA INFO EMPRENDIMIENTOS------------------------>
-    <div class="card" id="caja_info">
-        <div class="card-header">
-          Fecha
-        </div>
-        <div class="card-body" >
-          <h5 class="card-title">Rappi</h5>
-          <p class="card-text">Estado: En proceso</p>
-           <div id="btn_inf_empredimientos" class="text-right">
-               <table>
-                   <tr>
-                    <td>
-                       <img class="card-img-right flex-auto d-none d-md-block" src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png" alt="Card image cap" id="imagen_usuario" width="50" height="50">
-                       </td><td></td><td></td><td></td><td></td><td></td>
-                       <td rowspan="2">
-                           Valentina la mejor
-                      </td> 
-                   </tr> 
-                   <tr></tr>      
-               </table>   
-               <table>
-                   <td>
-                    <a href="#" class="btn btn-link"  aling="left" >editar</a>
-                   </td>
-                   <td></td><td></td><td></td>
-                   <td>
-                    <a href="#" class="btn btn-link">eliminar</a>
-                   </td>
-               </table>            
-           </div>     
-        </div>
-      </div>
 
+    <div class="row">
+        <div class="col-12">
+            <h1  href="#">Emprendimientos</h1>
 
+            <hr>
+
+            <h1>Filtro</h1>
+        </div>
+        <div class="cont-filtro col-10">
+            <form>
+                <div class="form-row align-items-center">
+                  <div class="col-md-4">
+                    <select class="form-control form-control-lg">
+                        <option>Típo de emprendimiento</option>
+                      </select>
+                  </div>
+                  <div class="col-md-3">
+                    <select class="form-control form-control-lg">
+                        <option>Periodo académico</option>
+                      </select>
+                  </div>
+                  <div class="col-md-3">
+                    <select class="form-control form-control-lg">
+                        <option>Mes</option>
+                      </select>
+                  </div>
+                  <div class="col-md-2">
+                    <button type="submit" class="btn btnSearch mb-2">Buscar</button>
+                  </div>
+                </div>
+              </form>
+        </div>
+        <div class="plus col-1">
+        <a routerLink="/crear-emprendedor"><img src="../../../assets/image/plus.png" alt="" width="100%"></a>
+        <button type="button" class="btn btn-warning btn-circle btn-xl" routerLink="/crear-emprendimiento"><i class="fa fa-plus"></i></button>
+        </div>
+        <div class="col-md-12 list-emp">
+            <h1>Total: 55</h1>
+
+            <br>
+            <div class="row mb-2" id="caja_info">
+                <div class="col-md-12">
+                    
+                  <div class="card flex-md-row mb-4 box-shadow h-md-250 d-flex" id="cuadro_info">
+                    <div class="card-body  align-items-start" >
+                    <div class="row">
+                        <div class="col-12">
+                            <h1><strong class="text-muted"> Titulo Emprendimiento # 1 </strong></h1>
+                            <hr>
+                        </div>
+                    <img class="card-img-left flex-auto d-none d-md-block justify-content-center align-self-center" src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png" alt="Card image cap" id="imagen_usuario">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <strong class="text-muted">Nombre del emprendedor</strong><br>
+                                        <label for="name">Susanita Pérez</label>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong class="text-muted">Sector Asociado</strong><br>
+                                        <label for="name">Ciberseguridad</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <strong class="text-muted">Teléfono</strong><br>
+                                        <label for="name">300 55 65 55</label>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong class="text-muted">Empresa formalizada</strong><br>
+                                        <label for="name">Sí</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                
+                                   <div class="boton float-right"><button class="btn btnE"> Etapa #2</button></div>
+                                   
+                                    <div class="otrosbtn float-right" >
+                                    
+                                        <a routerLink="/actualizar-emprendedores"><span class="fa fa-pencil"></span> Editar</a> &nbsp;&nbsp;
+                                        <a routerLink="/eliminar-emprendedores"><span class="fa fa-trash"></span> Eliminar</a> &nbsp;&nbsp;
+                                        <a routerLink="/detalle-emprendimiento"><span class="fa fa-eye"></span> Ver más</a>
+                                   
+                                        </div>
+                                
+                            </div>
+
+                        </div>
+                      </div>
+                    </div>  
+                </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
