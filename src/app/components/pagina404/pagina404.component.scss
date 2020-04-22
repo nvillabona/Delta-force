@@ -1,0 +1,23 @@
+.btn-primary{
+    background-color: #7386D5;
+    border-color: #7386D5;
+    color: white;
+}
+.btn-primary:hover{
+    background-color: rgb(87, 113, 216);
+    border-color: rgb(87, 113, 216);
+    color: white;
+}
+.logo{
+    width: 300px;
+}
+.message-cont{
+    width: 96%;
+    background: transparentize($color: #e9ecef, $amount: 0);
+    margin: 2% 2% 2% 2%;
+    margin-top: 2%;
+    padding: 40px;
+    border-radius: 6px;
+  }
+
+
