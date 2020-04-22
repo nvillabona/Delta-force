@@ -43,9 +43,9 @@ const routes: Routes = [
   {
     path: 'emprendedores', component: EmprendedoresComponent /* Importo componente pagina principal emprendedores */
   },
-
+  
   {
-    path: 'eliminar-emprendedores', component: EliminarEmprendedorComponent /* Importo componente para eliminar emprendedores */
+    path: 'eliminar-emprendedores/:cedula/:nombres/:apellidos', component: EliminarEmprendedorComponent /* Importo componente para eliminar emprendedores */
   },
 
   {

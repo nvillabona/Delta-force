@@ -76,8 +76,8 @@ al dar click en el boton emprededores de la sidebar -->
                                    
                                     <div class="otrosbtn float-right" >
                                     
-                                        <a routerLink="/actualizar-emprendedores"><span class="fa fa-pencil"></span> Editar</a> &nbsp;&nbsp;
-                                        <a routerLink="/eliminar-emprendedores"><span class="fa fa-trash"></span> Eliminar</a>
+                                        <a class="nodelete" routerLink="/actualizar-emprendedores"><span class="fa fa-pencil"></span> Editar</a> &nbsp;&nbsp;
+                                        <a class="delete" (click)="deleteEmprendedor(emprendedor.cedula_emprendedor, emprendedor.nombres, emprendedor.apellidos)"><span class="fa fa-trash"></span> Eliminar</a>
                                    
                                         </div>
                                 

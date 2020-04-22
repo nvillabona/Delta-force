@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Emprendedor } from "../../models/emprendedor";
 import { EmprendedorService } from "../../services/emprendedor.service";
+import { HttpHeaders } from '@angular/common/http';
+import { Router, ActivatedRoute, Params } from "@angular/router";
 
 
 @Component({
@@ -14,12 +16,17 @@ export class EmprendedoresComponent implements OnInit {
   public emprendedores: Emprendedor[];
 
   constructor(
-    private _emprededorService: EmprendedorService
+    private _emprededorService: EmprendedorService,
+    private _router: Router,
+    private _route: ActivatedRoute,
   ) {
    }
 
   ngOnInit() {
     this.getEmprendedores();
+    this._route.params.subscribe((params:Params)=>{
+        console.log(params);
+    });
   }
 
   getEmprendedores(){
@@ -34,13 +41,19 @@ export class EmprendedoresComponent implements OnInit {
         }else{
           
         }
-        
+ 
       },
       error => {
         console.log(error);
         
       }
     );
+  }
+
+  deleteEmprendedor(cedula, nombres, apellidos){
+    
+    this._router.navigate(['/eliminar-emprendedores/'+ cedula + '/'+ nombres + '/' + apellidos]);   
+      
   }
 
 }
