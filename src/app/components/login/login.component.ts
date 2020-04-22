@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     private _loginService: LoginService
   ) {
   
-    this.logUsuario = new LoginUsuario("" , "");
+    this.logUsuario = new LoginUsuario("" , "", "", 0);
 
     
    }

@@ -1,22 +1,11 @@
-/* Estilos CSS del formulario del emprendedor */
-
- h1{
+h1{
     font-size: 20px;
   }
   
-  .emprendedor-cont{
-    width: 80%;
+  .consultor-cont{
+    width: 70%;
     background: white;
-    margin: 25% 25% 10% 25%;
-    margin-top: 0%;
-    padding: 40px;
-    border-radius: 6px;
-  }
-
-  .emprendedor-cont-succ{
-    width: 800px;
-    background: white;
-    margin: 25% 25% 10% 25%;
+    margin: 20% 20% 10% 20%;
     margin-top: 0%;
     padding: 40px;
     border-radius: 6px;
@@ -136,14 +125,6 @@
     cursor: text;
   }
 
-  select{
-    outline: 0;
-    border-width: 0 0 1px;
-    border-color: #e2e2e2 !important;
-    border-radius: 0px;
-    font-size: 14px;
-  }
-
 .selectlabel {
     position: absolute;
     color: #F37920;
@@ -167,14 +148,4 @@
   .btn-success{
       background: #2ED47A;
       font-size: 15px;
-  }
-form button[disabled]{
-    opacity: 0.4;
-    cursor: not-allowed;
-  }
-
-  form span {
-    font-size: 10px;
-    color: red;
-    margin-left: 10px;
   }
