@@ -54,7 +54,7 @@ al dar click en el boton emprededores de la sidebar -->
                                 <strong class="text-muted">{{emprendedor.nombres}} {{emprendedor.apellidos}}</strong>
                                 <div class="row">
                                     <div class="col-6">
-                                        <p class="text-muted">{{emprendedor.programa_academico}}</p>
+                                        <p class="text-muted">{{emprendedor.programa_academico}} </p>
                                     </div>
                                     <div class="col-6">
                                         <div class="mb-1 text-muted float-left"><b>Correo:</b> {{emprendedor.email}}</div>
@@ -75,7 +75,7 @@ al dar click en el boton emprededores de la sidebar -->
                                    
                                     <div class="otrosbtn float-right" >
                                     
-                                        <a class="nodelete" routerLink="/actualizar-emprendedores"><span class="fa fa-pencil"></span> Editar</a> &nbsp;&nbsp;
+                                        <a class="nodelete" [routerLink]="['/actualizar-emprendedores',emprendedor.cedula_emprendedor]"><span class="fa fa-pencil"></span> Editar</a> &nbsp;&nbsp;
                                         <a class="delete" (click)="deleteEmprendedor(emprendedor.cedula_emprendedor, emprendedor.nombres, emprendedor.apellidos)"><span class="fa fa-trash"></span> Eliminar</a>
                                    
                                         </div>

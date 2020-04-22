@@ -43,7 +43,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'actualizar-emprendedores', component: ActualizarEmprendedoresComponent /* Importo componente para actualizar emprendedor*/
+    path: 'actualizar-emprendedores/:cedula', component: ActualizarEmprendedoresComponent /* Importo componente para actualizar emprendedor*/
   },
 
   {

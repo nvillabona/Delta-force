@@ -24,9 +24,7 @@ export class EmprendedoresComponent implements OnInit {
 
   ngOnInit() {
     this.getEmprendedores();
-    this._route.params.subscribe((params:Params)=>{
-        console.log(params);
-    });
+
   }
 
   getEmprendedores(){
