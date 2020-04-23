@@ -101,6 +101,11 @@
   .back{
     margin:20px
   }
+
+  .back i {
+    color: #9A66A8;
+    font-size: 30px;
+  }
  
   .formActUsuario input{
     outline: 0;
@@ -173,7 +178,7 @@ form button[disabled]{
     cursor: not-allowed;
   }
 
-  form span {
+  .form-error {
     font-size: 10px;
     color: red;
     margin-left: 10px;
