@@ -70,6 +70,15 @@ select.form-control.form-control-lg {
   background: #909090;
   
 }
+.btn-add{
+  background: #ee7303;
+}
+.btn-add:hover{
+  opacity: 0.7;
+}
+.btn-add i {
+  color: white;
+}
 
 .otrosbtn.float-right {
   margin-left: 80px;
@@ -88,8 +97,14 @@ select.form-control.form-control-lg {
 }
 
 .back{
-  margin:20px
+  margin:20px;
+  margin-bottom: 0px;
+  color: #9A66A8
 }
+.back i {
+  font-size: 35px;
+}
+
 
 .btn-circle.btn-xl {
   width: 70px;
