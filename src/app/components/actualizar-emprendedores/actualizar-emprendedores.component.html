@@ -13,7 +13,7 @@ darle click al boton editar de un emprendedor -->
   <div class=" col-12 message success text-center" >
     <img src="../../../assets/image/true.png" alt="" width="20%">
     <br><br><br>
-    <h5>El emprendedor se ha creado correctamente.</h5>
+    <h5>El emprendedor se actualizo correctamente.</h5>
   </div>
 </div>
 </div>
@@ -29,7 +29,7 @@ darle click al boton editar de un emprendedor -->
     </div>
 
     <div class="formActUsuario">
-      <form #emprendedorForm="ngForm" (ngSubmit)="onSubmit(emprendedorForm)">
+      <form #actemprendedorForm="ngForm" (ngSubmit)="onSubmit(actemprendedorForm)">
         <div class="form-row align-items-center">
             <div class="col-md-6"><img class="justify-content-center align-self-center" src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png" alt="Card image cap" id="imagen_usuario">
             </div>
@@ -112,7 +112,7 @@ darle click al boton editar de un emprendedor -->
                     <label for="rol">Rol</label>
                   </fieldset>
                   
-                  <button type="submit" class="btn btn-success btn-lg float-right" [disabled]="!emprendedorForm.form.valid">+ Actualizar emprendedor</button>
+                  <button type="submit" class="btn btn-success btn-lg float-right" [disabled]="!actemprendedorForm.form.valid">+ Actualizar emprendedor</button>
             </div>
             <div class="col-12">
 

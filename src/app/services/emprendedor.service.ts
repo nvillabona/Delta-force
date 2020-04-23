@@ -43,11 +43,11 @@ export class EmprendedorService{
         return this._http.get(this.url+'/emprendedores/'+cedula, {headers: headers});
     }
 
-    updateEmprendedor(emprendedor): Observable<any>{
-        let params = JSON.stringify(emprendedor);
+    updateEmprendedor(emprendedor:Emprendedor): Observable<any>{
+        let params = emprendedor;
         let headers = new HttpHeaders().set('Content-Type', 'application/json')
     
-        return this._http.put(this.url+'/emprendedores/'+emprendedor.cedula, params, {headers:headers})
+        return this._http.put(this.url+'/emprendedores/'+emprendedor.cedula_emprendedor, params, {headers:headers})
     }
     
 }
