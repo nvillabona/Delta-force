@@ -1,0 +1,73 @@
+<!-- Aqui se encuentra el codigo del formulario para actualizar consultor,
+el cual se ejecuta al darle click al boton consultores de la sidebar y luego
+darle click al boton editar de un consultor -->
+<div class="row">
+  <div class="col-12 back">
+    
+      <a routerLink="/consultores"><i class="fa fa-arrow-circle-left"></i> Atrás</a>
+</div>
+</div>
+<div class="consultor-cont">
+
+    <div class="row">
+        <div class="col-12">
+            <h1  href="#">Actualizar Consultores</h1>
+
+            <hr>
+        </div>
+    </div>
+
+    <div class="formActUsuario">
+        <form>
+            <div class="form-row align-items-center">
+                <div class="col-md-6"><img class="justify-content-center align-self-center" src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png" alt="Card image cap" id="imagen_usuario">
+                </div>
+                <div class="col-md-6">
+                    <fieldset class="form-group">
+                        <input type="text" class="form-control" id="name" name="name" required>
+                        <label for="name">Nombre Completo</label>
+                      </fieldset>
+                      <fieldset class="form-group">
+                        <input type="number" class="form-control" id="cedula" name="cedula" required>
+                        <label for="cedula">Numero de Cédula</label>
+                      </fieldset>
+                      <fieldset class="form-group">
+                        <input type="email" class="form-control" id="email" name="email" required>
+                        <label for="email">Email</label>
+                      </fieldset>
+                      <fieldset class="form-group">
+                        <input type="text" class="form-control" id="telefono" name="telefono" required>
+                        <label for="telefono">Teléfono</label>
+                      </fieldset>
+                </div>
+                <div class="col-md-6">
+                      <fieldset class="form-group">
+                        <input type="text" class="form-control" id="direccion" name="direccion" required>
+                        <label for="direccion">Dirección</label>
+                      </fieldset>
+                      <fieldset class="form-group">
+                        <input type="text" class="form-control" id="perfilprofecional" name="perfilprofecional">
+                        <label for="perfilprofecional">Perfil profesional</label>
+                         <small class="text-muted">Este campo no es obligatorio</small>
+                      </fieldset>
+                </div>
+                <div class="col-md-6">
+                      <fieldset class="form-group">
+                        <input type="text" class="form-control" id="area" name="area" required>
+                        <label for="area">Área de enfoque</label>
+                      </fieldset>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-success btn-lg float-right">+ Actualiar consultor</button>
+                </div>
+            </div> 
+          </form>
+    </div>
+</div>
+
+
+
+
+
+
+

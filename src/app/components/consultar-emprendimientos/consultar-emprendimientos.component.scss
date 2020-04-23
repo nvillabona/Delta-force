@@ -1,0 +1,123 @@
+h1{
+  font-size: 20px;
+}
+
+.emprendedor-cont{
+  width: 96%;
+  background: white;
+  margin: 2% 2% 2% 2%;
+  margin-top: 2%;
+  padding: 40px;
+  border-radius: 6px;
+}
+img#imagen_usuario {
+
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 100px;
+}
+
+#cuadro_info{
+  border-radius: 6px;
+  -webkit-box-shadow: 4px 3px 21px -8px rgba(0,0,0,0.13);
+  -moz-box-shadow: 4px 3px 21px -8px rgba(0,0,0,0.13);
+  box-shadow: 4px 3px 21px -8px rgba(0,0,0,0.13);
+}
+
+.cont-filtro {
+  width: 100%;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 40px;
+}
+
+.list-emp{
+  width: 100%;
+}
+
+select.form-control.form-control-lg {
+  outline: 0;
+  border-width: 0 0 1px;
+  border-color: #e2e2e2;
+  border-radius: 0px;
+  font-size: 14px;
+}
+
+.boton {
+  margin-bottom: 40px;
+}
+
+.btnE{
+  color: #fff;
+  background-color: #9A66A8;
+  border-color: #9A66A8;
+}
+
+.btnE:hover{
+  color: #fff;
+  background-color: #7e4b8c;
+  border-color: #9A66A8;
+}
+
+.btnSearch{
+  color:white;
+  background: #c1c1c1
+  
+}
+
+.btnSearch:hover{
+  color:white;
+  background: #909090;
+  
+}
+.btn-add{
+  background: #ee7303;
+}
+.btn-add:hover{
+  opacity: 0.7;
+}
+.btn-add i {
+  color: white;
+}
+
+.otrosbtn.float-right {
+  margin-left: 80px;
+}
+
+.otrosbtn a {
+  color: gray;
+}
+
+.otrosbtn a:hover {
+  color: #9A66A8;
+}
+
+
+.back{
+  margin:20px;
+  margin-bottom: 0px;
+  color: #9A66A8
+}
+.back i {
+  font-size: 35px;
+}
+
+
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  border-radius: 35px;
+  font-size: 24px;
+  line-height: 1.33;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  padding: 6px 0px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.42857;
+}

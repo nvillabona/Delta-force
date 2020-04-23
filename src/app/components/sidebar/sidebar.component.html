@@ -1,0 +1,41 @@
+<!-- Componente que contiene el codigo HTML la barra de navegacion 
+    vertical en a la izquierda de la pantalla -->
+
+<div class="wrapper">
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <img class="logo" src="https://sinapsis.uao.edu.co/wp-content/uploads/sites/13/2019/10/FINAL_SinapsisUAO_Mesa-de-trabajo-1-copia-2.png" alt="" srcset="">
+        </div>
+        <ul class="list-unstyled components">
+            <p>Hola, pepito!</p>
+            <li class="active">
+            <li>
+                <a routerLink="/calendario">Calendario</a> <!-- Redirecciono a componente calendario -->
+            </li>
+            <li>
+                <a routerLink="/consultar-consultorias" routerLinkActive="active" routerLinkActiveOptions="{exact:true}"  >Consultorías</a>
+            </li>
+            <li>
+                <a routerLink="/consultores" routerLinkActive="active"  >Consultores</a>
+            </li>
+            <li>
+                <a routerLink="/consultar-emprendimientos" routerLinkActive="active"  >Emprendimientos</a>
+            </li>
+            <li>
+                <a routerLink="/emprendedores" routerLinkActive="active"  >Emprendedores</a>
+            </li>
+        </ul>
+        <hr/>
+        
+        <ul class="list-unstyled CTAs">
+
+            <li>
+                <a  routerLink="/login" class="exit" (click)="exit()">Salir</a>
+            </li>
+        </ul>
+    </nav> <!-- Fin Sidebar -->
+
+            <router-outlet></router-outlet> <!-- Aqui se ejecutan todos los demás componentes -->
+
+</div>
