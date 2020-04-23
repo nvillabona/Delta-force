@@ -9,15 +9,23 @@
     color: white;
 }
 .logo{
-    width: 300px;
+    width: 200px;
 }
-.message-cont{
-    width: 96%;
-    background: transparentize($color: #e9ecef, $amount: 0);
-    margin: 2% 2% 2% 2%;
-    margin-top: 2%;
-    padding: 40px;
-    border-radius: 6px;
-  }
+// .message-cont{
+//     width: 600px;
+//     height: 90%;
+//     background-color: red;
+//     // background: transparentize($color: #e9ecef, $amount: 0);
+//     margin: 2% 2% 2% 2%;
+//     margin-top: 2%;
+//     // padding: 40px;
+//     border-radius: 6px;
+ 
+//   }
+
+.card{
+    width: 50em;
+}
+
 
 
