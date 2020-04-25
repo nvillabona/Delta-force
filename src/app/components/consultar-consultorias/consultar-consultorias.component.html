@@ -23,24 +23,27 @@
                 </button>
             </div>
 
-            <div class="col-md-12 list-emp">
-                <h1>Total: 55</h1>
-    
+            <div class="col-md-12 list-emp" >
+                <div *ngFor="let consultoria of consultorias; first as isFirst">
+
+                
+                <h1 *ngIf="isFirst" >Total: {{consultorias.length}}</h1>
+            </div>
                 <br>
-                <div class="row mb-2" id="caja_info" >
+                <div class="row mb-2" id="caja_info" *ngFor="let consultoria of consultorias" >
                     <div class="col-md-12">
                       <div class="card flex-md-row mb-4 box-shadow h-md-250 d-flex" id="cuadro_info" >                      
                         <div class="card-body  align-items-start" >
                             <div class="row">
-                                <div class="header-card col-6">
-                                    <h3>texto</h3>
+                                <div class="header-card col-4">
+                                    <h3>{{consultoria.titulo}}</h3>
                                     
                                   </div>
-                                  <div class="col-2">
-                                     <b> Estado:</b>
-                                  </div>
-                                  <div class="col-2">
-                                    <b> Fecha y Hora:</b>
+                                   <div class="col-2">
+                                     <b> Tipo:</b>  {{consultoria.tipo}}
+                                  </div> 
+                                  <div class="col-4">
+                                    <b> Fecha: </b> {{consultoria.fecha}} <b>Hora:</b> {{consultoria.hora}}
                                  </div>
                                   <div class="col-12">
                                     <hr>
@@ -53,8 +56,8 @@
                                         </div>
                                         <div class="col-5">
 
-                                                    <p class="text-muted"><b>Nombre del facilitador: </b>Texto </p>
-                                                    <div class="mb-1 text-muted float-left"><b>Teléfono: </b> Texto</div>
+                                                    <p class="text-muted"><b>Nombre del facilitador: </b><br>{{consultoria.fnombres}} {{consultoria.fapellidos}} </p>
+                                                    <div class="mb-1 text-muted float-left"><b>Teléfono: </b> {{consultoria.ftelefono}}</div>
 
                                         </div>
                                         <div class="col-1">
@@ -62,8 +65,8 @@
 
                                         </div>
                                         <div class="col-5">
-                                            <p class="text-muted"><b>Nombre del emprendedor: </b>Texto </p>
-                                            <div class="mb-1 text-muted float-left"><b>Teléfono: </b> Texto</div>
+                                            <p class="text-muted"><b>Nombre del emprendedor: </b><br>{{consultoria.enombres}} {{consultoria.eapellidos}}  </p>
+                                            <div class="mb-1 text-muted float-left"><b>Teléfono: </b> {{consultoria.etelefono}}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -73,10 +76,10 @@
                                        
                                         <div class="otrosbtn float-right" >
                                         
-                                            <a routerLink="/actualizar-consultorias"><span class="fa fa-pencil"></span> Editar</a> &nbsp;&nbsp;
-                                            <a routerLink="/eliminar-consultorias"><span class="fa fa-trash"></span> Eliminar</a> &nbsp;&nbsp;
-                                            <a routerLink="/detalle-consultorias"><span class="fa fa-eye"></span> Ver más</a>
-                                       
+                                            <a [routerLink]="['/actualizar-consultorias',consultoria.consecutivo]"><span class="fa fa-pencil"></span> Editar</a> &nbsp;&nbsp;
+                                            <a (click)="deleteConsultorias(consultoria.consecutivo, consultoria.titulo)"><span class="fa fa-trash"></span> Eliminar</a> &nbsp;&nbsp;
+<!--                                             <a routerLink="/detalle-consultorias"><span class="fa fa-eye"></span> Ver más</a> -->
+                                            
                                             </div>
                                     
                                 </div>

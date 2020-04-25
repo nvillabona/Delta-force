@@ -35,7 +35,7 @@
  -->                            <select name="c_emprendedor" #c_emprendedor="ngModel" [(ngModel)]="emprendimiento.c_emprendedor" required>
                                 <option *ngFor="let e of emprendedores" [ngValue]="e.cedula_emprendedor">{{e.nombres}} {{e.apellidos}}</option>
                                 </select>
-                            <label for="perfilprofecional">Nombre del emprendedor</label>
+                            <label for="c_emprendedor">Nombre del emprendedor</label>
                             <span class="form-error" *ngIf="c_emprendedor.touched && !c_emprendedor.valid"> El emprendedor es obligatorio</span>
                         </fieldset>
                         <fieldset class="form-group">

@@ -19,6 +19,8 @@ import { CrearConsultoriaComponent } from './components/crear-consultoria/crear-
 import { Pagina404Component } from './components/pagina404/pagina404.component';
 import { EliminarEmprendimientoComponent } from "./components/eliminar-emprendimiento/eliminar-emprendimiento.component";
 import { ActualizarEmprendimientoComponent } from "./components/actualizar-emprendimiento/actualizar-emprendimiento.component";
+import { EliminarConsultoriaComponent } from "./components/eliminar-consultoria/eliminar-consultoria.component";
+import { ActualizarConsultoriasComponent } from "./components/actualizar-consultorias/actualizar-consultorias.component";
 
 
 
@@ -71,6 +73,12 @@ const routes: Routes = [
 
   {
     path: 'consultar-consultorias', component: ConsultarConsultoriasComponent /* Importo componente para consultar consultorias programadas */
+  },
+  {
+    path: 'eliminar-consultorias/:consecutivo/:titulo', component: EliminarConsultoriaComponent /* Importo componente para consultar consultorias programadas */
+  },
+  {
+    path: 'actualizar-consultorias/:consecutivo', component: ActualizarConsultoriasComponent /* Importo componente para consultar consultorias programadas */
   },
 
   {

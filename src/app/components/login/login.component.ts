@@ -49,8 +49,7 @@ export class LoginComponent implements OnInit {
       res => {
         const resultado = res;
         if (resultado) {
-          this._router.navigate(['/pagina-principal']);
-          
+          this._router.navigate(['/pagina-principal']); 
         }else{
           form.reset();
           alert("Usuario o contraseña incorrectas");
