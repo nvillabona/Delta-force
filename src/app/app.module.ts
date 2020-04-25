@@ -27,6 +27,7 @@ import { Pagina404Component } from './components/pagina404/pagina404.component';
 import { CrearConsultorComponent } from './components/crear-consultor/crear-consultor.component';
 import { ConsultarUsuariosComponent } from './components/consultar-usuarios/consultar-usuarios.component';
 import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
+import { ReportesConsultoriasComponent } from './components/reportes-consultorias/reportes-consultorias.component';
 
 
 
@@ -59,6 +60,7 @@ import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.
     Pagina404Component,
     ConsultarUsuariosComponent,
     CrearUsuarioComponent,
+    ReportesConsultoriasComponent,
 
 
 
