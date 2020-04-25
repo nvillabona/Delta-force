@@ -61,11 +61,11 @@ const routes: Routes = [
   },
 
   {
-    path: 'actualizar-consultor', component:ActualizarConsultorComponent /* Importo componente para actualizar consultores */
+    path: 'actualizar-consultor/:cedula', component:ActualizarConsultorComponent /* Importo componente para actualizar consultores */
   },
 
   {
-    path: 'eliminar-consultor', component: EliminarConsultorComponent /* Importo componente para eliminar consultores */
+    path: 'eliminar-consultor/:cedula/:nombres/:apellidos', component: EliminarConsultorComponent /* Importo componente para eliminar consultores */
   },
 
   {
