@@ -28,14 +28,6 @@ import { CrearConsultorComponent } from './components/crear-consultor/crear-cons
 import { ConsultarUsuariosComponent } from './components/consultar-usuarios/consultar-usuarios.component';
 import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
 
-
-
-
-
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
