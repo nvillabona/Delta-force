@@ -24,6 +24,7 @@ import { DetalleEmprendimientoComponent } from './components/detalle-emprendimie
 import { CrearEmprendimientoComponent } from './components/crear-emprendimiento/crear-emprendimiento.component';
 import { CrearConsultoriaComponent } from './components/crear-consultoria/crear-consultoria.component';
 import { Pagina404Component } from './components/pagina404/pagina404.component';
+import { CrearConsultorComponent} from './components/crear-consultor/crear-consultor.component';
 
 
 
