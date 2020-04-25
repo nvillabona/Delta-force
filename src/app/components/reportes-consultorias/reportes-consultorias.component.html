@@ -1,28 +1,30 @@
 <div class="consultores-cont">
 
     <div class="row">
-        <div class="col-12">
+        <div class="col-md-12">
             <h1  href="#">Reportes Consultorías</h1>
 
             <hr>
-
-            <h1>Filtro</h1>
+            <br />
+            <h1>Seleccione un mes a consultar</h1>
         </div >
-        <div class="cont-filtro col-10">
-            <form>
-                <div class="form-group has-search">
-                    <span class="fa fa-search form-control-feedback"></span>
-                    <input type="text" class="form-control" placeholder="Search">
-                  </div>
-              </form>
-        </div>
-        <div class="plus col-1">
-            <button type="button" class="btn btn-add btn-circle btn-xl" routerLink="/crear-consultoria"><i class="fa fa-plus"></i>
+        <div class="col-md-11">
+            <select class="form-control form-control-lg">
+                <option>Mes</option>
+                <!-- las opciones de abajo deberán ser tomadas de la bd -->
+                <option>Enero</option>
+                <option>Febrero</option>
+                <option>Marzo</option>
+              </select>
+          </div>
+        <div class="plus col-md-1">
+            <button type="button" class="btn btn-primary btn-buscar" routerLink="/crear-consultoria">Buscar
             </button>
         </div>
 
         <div class="col-md-12 list-emp">
-            <h1>Total: 55</h1>
+            
+            <hr />
 
             <br>
             <div class="row mb-2" id="caja_info" >
@@ -30,54 +32,61 @@
                   <div class="card flex-md-row mb-4 box-shadow h-md-250 d-flex" id="cuadro_info" >                      
                     <div class="card-body  align-items-start" >
                         <div class="row">
-                            <div class="header-card col-6">
-                                <h3>texto</h3>
+                            <div class="header-card col-md-6">
+                                <h5>Mes</h5>
                                 
                               </div>
-                              <div class="col-2">
-                                 <b> Estado:</b>
+                              <div class="col-md-3">
+                                 
                               </div>
-                              <div class="col-2">
-                                <b> Fecha y Hora:</b>
+                              <div class="col-md-3">
+                                
                              </div>
-                              <div class="col-12">
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
                                 <hr>
-                              </div>
-                            <div class="col-8">
-                                <div class="row">
-                                    <div class="col-1">
-                                                <img class="d-none d-md-block justify-content-center align-self-center" src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png" alt="Card image cap" id="imagen_usuario">
+                            </div>
+                            
+                          </div>
+                        <div class="row" >
+                            
+                            <div class="col-md-12">
+                                <div class="row" >
+                                    <div class="col-md-4" >
+                                                <h6>Enero</h6>
+                                                <b>{{emprendedor.nombre}}</b>
  
                                     </div>
-                                    <div class="col-5">
 
-                                                <p class="text-muted"><b>Nombre del facilitador: </b>Texto </p>
-                                                <div class="mb-1 text-muted float-left"><b>Teléfono: </b> Texto</div>
-
-                                    </div>
-                                    <div class="col-1">
-                                        <img class="d-none d-md-block justify-content-center align-self-center" src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png" alt="Card image cap" id="imagen_usuario">
+                                    <div class="col-md-1" >
+                                        
 
                                     </div>
-                                    <div class="col-5">
-                                        <p class="text-muted"><b>Nombre del emprendedor: </b>Texto </p>
-                                        <div class="mb-1 text-muted float-left"><b>Teléfono: </b> Texto</div>
+                                    <div class="col-md-3" >
+                                        <p class="text-muted">Reporte consolidado </p>
+                                        <div class="mb-1 text-muted float-left"></div>
+                                    </div>
+                                    <div class="col-md-4"  >
+                                
+                                        <div class="boton float-right"><button class="btn btnE"> Descargar</button></div>
+                                        <div class="otrosbtn float-right" >
+                                    
+                                            <a routerLink="/actualizar-emprendedores"><span class="fa fa-pencil"></span> Editar</a> &nbsp;&nbsp;
+                                            <a routerLink="/eliminar-emprendedores"><span class="fa fa-trash"></span> Eliminar</a> &nbsp;&nbsp;
+                                            <a routerLink="/detalle-emprendimiento"><span class="fa fa-eye"></span> Ver más</a>
+                                            &nbsp;
+                                            </div>
+                                    
+                                    </div>
+                                    <div class="row">
+                                        <hr />
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-4">
-                                
-                                   <div class="boton float-right"><button class="btn btnE"> Ruta de proceso</button></div>
-                                   
-                                    <div class="otrosbtn float-right" >
-                                    
-                                        <a routerLink="/actualizar-consultorias"><span class="fa fa-pencil"></span> Editar</a> &nbsp;&nbsp;
-                                        <a routerLink="/eliminar-consultorias"><span class="fa fa-trash"></span> Eliminar</a> &nbsp;&nbsp;
-                                        <a routerLink="/detalle-consultorias"><span class="fa fa-eye"></span> Ver más</a>
-                                   
-                                        </div>
                                 
                             </div>
+
 
                         </div>
                       </div>  
