@@ -1,6 +1,20 @@
 <!-- <i class="fa fa-arrow-circle-left"></i> -->
-
-<div class="consultores-cont">
+<div class="row">
+    <div class="col-12 back">
+      
+        <a routerLink="/consultar-emprendimientos"><i class="fa fa-arrow-circle-left"></i> Atrás</a>
+</div>
+</div>
+<div class="emprendedor-cont-succ" *ngIf="status == 'failed'">
+    <div class="row">
+    <div class=" col-12 message success text-center" >
+      <img src="../../../assets/image/true.png" alt="" width="20%">
+      <br><br><br>
+      <h5>El emprendedor se ha creado correctamente.</h5>
+    </div>
+  </div>
+  </div>
+<div class="consultores-cont" *ngIf="status == 'success'">
 
     <div class="row">
         <div class="col-12">
@@ -8,7 +22,7 @@
             <hr>
         </div>
         <div class="formActUsuario">
-            <form>
+            <form #emprendimientoForm="ngForm" (ngSubmit)="onSubmit(emprendimientoForm)">
                 <div class="form-row align-items-center">
                     <div class="col-3 ml-5">
                         <img class="justify-content-center align-self-center"
@@ -17,42 +31,46 @@
                     </div>
                     <div class="col-4">
                         <fieldset class="form-group">
-                            <input type="text" class="form-control" id="perfilprofecional" name="perfilprofecional">
+<!--                             <input type="text" class="form-control" id="perfilprofecional" name="perfilprofecional">
+ -->                            <select name="c_emprendedor" #c_emprendedor="ngModel" [(ngModel)]="emprendimiento.c_emprendedor" required>
+                                <option *ngFor="let e of emprendedores" [ngValue]="e.cedula_emprendedor">{{e.nombres}} {{e.apellidos}}</option>
+                                </select>
                             <label for="perfilprofecional">Nombre del emprendedor</label>
+                            <span class="form-error" *ngIf="c_emprendedor.touched && !c_emprendedor.valid"> El emprendedor es obligatorio</span>
                         </fieldset>
                         <fieldset class="form-group">
-                            <input type="text" class="form-control" id="perfilprofecional" name="perfilprofecional">
-                            <label for="perfilprofecional">Facultad</label>
+                            <input type="text" class="form-control" id="facultad" name="facultad" #facultad="ngModel" [(ngModel)]="emprendimiento.facultad" >
+                            <label for="facultad">Facultad</label>
                         </fieldset>
                         <fieldset class="form-group">
-                            <input type="text" class="form-control" id="perfilprofecional" name="perfilprofecional">
-                            <label for="perfilprofecional">Sector Asociado al emprendimiento</label>
+                            <input type="text" class="form-control" id="perfilprofecional" name="sector" #sector="ngModel" [(ngModel)]="emprendimiento.sector" required>
+                            <label for="sector">Sector Asociado al emprendimiento</label>
                         </fieldset>
                         <fieldset class="form-group">
-                            <input type="text" class="form-control" id="perfilprofecional" name="perfilprofecional">
-                            <label for="perfilprofecional">¿Empresa formalizada?</label>
+                            <input type="text" class="form-control" id="" name=""  required>
+                            <label for="">¿Empresa formalizada?</label>
                         </fieldset>
                     </div>
                     <div class="col-4">
                         <fieldset class="form-group">
-                            <input type="text" class="form-control" id="perfilprofecional" name="perfilprofecional">
-                            <label for="perfilprofecional">Titulo del emprendimiento</label>
+                            <input type="text" class="form-control" id="titulo" name="titulo" #titulo="ngModel" [(ngModel)]="emprendimiento.titulo" required>
+                            <label for="titulo">Titulo del emprendimiento</label>
                         </fieldset>
                         <fieldset class="form-group">
-                            <input type="text" class="form-control" id="perfilprofecional" name="perfilprofecional">
-                            <label for="perfilprofecional">Programa academico</label>
+                            <input type="text" class="form-control" id="programa_academico" name="programa_academico" #programa_academico="ngModel" [(ngModel)]="emprendimiento.programa_academico">
+                            <label for="programa_academico">Programa academico</label>
                         </fieldset>
                         <fieldset class="form-group">
-                            <input type="text" class="form-control" id="perfilprofecional" name="perfilprofecional">
-                            <label for="perfilprofecional">¿Egresado?</label>
+                            <input type="text" class="form-control" id="egresado" name="egresado" #egresado="ngModel" [(ngModel)]="emprendimiento.egresado" required>
+                            <label for="egresado">¿Egresado?</label>
                         </fieldset>
                         <fieldset class="form-group">
-                            <input type="text" class="form-control" id="perfilprofecional" name="perfilprofecional">
-                            <label for="perfilprofecional">Etapa del proyecto</label>
+                            <input type="text" class="form-control" id="etapa" name="etapa" #etapa="ngModel" [(ngModel)]="emprendimiento.etapa" required>
+                            <label for="etapa">Etapa del proyecto</label>
                         </fieldset>
                     </div>
                 </div>
-            </form>
+       
 
 
                                             <!-- INICIO FORMULARIO EMPRESA -->
@@ -72,67 +90,61 @@
                                         <div class="col-12 ml-4">
                                             <div class="row">
                                                 <div class="col-3">
-                                                    <input type="text" class="form-control" id="perfilprofecional" name="perfilprofecional">
-                                                    <label for="perfilprofecional">NIT</label>
+                                                    <input type="text" class="form-control" id="NIT" name="NIT" #NIT="ngModel" [(ngModel)]="emprendimiento.NIT">
+                                                    <label for="NIT">NIT</label>
                                                 </div>
                                                 <div class="col-3">
-                                                    <input type="text" class="form-control" id="perfilprofecional" name="perfilprofecional">
-                                                    <label for="perfilprofecional">Numero de empleados</label>
+                                                    <input type="text" class="form-control" id="num_empleados" name="num_empleados" #num_empleados="ngModel" [(ngModel)]="emprendimiento.num_empleados">
+                                                    <label for="num_empleados">Numero de empleados</label>
                                                 </div>
                                                 <div class="col-3">
-                                                    <input type="text" class="form-control" id="perfilprofecional" name="perfilprofecional">
-                                                    <label for="perfilprofecional">Telefono empresa</label>
+                                                    <input type="text" class="form-control" id="num_contacto" name="num_contacto" #num_contacto="ngModel" [(ngModel)]="emprendimiento.num_contacto">
+                                                    <label for="num_contacto">Telefono empresa</label>
                                                 </div>
                                                 <div class="col-3">
-                                                    <input type="text" class="form-control" id="perfilprofecional" name="perfilprofecional">
-                                                    <label for="perfilprofecional">Segmento de clientes</label>
+                                                    <input type="text" class="form-control" id="segmento_clientes" name="segmento_clientes" #segmento_clientes="ngModel" [(ngModel)]="emprendimiento.segmento_clientes">
+                                                    <label for="segmento_clientes">Segmento de clientes</label>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-3">
-                                                    <input type="text" class="form-control" id="perfilprofecional" name="perfilprofecional">
-                                                    <label for="perfilprofecional">Fecha de creación</label>
+                                                    <input type="date" class="form-control" id="fecha_creacion" name="fecha_creacion" #fecha_creacion="ngModel" [(ngModel)]="emprendimiento.fecha_creacion">
+                                                    <label for="fecha_creacion">Fecha de creación</label>
                                                 </div>
                                                 <div class="col-3">
-                                                    <input type="text" class="form-control" id="perfilprofecional" name="perfilprofecional">
-                                                    <label for="perfilprofecional">Telefono emprendedor</label>
+                                                    <input type="text" class="form-control" id="propuesta_valor" name="propuesta_valor" #propuesta_valor="ngModel" [(ngModel)]="emprendimiento.propuesta_valor">
+                                                    <label for="propuesta_valor">Propuesta de valor</label>
                                                 </div>
                                                 <div class="col-3">
-                                                    <input type="text" class="form-control" id="perfilprofecional" name="perfilprofecional">
-                                                    <label for="perfilprofecional">Propuesta de valor</label>
-                                                </div>
-                                                <div class="col-3">
-                                                    <input type="text" class="form-control" id="perfilprofecional" name="perfilprofecional">
-                                                    <label for="perfilprofecional">Canales</label>
+                                                    <input type="text" class="form-control" id="canales" name="canales" #canales="ngModel" [(ngModel)]="emprendimiento.canales">
+                                                    <label for="canales">Canales</label>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-3">
-                                                    <input type="text" class="form-control" id="perfilprofecional" name="perfilprofecional">
-                                                    <label for="perfilprofecional">Relacion con clientes</label>
+                                                    <input type="text" class="form-control" id="fuente_ingresos" name="fuente_ingresos" #fuente_ingresos="ngModel" [(ngModel)]="emprendimiento.fuente_ingresos">
+                                                    <label for="fuente_ingresos">Fuente de ingresos</label>
                                                 </div>
                                                 <div class="col-3">
-                                                    <input type="text" class="form-control" id="perfilprofecional" name="perfilprofecional">
-                                                    <label for="perfilprofecional">Fuente de ingresos</label>
+                                                    <input type="text" class="form-control" id="recursos_clave" name="recursos_clave" #recursos_clave="ngModel" [(ngModel)]="emprendimiento.recursos_clave">
+                                                    <label for="recursos_clave">Recursos clave</label>
                                                 </div>
                                                 <div class="col-3">
-                                                    <input type="text" class="form-control" id="perfilprofecional" name="perfilprofecional">
-                                                    <label for="perfilprofecional">Recursos clave</label>
-                                                </div>
-                                                <div class="col-3">
-                                                    <input type="text" class="form-control" id="perfilprofecional" name="perfilprofecional">
-                                                    <label for="perfilprofecional">Actividades clave</label>
+                                                    <input type="text" class="form-control" id="actividades_clave" name="actividades_clave" #actividades_clave="ngModel" [(ngModel)]="emprendimiento.actividades_clave">
+                                                    <label for="actividades_clave">Actividades clave</label>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-3">
-                                                    <input type="text" class="form-control" id="perfilprofecional" name="perfilprofecional">
-                                                    <label for="perfilprofecional">Socios clave</label>
+                                                    <input type="text" class="form-control" id="socios_clave" name="socios_clave" #socios_clave="ngModel" [(ngModel)]="emprendimiento.socios_clave">
+                                                    <label for="socios_clave">Socios clave</label>
                                                 </div>
                                                 <div class="col-3">
-                                                    <input type="text" class="form-control" id="perfilprofecional" name="perfilprofecional">
-                                                    <label for="perfilprofecional">Estructura de costos</label>
+                                                    <input type="text" class="form-control" id="estructura_costos" name="estructura_costos" #estructura_costos="ngModel" [(ngModel)]="emprendimiento.estructura_costos">
+                                                    <label for="estructura_costos">Estructura de costos</label>
                                                 </div>
+                                                <button type="submit" class="btn btn-success btn-lg float-right" [disabled]="!emprendimientoForm.form.valid">+ Crear emprendimiento</button>
+
                                             </div>
                                         </div>
                                     </div>
@@ -142,6 +154,7 @@
                     </div>
                 </div>
             </div>
+        </form>
                                             <!-- FIN FORMULARIO EMPRESA -->
         </div>
     </div>

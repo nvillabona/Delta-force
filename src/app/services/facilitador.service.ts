@@ -1,13 +1,13 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { Emprendedor } from "../models/emprendedor";
+import { Facilitador } from "../models/facilitador";
 import { LoginUsuario } from "../models/login.usuario";
 import { Global } from "./global";
 
 @Injectable()
 
-export class EmprendedorService{
+export class FacilitadorService{
 
     public url: string;
 
@@ -21,33 +21,33 @@ export class EmprendedorService{
         return 'probando servicio de angular'
     }
 
-    saveEmprendedor(emprendedor: Emprendedor): Observable<any>{
+    saveFacilitador(facilitador: Facilitador): Observable<any>{
 
-        let params = JSON.stringify(emprendedor);
+        let params = JSON.stringify(facilitador);
         let headers = new HttpHeaders().set('Content-Type', 'application/json')
 
-        return this._http.post(this.url+'/emprendedores', params, {headers: headers})
+        return this._http.post(this.url+'/facilitadores', params, {headers: headers})
     }
-    getEmprendedores(): Observable<any>{
+    getFacilitadores(): Observable<any>{
         let headers = new HttpHeaders().set('Content-Type', 'application/json');
-        return this._http.get(this.url+'/emprendedores', {headers:headers})
+        return this._http.get(this.url+'/facilitadores', {headers:headers})
     }
-    deleteEmprendedor(cedula): Observable<any>{
+    deleteFacilitador(cedula): Observable<any>{
         let headers = new HttpHeaders().set('Content-Type', 'application/json')
     
-        return this._http.delete(this.url+'/emprendedores/'+cedula, {headers:headers})
+        return this._http.delete(this.url+'/facilitadores/'+cedula, {headers:headers})
     }
-    getEmprendedor(cedula): Observable<any>{
+    getFacilitador(cedula): Observable<any>{
         let headers = new HttpHeaders().set('Content-Type', 'application/json');
         
-        return this._http.get(this.url+'/emprendedores/'+cedula, {headers: headers});
+        return this._http.get(this.url+'/facilitadores/'+cedula, {headers: headers});
     }
 
-    updateEmprendedor(emprendedor:Emprendedor): Observable<any>{
-        let params = emprendedor;
+    updateFacilitador(facilitador: Facilitador): Observable<any>{
+        let params = facilitador;
         let headers = new HttpHeaders().set('Content-Type', 'application/json')
     
-        return this._http.put(this.url+'/emprendedores/'+emprendedor.cedula_emprendedor, params, {headers:headers})
+        return this._http.put(this.url+'/facilitadores/'+facilitador.cedula_facilitador, params, {headers:headers})
     }
     
 }

@@ -10,6 +10,14 @@ h1{
     padding: 40px;
     border-radius: 6px;
   }
+  .facilitador-cont-succ{
+    width: 800px;
+    background: white;
+    margin: 25% 25% 10% 25%;
+    margin-top: 0%;
+    padding: 40px;
+    border-radius: 6px;
+  }
   img#imagen_usuario {
   
     margin-left: 20px;
@@ -90,6 +98,11 @@ h1{
   .back{
     margin:20px
   }
+  .back i {
+    color: #9A66A8;
+    font-size: 30px;
+  }
+  
  
   .formActUsuario input{
     outline: 0;
@@ -148,4 +161,9 @@ h1{
   .btn-success{
       background: #2ED47A;
       font-size: 15px;
+  }
+  .form-error {
+    font-size: 10px;
+    color: red;
+    margin-left: 10px;
   }
