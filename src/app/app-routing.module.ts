@@ -17,6 +17,8 @@ import { DetalleEmprendimientoComponent } from './components/detalle-emprendimie
 import { CrearEmprendimientoComponent } from './components/crear-emprendimiento/crear-emprendimiento.component';
 import { CrearConsultoriaComponent } from './components/crear-consultoria/crear-consultoria.component';
 import { Pagina404Component } from './components/pagina404/pagina404.component';
+import { ConsultarUsuariosComponent } from './components/consultar-usuarios/consultar-usuarios.component';
+import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
 
 
 
@@ -43,7 +45,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'actualizar-emprendedores', component: ActualizarEmprendedoresComponent /* Importo componente para actualizar emprendedor*/
+    path: 'actualizar-emprendedores/:cedula', component: ActualizarEmprendedoresComponent /* Importo componente para actualizar emprendedor*/
   },
 
   {
@@ -59,11 +61,11 @@ const routes: Routes = [
   },
 
   {
-    path: 'actualizar-consultor', component:ActualizarConsultorComponent /* Importo componente para actualizar consultores */
+    path: 'actualizar-consultor/:cedula', component:ActualizarConsultorComponent /* Importo componente para actualizar consultores */
   },
 
   {
-    path: 'eliminar-consultor', component: EliminarConsultorComponent /* Importo componente para eliminar consultores */
+    path: 'eliminar-consultor/:cedula/:nombres/:apellidos', component: EliminarConsultorComponent /* Importo componente para eliminar consultores */
   },
 
   {
@@ -89,7 +91,13 @@ const routes: Routes = [
   {
     path: 'crear-emprendimiento', component: CrearEmprendimientoComponent  /* Importo componente para crear un emprendimiento */
   },
-
+  {
+    path: 'consultar-usuarios', component: ConsultarUsuariosComponent  /* Importo consultar usuario */
+  },
+  {
+    path: 'crear-usuario', component: CrearUsuarioComponent  /* Importo consultar usuario */
+  },
+  
   { /* ¡¡ Debe ser siempre el ultimo !! */
     path: '**', component: Pagina404Component /* El path con '**' significa que cualquier URL desconocida se redirecciona al componente 'Login', aqui se puede colocar el componente de ERROR 404*/
   }

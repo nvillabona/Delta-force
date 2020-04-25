@@ -1,37 +1,3 @@
-/* .input{
-    outline: 0;
-    border-width: 0 0 1px;
-    border-color: rgb(177, 166, 166);
-    margin: 2px;
-    width: 300px;
-  }
-.input:focus{
-    border-color: #7386d5;
-  
-}
-
-.input:focus::placeholder{
-    color: #7386d5;
-}
-
-
-.btn{
-    background-color: #7386d5;
-    color: white;
-}
-
-#form{
-    margin-top: 75px;
-    margin-left: 150px;
-}
-
-#imagen1{
-    margin-top: 100px;
-}
-
-.back{
-    margin:20px
-  } */
 
 
   h1{
@@ -39,9 +5,17 @@
   }
   
   .emprendedor-cont{
-    width: 70%;
+    width: 90%;
     background: white;
     margin: 20% 20% 10% 20%;
+    margin-top: 0%;
+    padding: 40px;
+    border-radius: 6px;
+  }
+  .emprendedor-cont-succ{
+    width: 800px;
+    background: white;
+    margin: 25% 25% 10% 25%;
     margin-top: 0%;
     padding: 40px;
     border-radius: 6px;
@@ -125,6 +99,10 @@
   
   .back{
     margin:20px
+  }
+  .back i {
+    color: #9A66A8;
+    font-size: 30px;
   }
  
   .formActUsuario input{

@@ -24,6 +24,13 @@ import { DetalleEmprendimientoComponent } from './components/detalle-emprendimie
 import { CrearEmprendimientoComponent } from './components/crear-emprendimiento/crear-emprendimiento.component';
 import { CrearConsultoriaComponent } from './components/crear-consultoria/crear-consultoria.component';
 import { Pagina404Component } from './components/pagina404/pagina404.component';
+import { CrearConsultorComponent } from './components/crear-consultor/crear-consultor.component';
+import { ConsultarUsuariosComponent } from './components/consultar-usuarios/consultar-usuarios.component';
+import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
+
+
+
+
 
 
 
@@ -50,6 +57,8 @@ import { Pagina404Component } from './components/pagina404/pagina404.component';
     CrearEmprendimientoComponent,
     CrearConsultoriaComponent,
     Pagina404Component,
+    ConsultarUsuariosComponent,
+    CrearUsuarioComponent,
 
 
 
