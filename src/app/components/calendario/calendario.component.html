@@ -1,10 +1,4 @@
-<!-- 
-        <full-calendar defaultView="dayGridMonth" [plugins]="calendarPlugins"></full-calendar>
-  
-
-
- -->
- <div class="row">
+  <div class="row">
          <div class="col-12 consultar">
                 <form>
                         <div class="form-group has-search">
@@ -21,19 +15,29 @@
                 <button type="button" class="btn btn-evento btn-lg">+ Crear evento</button>
                 <button type="button" class="btn btn-formulario btn-lg">+ Crear formulario</button>
          </div>
- </div>
 
- <div class="emprendedor-cont">
 
-        <div class="row">
-            <div class="col-12">
-                <h1  href="#">Calendario</h1>
-    
-                <hr>
+<div class="emprendedor-cont">
 
-            </div>
-            <div class="col-md-12 list-emp">
-                <full-calendar defaultView="dayGridMonth" [plugins]="calendarPlugins"></full-calendar>
-            </div>
+    <div class="row">
+        <div class="col-12">
+            <h1 href="#">Calendario</h1>
+
+            <hr>
+
+        </div>
+        <div class="col-md-12 list-emp"> <!-- Se agrega el calendario y adentro sus eventos -->
+            <full-calendar defaultView="dayGridMonth" [plugins]="calendarPlugins" [events]="[
+            { title: 'Consultoria Marketing Digital', date: '2020-04-03' },
+            { title: 'Consultoria Seguridad y salud en el trabajo', date: '2020-04-06' },
+            { title: 'Consultoria CiberSeguridad', date: '2020-04-15' },
+            { title: 'Consultoria Sociología', date: '2020-04-19' },
+            { title: 'Consultoria Mercadeo', date: '2020-04-10' },
+            { title: 'Consultoria Administración de recursos', date: '2020-04-18' },
+            { title: 'Consultoria Redes y servicios', date: '2020-04-20' },
+            { title: 'Consultoria Multimedia', date: '2020-04-20' },
+            { title: 'Consultoria Telemática', date: '2020-04-21' }]">
+        </full-calendar>
         </div>
     </div>
+</div>
