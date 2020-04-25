@@ -84,7 +84,12 @@ select.form-control.form-control-lg {
   color: #9A66A8;
 }
 
-.plus img:hover{
+.btn-add{
+  background: #ee7303;
+  color:white;
+}
+
+.btn-add:hover{
   opacity: 0.7;
 }
 
@@ -107,4 +112,23 @@ select.form-control.form-control-lg {
   text-align: center;
   pointer-events: none;
   color: #aaa;
+}
+
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  border-radius: 35px;
+  font-size: 24px;
+  line-height: 1.33;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  padding: 6px 0px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.42857;
 }

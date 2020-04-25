@@ -48,13 +48,15 @@ export class ActualizarEmprendedoresComponent implements OnInit {
   }
 
   onSubmit(form){
+    console.log(this.emprendedor);
     this._emprendedorService.updateEmprendedor(this.emprendedor).subscribe(
       response => {
         if (response) {
           this.save_emprendedor = response;
-          this.status = "success"
-        }else {
           this.status = "failed";
+        }else {
+          this.status = "success"
+          
         }
       },
       error => {

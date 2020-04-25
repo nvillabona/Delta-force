@@ -5,7 +5,8 @@ en el boton crear -->
 
 <div class="row">
     <div class="col-12 back">
-        <a routerLink="/emprendedores"><img src="../../../assets/image/return.png" alt="" width="3%"> Atrás</a>
+      
+        <a routerLink="/emprendedores"><i class="fa fa-arrow-circle-left"></i> Atrás</a>
 </div>
 </div>
 
@@ -109,10 +110,6 @@ en el boton crear -->
                         <input type="text" class="form-control" id="area" name="area_enfoque" #area_enfoque="ngModel" [(ngModel)]="emprendedor.area_enfoque" required>
                         <label for="area_enfoque">Área de enfoque</label>
                         <span class="form-error" *ngIf="area_enfoque.touched && !area_enfoque.valid"> El Area de enfoque es obligatorio</span>
-                      </fieldset>
-                      <fieldset class="form-group">
-                        <input type="text" class="form-control" id="rol" name="rol" value="emprendimiento" #rol="ngModel" [(ngModel)]="emprendedor.rol" readonly>
-                        <label for="rol">Rol</label>
                       </fieldset>
                       
                       <button type="submit" class="btn btn-success btn-lg float-right" [disabled]="!emprendedorForm.form.valid">+ Crear emprendedor</button>

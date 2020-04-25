@@ -19,7 +19,7 @@ export class CrearEmprendedorComponent implements OnInit {
     private _emprendedorService: EmprendedorService
   ) { 
     this.title = "Crear Emprendedores";
-    this.emprendedor= new Emprendedor(0,'','','','','','', 0, '', '',0,'','','');
+    this.emprendedor= new Emprendedor(0,'','','','','','', 0, '', '',0,'','','emprendedor');
     this.status = "success"
   }
 
