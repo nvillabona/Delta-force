@@ -17,6 +17,9 @@ import { DetalleEmprendimientoComponent } from './components/detalle-emprendimie
 import { CrearEmprendimientoComponent } from './components/crear-emprendimiento/crear-emprendimiento.component';
 import { CrearConsultoriaComponent } from './components/crear-consultoria/crear-consultoria.component';
 import { Pagina404Component } from './components/pagina404/pagina404.component';
+import { EliminarEmprendimientoComponent } from "./components/eliminar-emprendimiento/eliminar-emprendimiento.component";
+import { ActualizarEmprendimientoComponent } from "./components/actualizar-emprendimiento/actualizar-emprendimiento.component";
+
 
 
 
@@ -75,6 +78,14 @@ const routes: Routes = [
   },
 
   {
+    path: 'eliminar-emprendimientos/:consecutivo/:titulo', component: EliminarEmprendimientoComponent  /* Importo componente para consultar emprendimientos */
+  },
+  
+  {
+    path: 'actualizar-emprendimientos/:consecutivo', component: ActualizarEmprendimientoComponent
+  },
+
+  {
     path: 'crear-consultor', component: CrearConsultorComponent  /* Importo componente para crear consultor */
   },
   {
@@ -83,7 +94,7 @@ const routes: Routes = [
 
 
   {
-    path: 'detalle-emprendimiento', component: DetalleEmprendimientoComponent  /* Importo componente para ver el detalle de un emprendimiento */
+    path: 'detalle-emprendimiento/:consecutivo', component: DetalleEmprendimientoComponent  /* Importo componente para ver el detalle de un emprendimiento */
   },
 
   {
