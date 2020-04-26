@@ -58,9 +58,9 @@
               </div>
               <div class="form-row align-items-center">    
                   <fieldset class="form-group col-12">
-                    <input type="email" class="form-control" id="correo" name="correo" #correo="ngModel" [(ngModel)]="atencion.correo" required>
-                    <label for="correo" *ngIf="!atencion.correo">Correo</label>
-                    <span class="form-error" *ngIf="correo.touched && !correo.valid"> El nombre es obligatorio</span>
+                    <input type="email" class="form-control" id="email" name="email" #email="ngModel" [(ngModel)]="atencion.email" required>
+                    <label for="email" *ngIf="!atencion.email">Correo</label>
+                    <span class="form-error" *ngIf="email.touched && !email.valid"> El nombre es obligatorio</span>
 
                   </fieldset>         
               </div>

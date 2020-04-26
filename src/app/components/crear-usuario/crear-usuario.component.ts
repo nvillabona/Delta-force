@@ -18,10 +18,10 @@ export class CrearUsuarioComponent implements OnInit {
     private _route: ActivatedRoute,
     private _loginService: LoginService
   ) { 
-    this.atencion= new AtencionUsuarioAdd(0,"","","","",0,"","","");
+    this.atencion= new AtencionUsuarioAdd(0,"","","","",0,"","123456","");
     this.status = "success"
   }
-
+  
   ngOnInit() {
   }
 
