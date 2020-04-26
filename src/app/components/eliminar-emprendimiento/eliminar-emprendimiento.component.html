@@ -6,11 +6,11 @@
 </div>
 </div>
 
-<div class="emprendedor-cont">
+<div class="emprendedor-cont mx-auto">
 
     <div class="row">
         <div class="col-10">
-            <h1  href="#">Eliminar Emprendedor</h1>
+            <h1  href="#">Eliminar Emprendimiento</h1>
            
         </div>
         <div class="col-2">
@@ -22,9 +22,9 @@
     </div>
     <div class="row">
         <div class="col-1"></div>
-        <div class="col-10 text-center">
+        <div class="col-12 text-center">
             <br>
-            <h5>Estas seguro que deseas eliminar el emprendedor <b style="color: #EE7202;">{{consecutivo}} - {{titulo}}</b></h5>
+            <h6>Estas seguro que deseas eliminar el emprendedor <b style="color: #EE7202;">{{consecutivo}} - {{titulo}}</b></h6>
             <br><br>
             <a routerLink="/emprendedores"><button type="button" class="btn btn-lg btn-danger">Cancelar</button></a> &nbsp;&nbsp;&nbsp;
             <button (click)="deleteEmprendimiento(consecutivo)" type="button" class="btn btn-lg btn-true">Aceptar</button>

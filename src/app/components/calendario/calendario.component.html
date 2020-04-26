@@ -10,14 +10,18 @@
 
  </div>
  <div class="row botonesCrear">
-         <div class="col-12">
+         <div class="col-12 d-none d-md-block">
                 <button type="button" class="btn btn-consultoria btn-lg" routerLink="/crear-consultoria">+ Crear consultoría</button>
-                <button type="button" class="btn btn-evento btn-lg" disabled>+ Crear evento</button>
-                <button type="button" class="btn btn-formulario btn-lg" disabled>+ Crear formulario</button>
+<!--                 <button type="button" class="btn btn-evento btn-lg" disabled>+ Crear evento</button>
+                <button type="button" class="btn btn-formulario btn-lg" disabled>+ Crear formulario</button> -->
          </div>
+         <div class="col-12 d-block d-md-none text-center">
+            <button type="button" class="btn btn-consultoria btn-lg" routerLink="/crear-consultoria">+ Crear consultoría</button>
+<!--             <button type="button" class="btn btn-evento btn-lg" disabled>+ Crear evento</button>
+            <button type="button" class="btn btn-formulario btn-lg" disabled>+ Crear formulario</button> -->
+     </div>
 
-
-<div class="emprendedor-cont">
+<div class="emprendedor-cont mx-auto">
 
     <div class="row">
         <div class="col-12">
@@ -26,17 +30,13 @@
             <hr>
 
         </div>
-        <div class="col-md-12 list-emp"> <!-- Se agrega el calendario y adentro sus eventos -->
-            <full-calendar defaultView="dayGridMonth" [plugins]="calendarPlugins" [events]="[
-            { title: 'Consultoria Marketing Digital', date: '2020-04-03' },
-            { title: 'Consultoria Seguridad y salud en el trabajo', date: '2020-04-06' },
-            { title: 'Consultoria CiberSeguridad', date: '2020-04-15' },
-            { title: 'Consultoria Sociología', date: '2020-04-19' },
-            { title: 'Consultoria Mercadeo', date: '2020-04-10' },
-            { title: 'Consultoria Administración de recursos', date: '2020-04-18' },
-            { title: 'Consultoria Redes y servicios', date: '2020-04-20' },
-            { title: 'Consultoria Multimedia', date: '2020-04-20' },
-            { title: 'Consultoria Telemática', date: '2020-04-21' }]">
+        <div class="col-md-12 list-emp" > <!-- Se agrega el calendario y adentro sus eventos -->
+            
+            <full-calendar defaultView="dayGridMonth"
+                            [plugins]="calendarPlugins" 
+                            [locales]="locales"
+                            locale="es"
+                            [events]="eventSources">
         </full-calendar>
         </div>
     </div>

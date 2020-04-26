@@ -327,3 +327,48 @@ select.form-control.form-control-lg {
 .botonesCrear{
     margin: 20px 30px 20px 20px;
 }
+
+@media (min-width: 992px) {
+
+  .emprendedor-cont{
+    width: 96%;
+    background: white;
+    margin: 0;
+    margin-top: 2%;
+    padding: 40px;
+    border-radius: 6px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .emprendedor-cont{
+    width: 96%;
+    background: white;
+    margin: 0;
+    margin-top: 2%;
+    padding: 40px;
+    border-radius: 6px;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .emprendedor-cont{
+    width: auto;
+    background: white;
+    margin: 0;
+    margin-top: 2%;
+    padding: 40px;
+    border-radius: 6px;
+    height: auto;
+  }
+}
+
+.fc-event {
+
+    background: #7b578e !important;
+    color: white !important;
+    font-size: 12px !important;
+
+}

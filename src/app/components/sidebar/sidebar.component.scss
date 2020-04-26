@@ -231,16 +231,16 @@ body {
     }
   
     #wrapper.toggled #sidebar-wrapper {
-      width: 250px;
+      width: 266px;
     }
     #wrapper.toggled #navbar-wrapper {
       position: absolute;
-      margin-right: -250px;
+      margin-right: -266px;
     }
   
     #wrapper.toggled #content-wrapper {
       position: absolute;
-      margin-right: -250px;
+      margin-right: -266px;
     }
   
     #navbar-wrapper {
@@ -248,7 +248,7 @@ body {
     }
   
     #wrapper.toggled {
-      padding-left: 250px;
+      padding-left: 266px;
     }
   
     #content-wrapper {
@@ -259,7 +259,7 @@ body {
     #wrapper.toggled #navbar-wrapper,
     #wrapper.toggled #content-wrapper {
       position: relative;
-      margin-right: 250px;
+      margin-right: 266px;
     }
   }
 
