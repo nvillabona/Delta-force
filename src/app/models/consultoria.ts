@@ -40,8 +40,8 @@ export class ConsultoriaCalendar {
     constructor(
         public title: string,
         public date: string,
-        public hora: string,
-        public consecutivo: number,
+/*         public hora: string,
+        public consecutivo: number, */
        
         
     ){
