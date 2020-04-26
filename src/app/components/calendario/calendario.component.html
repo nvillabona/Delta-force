@@ -31,7 +31,11 @@
 
         </div>
         <div class="col-md-12 list-emp"> <!-- Se agrega el calendario y adentro sus eventos -->
-            <full-calendar defaultView="dayGridMonth" [plugins]="calendarPlugins" [events]="[
+            <full-calendar defaultView="dayGridMonth"
+                            [plugins]="calendarPlugins" 
+                            [locales]="locales"
+                            locale="es"
+                            [events]="[
             { title: 'Consultoria Marketing Digital', date: '2020-04-03' },
             { title: 'Consultoria Seguridad y salud en el trabajo', date: '2020-04-06' },
             { title: 'Consultoria CiberSeguridad', date: '2020-04-15' },
