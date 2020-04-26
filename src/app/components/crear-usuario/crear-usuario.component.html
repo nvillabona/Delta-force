@@ -1,0 +1,105 @@
+<div class="row">
+  <div class="col-12 back">
+    
+      <a routerLink="/consultar-usuarios"><i class="fa fa-arrow-circle-left"></i> Atrás</a>
+</div>
+</div>
+<div class="emprendedor-cont-succ mx-auto" *ngIf="status == 'failed'">
+  <div class="row">
+  <div class=" col-12 message success text-center" >
+    <img src="../../../assets/image/true.png" alt="" width="20%">
+    <br><br><br>
+    <h5>La atención se ha creado correctamente.</h5>
+  </div>
+</div>
+</div>
+<div class="container">
+  <div class="usuario-cont mx-auto card" *ngIf="status == 'success'">
+
+      <div class="row">
+          <div class="col-12">
+              <h1  href="#">Atención a Usuario</h1>
+
+              <hr>
+          </div>
+      </div>
+
+      <div class="formActUsuario abs-center">
+          <form #atencionForm="ngForm" (ngSubmit)="onSubmit(atencionForm)">
+              <div class="form-row align-items-center">
+                  
+                      <fieldset class="form-group col-md-6">
+                          <input type="text" class="form-control" id="nombre" name="nombre" #nombre="ngModel" [(ngModel)]="atencion.nombre" required>
+                          <label for="nombre" *ngIf="!atencion.nombre">Nombre</label>
+                          <span class="form-error" *ngIf="nombre.touched && !nombre.valid"> El nombre es obligatorio</span>
+                      </fieldset>
+                      <fieldset class="form-group col-md-6">
+                          <select type="number" class="form-control" id="rol" name="rol" #cedula="ngModel" [(ngModel)]="atencion.rol" required>
+                            <option></option>
+                            <option value="emprendedor">Emprendedor</option>
+                            <option value="facilitador">Facilitador</option>
+                          </select>
+                          
+                          <label class="seleclab" for="rol" *ngIf="!atencion.rol">Tipo usuario</label>
+                          <span class="form-error" *ngIf="nombre.touched && !nombre.valid"> El nombre es obligatorio</span>
+                      </fieldset>
+              </div> 
+              
+              <div class="form-row align-items-center">    
+                  <fieldset class="form-group col-6">
+                    <input type="text" class="form-control" id="cedula" name="cedula" #cedula="ngModel" [(ngModel)]="atencion.cedula" required >
+                    <label for="cedula" style="margin-left: 30px;" *ngIf="!atencion.cedula">Cédula</label>
+                    <span class="form-error" *ngIf="cedula.touched && !cedula.valid"> El nombre es obligatorio</span>
+                  </fieldset>
+                  <fieldset class="form-group col-6">
+                    <input type="text" class="form-control" id="telefono" name="telefono" #telefono="ngModel" [(ngModel)]="atencion.telefono">
+                    <label for="telefono" style="margin-left: 30px;" *ngIf="!atencion.telefono">Teléfono</label>
+                  </fieldset>          
+              </div>
+              <div class="form-row align-items-center">    
+                  <fieldset class="form-group col-12">
+                    <input type="email" class="form-control" id="email" name="email" #email="ngModel" [(ngModel)]="atencion.email" required>
+                    <label for="email" *ngIf="!atencion.email">Correo</label>
+                    <span class="form-error" *ngIf="email.touched && !email.valid"> El nombre es obligatorio</span>
+
+                  </fieldset>         
+              </div>
+              <div class="form-row align-items-center">    
+                <fieldset class="form-group col-12 col-md-6">
+                  <input type="text" class="form-control" id="titulo" name="titulo" #titulo="ngModel" [(ngModel)]="atencion.titulo" required>
+                  <label for="titulo" *ngIf="!atencion.titulo">Titulo</label>
+                  <span class="form-error" *ngIf="titulo.touched && !titulo.valid"> El nombre es obligatorio</span>
+
+                </fieldset>  
+                <fieldset class="form-group col-12 col-md-6">
+                  <input type="date" tabindex="13" class="form-control" id="fecha" name="fecha" #fecha="ngModel" [(ngModel)]="atencion.fecha">
+                  <label class="fecha" for="fecha" *ngIf="!atencion.fecha">Fecha de atención</label>
+
+                </fieldset>   
+     
+            </div>
+              <div class="form-row align-items-cente">   
+                  <div class="col-12">
+                    <fieldset class="form-group">
+                      <input type="text" class="form-control" id="descripcion" name="descripcion" #descripcion="ngModel" [(ngModel)]="atencion.descripcion" required>
+                      <label for="descripcion" *ngIf="!atencion.descripcion">Descripción tema</label>
+                      <span class="form-error" *ngIf="descripcion.touched && !descripcion.valid"> El nombre es obligatorio</span>
+
+                    </fieldset>
+                </div>
+                </div>
+              
+              
+              <div class="form-row align-items-cente">   
+                <div class="col-12">
+                  <fieldset class="form-group">
+                    <div class="col-12">
+                      <button type="submit" class="btn btn-success btn-lg float-right" [disabled]="!atencionForm.form.valid">+ Crear Atención</button>
+                    </div>
+                  </fieldset>
+              </div>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>

@@ -37,8 +37,7 @@ export class EliminarEmprendedorComponent implements OnInit {
         }
       },
       error => {
-        console.log(error);
-        
+        console.log(error);        
       }
     );
 

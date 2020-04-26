@@ -24,7 +24,14 @@ import { DetalleEmprendimientoComponent } from './components/detalle-emprendimie
 import { CrearEmprendimientoComponent } from './components/crear-emprendimiento/crear-emprendimiento.component';
 import { CrearConsultoriaComponent } from './components/crear-consultoria/crear-consultoria.component';
 import { Pagina404Component } from './components/pagina404/pagina404.component';
-import { CrearConsultorComponent } from "./components/crear-consultor/crear-consultor.component";
+import { CrearConsultorComponent } from './components/crear-consultor/crear-consultor.component';
+import { ConsultarUsuariosComponent } from './components/consultar-usuarios/consultar-usuarios.component';
+import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
+import { EliminarEmprendimientoComponent } from './components/eliminar-emprendimiento/eliminar-emprendimiento.component';
+import { EliminarConsultoriaComponent } from './components/eliminar-consultoria/eliminar-consultoria.component';
+import { ActualizarEmprendimientoComponent } from './components/actualizar-emprendimiento/actualizar-emprendimiento.component';
+import { ActualizarConsultoriasComponent } from './components/actualizar-consultorias/actualizar-consultorias.component';
+
 
 
 
@@ -51,6 +58,13 @@ import { CrearConsultorComponent } from "./components/crear-consultor/crear-cons
     CrearEmprendimientoComponent,
     CrearConsultoriaComponent,
     Pagina404Component,
+    ConsultarUsuariosComponent,
+    CrearUsuarioComponent,
+    EliminarEmprendimientoComponent,
+    EliminarConsultoriaComponent,
+    ActualizarEmprendimientoComponent,
+    ActualizarConsultoriasComponent,
+
 
 
 

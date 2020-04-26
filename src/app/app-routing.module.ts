@@ -17,6 +17,14 @@ import { DetalleEmprendimientoComponent } from './components/detalle-emprendimie
 import { CrearEmprendimientoComponent } from './components/crear-emprendimiento/crear-emprendimiento.component';
 import { CrearConsultoriaComponent } from './components/crear-consultoria/crear-consultoria.component';
 import { Pagina404Component } from './components/pagina404/pagina404.component';
+import { ConsultarUsuariosComponent } from './components/consultar-usuarios/consultar-usuarios.component';
+import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
+import { EliminarEmprendimientoComponent } from "./components/eliminar-emprendimiento/eliminar-emprendimiento.component";
+import { ActualizarEmprendimientoComponent } from "./components/actualizar-emprendimiento/actualizar-emprendimiento.component";
+import { EliminarConsultoriaComponent } from "./components/eliminar-consultoria/eliminar-consultoria.component";
+import { ActualizarConsultoriasComponent } from "./components/actualizar-consultorias/actualizar-consultorias.component";
+
+
 
 
 
@@ -69,9 +77,23 @@ const routes: Routes = [
   {
     path: 'consultar-consultorias', component: ConsultarConsultoriasComponent /* Importo componente para consultar consultorias programadas */
   },
+  {
+    path: 'eliminar-consultorias/:consecutivo/:titulo', component: EliminarConsultoriaComponent /* Importo componente para consultar consultorias programadas */
+  },
+  {
+    path: 'actualizar-consultorias/:consecutivo', component: ActualizarConsultoriasComponent /* Importo componente para consultar consultorias programadas */
+  },
 
   {
     path: 'consultar-emprendimientos', component: ConsultarEmprendimientosComponent  /* Importo componente para consultar emprendimientos */
+  },
+
+  {
+    path: 'eliminar-emprendimientos/:consecutivo/:titulo', component: EliminarEmprendimientoComponent  /* Importo componente para consultar emprendimientos */
+  },
+  
+  {
+    path: 'actualizar-emprendimientos/:consecutivo', component: ActualizarEmprendimientoComponent
   },
 
   {
@@ -83,13 +105,19 @@ const routes: Routes = [
 
 
   {
-    path: 'detalle-emprendimiento', component: DetalleEmprendimientoComponent  /* Importo componente para ver el detalle de un emprendimiento */
+    path: 'detalle-emprendimiento/:consecutivo', component: DetalleEmprendimientoComponent  /* Importo componente para ver el detalle de un emprendimiento */
   },
 
   {
     path: 'crear-emprendimiento', component: CrearEmprendimientoComponent  /* Importo componente para crear un emprendimiento */
   },
-
+  {
+    path: 'consultar-usuarios', component: ConsultarUsuariosComponent  /* Importo consultar usuario */
+  },
+  {
+    path: 'crear-usuario', component: CrearUsuarioComponent  /* Importo consultar usuario */
+  },
+  
   { /* ¡¡ Debe ser siempre el ultimo !! */
     path: '**', component: Pagina404Component /* El path con '**' significa que cualquier URL desconocida se redirecciona al componente 'Login', aqui se puede colocar el componente de ERROR 404*/
   }
