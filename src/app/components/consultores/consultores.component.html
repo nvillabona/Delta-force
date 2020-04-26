@@ -24,7 +24,11 @@ al dar click en el boton consultores de la sidebar -->
 
             </div>
             <div class="col-md-12 list-emp">
-                <h1>Total: 55</h1>
+                <div *ngFor="let facilitador of facilitadores; first as isFirst">
+
+                
+                    <h1 *ngIf="isFirst" >Total: {{facilitadores.length}}</h1>
+                </div>
     
                 <br>
                 <div class="row mb-2" id="caja_info">

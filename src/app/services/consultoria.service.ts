@@ -2,13 +2,15 @@ import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Emprendimiento } from "../models/emprendimiento";
+import { Facilitador } from "../models/facilitador";
 import { Emprendedor } from "../models/emprendedor";
+import { Consultoria, ConsultoriaEF } from "../models/consultoria";
 import { LoginUsuario } from "../models/login.usuario";
 import { Global } from "./global";
 
 @Injectable()
 
-export class EmprendimientoService{
+export class ConsultoriaService{
 
     public url: string;
 
@@ -22,42 +24,46 @@ export class EmprendimientoService{
         return 'probando servicio de angular'
     }
 
-    saveEmprendimiento(emprendimento: Emprendimiento): Observable<any>{
+    saveConsultoria(consultoria: Consultoria): Observable<any>{
 
-        let params = JSON.stringify(emprendimento);
+        let params = JSON.stringify(consultoria);
         let headers = new HttpHeaders().set('Content-Type', 'application/json')
 
-        return this._http.post(this.url+'/emprendimientos', params, {headers: headers})
+        return this._http.post(this.url+'/consultorias', params, {headers: headers})
     }
-    getEmprendimientos(): Observable<any>{
+    getConsultorias(): Observable<any>{
         let headers = new HttpHeaders().set('Content-Type', 'application/json');
-        return this._http.get(this.url+'/emprendimientos', {headers:headers})
+        return this._http.get(this.url+'/consultorias', {headers:headers})
     }
     getEmprendedores(): Observable<any>{
         let headers = new HttpHeaders().set('Content-Type', 'application/json');
         return this._http.get(this.url+'/emprendedores', {headers:headers})
     }
-    deleteEmprendimiento(consecutivo): Observable<any>{
+    getFacilitadores(): Observable<any>{
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+        return this._http.get(this.url+'/facilitadores', {headers:headers})
+    }
+    deleteConsultorias(consecutivo): Observable<any>{
         let headers = new HttpHeaders().set('Content-Type', 'application/json')
     
-        return this._http.delete(this.url+'/emprendimientos/'+consecutivo, {headers:headers})
+        return this._http.delete(this.url+'/consultorias/'+consecutivo, {headers:headers})
     }
-    getEmprendimiento(consecutivo): Observable<any>{
+    getConsultoria(consecutivo): Observable<any>{
         let headers = new HttpHeaders().set('Content-Type', 'application/json');
         
-        return this._http.get(this.url+'/emprendimientos/'+consecutivo, {headers: headers});
+        return this._http.get(this.url+'/consultorias/'+consecutivo, {headers: headers});
     }
-    getEmprendimientoE(consecutivo): Observable<any>{
+    getConsultoriaE(consecutivo): Observable<any>{
         let headers = new HttpHeaders().set('Content-Type', 'application/json');
         
-        return this._http.get(this.url+'/emprendimientos/getone/'+consecutivo, {headers: headers});
+        return this._http.get(this.url+'/consultorias/getone/'+consecutivo, {headers: headers});
     }
 
-    updateEmprendimiento(emprendimento:Emprendimiento): Observable<any>{
-        let params = emprendimento;
+    updateConsultoria(consultoria:Consultoria): Observable<any>{
+        let params = consultoria;
         let headers = new HttpHeaders().set('Content-Type', 'application/json')
     
-        return this._http.put(this.url+'/emprendimientos/'+emprendimento.consecutivo, params, {headers:headers})
+        return this._http.put(this.url+'/consultorias/'+consultoria.consecutivo, params, {headers:headers})
     }
     
 }

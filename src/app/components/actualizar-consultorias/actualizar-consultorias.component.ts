@@ -7,19 +7,24 @@ import { Facilitador } from "../../models/facilitador";
 import { FacilitadorService } from "../../services/facilitador.service";
 import { HttpHeaders } from '@angular/common/http';
 import { Router, ActivatedRoute, Params } from "@angular/router";
+import { Global } from "../../services/global";
 
 @Component({
-  selector: 'app-crear-consultoria',
-  templateUrl: './crear-consultoria.component.html',
-  styleUrls: ['./crear-consultoria.component.scss'],
+  selector: 'app-actualizar-consultorias',
+  templateUrl: './actualizar-consultorias.component.html',
+  styleUrls: ['./actualizar-consultorias.component.scss'],
   providers:[ConsultoriaService, EmprendedorService, FacilitadorService]
 })
-export class CrearConsultoriaComponent implements OnInit {
-  public emprendedores:Emprendedor[];
-  public facilitadores: Facilitador[];
+export class ActualizarConsultoriasComponent implements OnInit {
+  public save_consultoria;
+  public emprendedores:Emprendedor;
+  public facilitadores: Facilitador;
   public consultoria: Consultoria;
   public status:string;
+  public url: string;
 
+
+  
   constructor(
     private _consultoriasService: ConsultoriaService,
     private _emprededorService: EmprendedorService,
@@ -27,13 +32,32 @@ export class CrearConsultoriaComponent implements OnInit {
     private _router: Router,
     private _route: ActivatedRoute,
   ) { 
-    this.consultoria= new Consultoria(0, "", 0, 0, "", "", "", "", "");
     this.status = "success"
+    this.url = Global.url;
   }
 
   ngOnInit() {
+    this._route.params.subscribe(params=>{
+      let consecutivo= params.consecutivo;
+      this.getConsultoria(consecutivo);
+    });
     this.getEmprendedores();
     this.getFacilitador();
+  }
+
+  getConsultoria(consecutivo){
+    this._consultoriasService.getConsultoria(consecutivo).subscribe(
+      response => {        
+        this.consultoria = response;
+        console.log(this.consultoria);
+        
+
+      },
+      error => {
+        console.log(<any>error);
+        
+      }
+    );
   }
 
   getEmprendedores(){
@@ -80,13 +104,15 @@ export class CrearConsultoriaComponent implements OnInit {
 
   onSubmit(form){
     console.log(this.consultoria);
-    this._consultoriasService.saveConsultoria(this.consultoria).subscribe(
+    this._consultoriasService.updateConsultoria(this.consultoria).subscribe(
       response => {
-        if(response.consultoria){
-          this.status = "success";
+        if(response){
+          this.save_consultoria = response;
+          this.status = "failed";
           form.reset();
         }else {
-          this.status = "failed";
+          
+          this.status = "success";
         }
         
       },

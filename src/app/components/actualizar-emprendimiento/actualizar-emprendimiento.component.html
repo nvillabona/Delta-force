@@ -10,19 +10,19 @@
     <div class=" col-12 message success text-center" >
       <img src="../../../assets/image/true.png" alt="" width="20%">
       <br><br><br>
-      <h5>El emprendedor se ha creado correctamente.</h5>
+      <h5>El emprendimiento se actualizo correctamente.</h5>
     </div>
   </div>
   </div>
-<div class="consultores-cont" *ngIf="status == 'success'">
+<div class="consultores-cont" *ngIf="status == 'success' && emprendimiento">
 
     <div class="row">
         <div class="col-12">
-            <h1><strong class="text-muted"> Crear emprendimiento </strong></h1>
+            <h1><strong class="text-muted"> Actualizar emprendimiento </strong></h1>
             <hr>
         </div>
         <div class="formActUsuario">
-            <form #emprendimientoForm="ngForm" (ngSubmit)="onSubmit(emprendimientoForm)">
+            <form #actemprendimientoForm="ngForm" (ngSubmit)="onSubmit(actemprendimientoForm)">
                 <div class="form-row align-items-center">
                     <div class="col-3 ml-5">
                         <img class="justify-content-center align-self-center"
@@ -35,7 +35,7 @@
  -->                            <select name="c_emprendedor" #c_emprendedor="ngModel" [(ngModel)]="emprendimiento.c_emprendedor" required>
                                 <option *ngFor="let e of emprendedores" [ngValue]="e.cedula_emprendedor">{{e.nombres}} {{e.apellidos}}</option>
                                 </select>
-                            <label for="c_emprendedor">Nombre del emprendedor</label>
+                            <label for="perfilprofecional">Nombre del emprendedor</label>
                             <span class="form-error" *ngIf="c_emprendedor.touched && !c_emprendedor.valid"> El emprendedor es obligatorio</span>
                         </fieldset>
                         <fieldset class="form-group">
@@ -143,7 +143,7 @@
                                                     <input type="text" class="form-control" id="estructura_costos" name="estructura_costos" #estructura_costos="ngModel" [(ngModel)]="emprendimiento.estructura_costos">
                                                     <label for="estructura_costos">Estructura de costos</label>
                                                 </div>
-                                                <button type="submit" class="btn btn-success btn-lg float-right" [disabled]="!emprendimientoForm.form.valid">+ Crear emprendimiento</button>
+                                                <button type="submit" class="btn btn-success btn-lg float-right" [disabled]="!actemprendimientoForm.form.valid">+ Actualizar emprendimiento</button>
 
                                             </div>
                                         </div>
