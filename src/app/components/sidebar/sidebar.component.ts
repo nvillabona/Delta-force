@@ -27,7 +27,13 @@ export class SidebarComponent implements OnInit {
     this.user = this._loginService.dentro();
     console.log(this.user);
     
-
+    const $button  = document.querySelector('#sidebar-toggle');
+    const $wrapper = document.querySelector('#wrapper');
+    
+    $button.addEventListener('click', (e) => {
+      e.preventDefault();
+      $wrapper.classList.toggle('toggled');
+    });
 
   }
   exit(){

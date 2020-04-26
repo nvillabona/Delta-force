@@ -7,7 +7,7 @@
   .emprendedor-cont{
     width: 80%;
     background: white;
-    margin: 25% 25% 10% 25%;
+    margin: 0;
     margin-top: 0%;
     padding: 40px;
     border-radius: 6px;
@@ -139,6 +139,7 @@
     left: 1rem;
     transition: all .1s ease-in-out;
     cursor: text;
+    margin-left: 8px;
   }
 
   select{
