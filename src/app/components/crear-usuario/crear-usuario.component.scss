@@ -149,3 +149,17 @@ h1{
       background: #2ED47A;
       font-size: 15px;
   }
+
+  CSS
+
+
+.abs-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+ 
+.form {
+  width: 450px;
+}
