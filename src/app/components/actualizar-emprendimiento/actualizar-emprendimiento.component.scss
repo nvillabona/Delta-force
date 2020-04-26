@@ -267,3 +267,64 @@ h1{
       background: #2ED47A;
       font-size: 15px;
   }
+  select {
+    outline: 0;
+    border-width: 0 0 1px;
+    border-color: #e2e2e2;
+    border-radius: 0px;
+    font-size: 14px;
+}
+
+
+  .seleclab {
+    position: absolute;
+    top: -0.4rem;
+    left: 1rem;
+    transition: all 0.1s ease-in-out;
+    cursor: text;
+  }
+  
+  
+  .fecha{
+    color: #F37920;
+      top: -.9rem;
+      background: white;
+  }
+@media (min-width: 992px) {
+  input {
+    margin-bottom: 25px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  input {
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 767px) {
+  input {
+    margin-bottom: 25px;
+  }
+  fieldset{
+    margin-bottom: 5px !important;
+  }
+  img#imagen_usuario {
+  
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 40px;
+    height: 100px;
+  }
+  .emprendedor-cont-succ{
+    width: auto;
+    background: white;
+    margin: 0;
+    margin-top: 0;
+    padding: 40px;
+    border-radius: 6px;
+  }
+  .selectN{
+    margin-bottom: 25px;
+  }
+}

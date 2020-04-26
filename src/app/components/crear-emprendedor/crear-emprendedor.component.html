@@ -10,7 +10,7 @@ en el boton crear -->
 </div>
 </div>
 
-<div class="emprendedor-cont-succ" *ngIf="status == 'failed'">
+<div class="emprendedor-cont-succ mx-auto" *ngIf="status == 'failed'">
   <div class="row">
   <div class=" col-12 message success text-center" >
     <img src="../../../assets/image/true.png" alt="" width="20%">
@@ -20,7 +20,7 @@ en el boton crear -->
 </div>
 </div>
 
-<div class="emprendedor-cont" *ngIf="status == 'success'">
+<div class="emprendedor-cont mx-auto" *ngIf="status == 'success'">
 
     <div class="row">
         <div class="col-12">
@@ -86,7 +86,7 @@ en el boton crear -->
                 </div>
                 <div class="col-md-6">
                     <fieldset class="form-group">
-                        <input type="text" tabindex="6" class="form-control" id="telefono" name="" #telefono="ngModel" [(ngModel)]="emprendedor.telefono" required>
+                        <input type="text" tabindex="6" class="form-control" id="telefono" name="telefono" #telefono="ngModel" [(ngModel)]="emprendedor.telefono" required>
                         <label for="telefono" *ngIf="!emprendedor.telefono">Teléfono</label>
                         <span class="form-error" *ngIf="telefono.touched && !telefono.valid"> El teléfono es obligatorio</span>
                       </fieldset>

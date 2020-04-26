@@ -10,7 +10,7 @@
     
                 <h1>Filtro</h1>
             </div >
-            <div class="cont-filtro col-10">
+            <div class="cont-filtro col-8 col-md-10">
                 <form>
                     <div class="form-group has-search">
                         <span class="fa fa-search form-control-feedback"></span>
@@ -35,42 +35,45 @@
                       <div class="card flex-md-row mb-4 box-shadow h-md-250 d-flex" id="cuadro_info" >                      
                         <div class="card-body  align-items-start" >
                             <div class="row">
-                                <div class="header-card col-4">
+                                <div class="header-card col-12 col-md-4">
                                     <h3>{{consultoria.titulo}}</h3>
                                     
                                   </div>
-                                   <div class="col-2">
+                                   <div class="col-12 col-md-2">
                                      <b> Tipo:</b>  {{consultoria.tipo}}
                                   </div> 
-                                  <div class="col-4">
+                                  <div class="col-12 col-md-4">
                                     <b> Fecha: </b> {{consultoria.fecha}} <b>Hora:</b> {{consultoria.hora}}
                                  </div>
                                   <div class="col-12">
                                     <hr>
                                   </div>
-                                <div class="col-8">
+                                <div class="col-12 col-md-8">
                                     <div class="row">
-                                        <div class="col-1">
-                                                    <img class="d-none d-md-block justify-content-center align-self-center" src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png" alt="Card image cap" id="imagen_usuario">
+                                        <div class="col-12 col-md-1">
+                                                    <img class=" justify-content-center align-self-center" src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png" alt="Card image cap" id="imagen_usuario">
      
                                         </div>
-                                        <div class="col-5">
+                                        <div class="col-12 col-md-5">
 
                                                     <p class="text-muted"><b>Nombre del facilitador: </b><br>{{consultoria.fnombres}} {{consultoria.fapellidos}} </p>
                                                     <div class="mb-1 text-muted float-left"><b>Teléfono: </b> {{consultoria.ftelefono}}</div>
 
                                         </div>
-                                        <div class="col-1">
-                                            <img class="d-none d-md-block justify-content-center align-self-center" src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png" alt="Card image cap" id="imagen_usuario">
+                                        <div class="col-12 d-block d-md-none ">
+                                            <hr>
+                                        </div>
+                                        <div class="col-12 col-md-1">
+                                            <img class="justify-content-center align-self-center" src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png" alt="Card image cap" id="imagen_usuario">
 
                                         </div>
-                                        <div class="col-5">
+                                        <div class="col-12 col-md-5">
                                             <p class="text-muted"><b>Nombre del emprendedor: </b><br>{{consultoria.enombres}} {{consultoria.eapellidos}}  </p>
                                             <div class="mb-1 text-muted float-left"><b>Teléfono: </b> {{consultoria.etelefono}}</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-12 col-md-4">
                                     
                                        <div class="boton float-right"><button class="btn btnE"> Ruta de proceso</button></div>
                                        

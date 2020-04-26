@@ -3,20 +3,8 @@
   font-size: 20px;
 }
 
-.consultores-cont{
-  width: 96%;
-  background: white;
-  margin: 2% 2% 2% 2%;
-  margin-top: 2%;
-  padding: 40px;
-  border-radius: 6px;
-}
-img#imagen_usuario {
 
-  margin-left: 20px;
-  margin-right: 20px;
-  height: 100px;
-}
+
 
 #cuadro_info{
   border-radius: 6px;
@@ -72,9 +60,7 @@ select.form-control.form-control-lg {
   
 }
 
-.otrosbtn.float-right {
-  margin-left: 80px;
-}
+
 
 .otrosbtn a {
   color: gray;
@@ -131,4 +117,66 @@ select.form-control.form-control-lg {
   text-align: center;
   font-size: 12px;
   line-height: 1.42857;
+}
+
+@media (min-width: 992px) {
+  .consultores-cont{
+    width: 90%;
+    background: white;
+    margin: 0;
+    margin-top: 0;
+    padding: 40px;
+    border-radius: 6px;
+  }
+  img#imagen_usuario {
+
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 100px;
+  }
+  .otrosbtn.float-right {
+    margin-left: 80px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .consultores-cont{
+    width: auto;
+    background: white;
+    margin: 0;
+    margin-top: 0;
+    padding: 40px;
+    border-radius: 6px;
+  }
+  img#imagen_usuario {
+
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 100px;
+  }
+  .otrosbtn.float-right {
+    margin-left: 80px;
+  }
+}
+
+@media (max-width: 767px) {
+  .consultores-cont{
+    width: auto;
+    background: white;
+    margin: 0;
+    margin-top: 0;
+    padding: 40px;
+    border-radius: 6px;
+  }
+  img#imagen_usuario {
+
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    height: 100px;
+  }
+  .otrosbtn.float-right {
+    margin-left: 80px;
+    margin-top: 20px;
+  }
 }

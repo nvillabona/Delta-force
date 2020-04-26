@@ -7,7 +7,7 @@ darle click al boton editar de un consultor -->
       <a routerLink="/consultores"><i class="fa fa-arrow-circle-left"></i> Atrás</a>
 </div>
 </div>
-<div class="facilitador-cont-succ" *ngIf="status == 'failed'">
+<div class="facilitador-cont-succ mx-auto" *ngIf="status == 'failed'">
   <div class="row">
   <div class=" col-12 message success text-center" >
     <img src="../../../assets/image/true.png" alt="" width="20%">
@@ -16,7 +16,7 @@ darle click al boton editar de un consultor -->
   </div>
 </div>
 </div>
-<div class="consultor-cont" *ngIf="status == 'success' && facilitador">
+<div class="consultor-cont mx-auto" *ngIf="status == 'success' && facilitador">
 
     <div class="row">
         <div class="col-12">
@@ -34,51 +34,51 @@ darle click al boton editar de un consultor -->
                 <div class="col-md-6">
                     <fieldset class="form-group">
                         <input type="text" class="form-control" id="nombres" name="nombres"  #nombres="ngModel" [(ngModel)]="facilitador.nombres" required>
-                        <label for="nombres">Nombre</label>
+                        <label for="nombres" *ngIf="!facilitador.nombres">Nombre</label>
                         <span class="form-error" *ngIf="nombres.touched && !nombres.valid"> El nombre es obligatorio</span>
                       </fieldset>
                       <fieldset class="form-group">
                         <input type="text" class="form-control" id="apellidos" name="apellidos"  #apellidos="ngModel" [(ngModel)]="facilitador.apellidos" required>
-                        <label for="apellidos">Apellido</label>
+                        <label for="apellidos" *ngIf="!facilitador.apellidos">Apellido</label>
                         <span class="form-error" *ngIf="apellidos.touched && !apellidos.valid"> El apellido es obligatorio</span>
                       </fieldset>
                       <fieldset class="form-group">
                         <input type="number" class="form-control" id="cedula_facilitador" name="cedula_facilitador" #cedula_facilitador="ngModel" [(ngModel)]="facilitador.cedula_facilitador" required>
-                        <label for="cedula_facilitador">Numero de Cédula</label>
+                        <label for="cedula_facilitador" *ngIf="!facilitador.cedula_facilitador">Numero de Cédula</label>
                         <span class="form-error" *ngIf="cedula_facilitador.touched && !cedula_facilitador.valid"> La cédula es obligatoria</span>
                       </fieldset>
                       <fieldset class="form-group">
                         <input type="email" class="form-control" id="email" name="email" #email="ngModel" [(ngModel)]="facilitador.email" required>
-                        <label for="email">Email</label>
+                        <label for="email" *ngIf="!facilitador.email">Email</label>
                         <span class="form-error" *ngIf="email.touched && !email.valid"> El email es obligatorio</span>
                       </fieldset>
                       <fieldset class="form-group">
                         <input type="text" class="form-control" id="telefono" name="telefono"  #telefono="ngModel" [(ngModel)]="facilitador.telefono" required>
-                        <label for="telefono">Teléfono</label>
+                        <label for="telefono" *ngIf="!facilitador.telefono">Teléfono</label>
                         <span class="form-error" *ngIf="telefono.touched && !telefono.valid"> El teléfono es obligatorio</span>
                       </fieldset>
                 </div>
                 <div class="col-md-6">
                       <fieldset class="form-group">
                         <input type="text" class="form-control" id="direccion" name="direccion"  #direccion="ngModel" [(ngModel)]="facilitador.direccion" required>
-                        <label for="direccion">Dirección</label>
+                        <label for="direccion" *ngIf="!facilitador.direccion">Dirección</label>
                         <span class="form-error" *ngIf="direccion.touched && !direccion.valid"> La dirección es obligatoria</span>
                       </fieldset>
                       <fieldset class="form-group">
                         <input type="text" class="form-control" id="profesion" name="profesion" #profesion="ngModel" [(ngModel)]="facilitador.profesion">
-                        <label for="profesion">Profesión</label>
+                        <label for="profesion" *ngIf="!facilitador.profesion">Profesión</label>
                          <small class="text-muted">Este campo no es obligatorio</small>
                       </fieldset>
                 </div>
                 <div class="col-md-6">
                       <fieldset class="form-group">
                         <input type="text" class="form-control" id="area_enfoque" name="area_enfoque" #area_enfoque="ngModel" [(ngModel)]="facilitador.area_enfoque" required>
-                        <label for="area_enfoque">Área de enfoque</label>
+                        <label for="area_enfoque" *ngIf="!facilitador.area_enfoque">Área de enfoque</label>
                         <span class="form-error" *ngIf="area_enfoque.touched && !area_enfoque.valid"> El Area de enfoque es obligatoria</span>
                       </fieldset>
                       <fieldset class="form-group">
                         <input type="text" class="form-control" id="password" name="password" #password="ngModel" [(ngModel)]="facilitador.password" required>
-                        <label for="password">Contraseña</label>
+                        <label for="password" *ngIf="!facilitador.password">Contraseña</label>
                         <span class="form-error" *ngIf="password.touched && !password.valid"> La password es obligatoria</span>
                       </fieldset>
                 </div>

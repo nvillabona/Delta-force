@@ -3,19 +3,14 @@ h1{
   }
   
   .consultores-cont{
-    width: 96%;
+    width: 100%;
     background: white;
-    margin: 2% 2% 2% 2%;
-    margin-top: 2%;
+    margin: 0;
+    margin-top: 0;
     padding: 40px;
     border-radius: 6px;
   }
-  img#imagen_usuario {
-  
-    margin-left: 20px;
-    margin-right: 20px;
-    height: 100px;
-  }
+
   
   #cuadro_info{
     border-radius: 6px;
@@ -88,7 +83,7 @@ h1{
   }
   
   .back{
-    margin:20px
+    margin:10px
   }
   .back i {
     color: #9A66A8;
@@ -111,4 +106,32 @@ h1{
     text-align: center;
     pointer-events: none;
     color: #aaa;
+  }
+
+  @media (min-width: 992px) {
+    img#imagen_usuario {
+  
+      margin-left: 20px;
+      margin-right: 20px;
+      height: 100px;
+    }
+  }
+  
+@media (min-width: 768px) and (max-width: 991px) {
+  img#imagen_usuario {
+  
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 100px;
+  }
+  }
+  
+@media (max-width: 767px) {
+  img#imagen_usuario {
+  
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    height: 100px;
+  }
   }
