@@ -19,6 +19,12 @@ import { CrearConsultoriaComponent } from './components/crear-consultoria/crear-
 import { Pagina404Component } from './components/pagina404/pagina404.component';
 import { ConsultarUsuariosComponent } from './components/consultar-usuarios/consultar-usuarios.component';
 import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
+import { EliminarEmprendimientoComponent } from "./components/eliminar-emprendimiento/eliminar-emprendimiento.component";
+import { ActualizarEmprendimientoComponent } from "./components/actualizar-emprendimiento/actualizar-emprendimiento.component";
+import { EliminarConsultoriaComponent } from "./components/eliminar-consultoria/eliminar-consultoria.component";
+import { ActualizarConsultoriasComponent } from "./components/actualizar-consultorias/actualizar-consultorias.component";
+
+
 
 
 
@@ -71,9 +77,23 @@ const routes: Routes = [
   {
     path: 'consultar-consultorias', component: ConsultarConsultoriasComponent /* Importo componente para consultar consultorias programadas */
   },
+  {
+    path: 'eliminar-consultorias/:consecutivo/:titulo', component: EliminarConsultoriaComponent /* Importo componente para consultar consultorias programadas */
+  },
+  {
+    path: 'actualizar-consultorias/:consecutivo', component: ActualizarConsultoriasComponent /* Importo componente para consultar consultorias programadas */
+  },
 
   {
     path: 'consultar-emprendimientos', component: ConsultarEmprendimientosComponent  /* Importo componente para consultar emprendimientos */
+  },
+
+  {
+    path: 'eliminar-emprendimientos/:consecutivo/:titulo', component: EliminarEmprendimientoComponent  /* Importo componente para consultar emprendimientos */
+  },
+  
+  {
+    path: 'actualizar-emprendimientos/:consecutivo', component: ActualizarEmprendimientoComponent
   },
 
   {
@@ -85,7 +105,7 @@ const routes: Routes = [
 
 
   {
-    path: 'detalle-emprendimiento', component: DetalleEmprendimientoComponent  /* Importo componente para ver el detalle de un emprendimiento */
+    path: 'detalle-emprendimiento/:consecutivo', component: DetalleEmprendimientoComponent  /* Importo componente para ver el detalle de un emprendimiento */
   },
 
   {

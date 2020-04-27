@@ -5,51 +5,51 @@
         <a routerLink="/consultar-emprendimientos"><i class="fa fa-arrow-circle-left"></i> Atrás</a>
 </div>
 </div>
-<div class="consultores-cont">
+<div class="consultores-cont mx-auto" *ngIf="emprendimiento">
 
     <div class="row">
         <div class="col-12">
-            <h1><strong class="text-muted"> Titulo de emprendimiento </strong></h1>
+            <h1><strong class="text-muted"> {{emprendimiento.titulo}} </strong></h1>
             <hr>
         </div>
         <div class="formActUsuario">
             <form>
                 <div class="form-row align-items-center">
-                    <div class="col-3">
+                    <div class="col-12 col-md-3">
                         <img class="justify-content-center align-self-center"
                             src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png"
                             alt="Card image cap" id="imagen_usuario">
                     </div>
-                    <div class="col-5">
+                    <div class="col-12 col-md-5">
                         <fieldset class="form-group">
                             <strong class="text-muted">Nombre del emprendedor</strong><br>
-                            <label for="name">Susanita Pérez</label>
+                            <label for="name">{{emprendimiento.nombres}} {{emprendimiento.apellidos}}</label>
                         </fieldset>
                         <fieldset class="form-group">
                             <strong class="text-muted">Facultad</strong><br>
-                            <label for="name">Ingenierias</label>
+                            <label for="name">{{emprendimiento.facultad}}</label>
                         </fieldset>
                         <fieldset class="form-group">
                             <strong class="text-muted">Sector asociado al emprendimiento</strong><br>
-                            <label for="name">Ciberseguridad</label>
+                            <label for="name">{{emprendimiento.sector}}</label>
                         </fieldset>
-                        <fieldset class="form-group">
+<!--                         <fieldset class="form-group">
                             <strong class="text-muted">Empresa formalizada</strong><br>
                             <label for="name">Sí</label>
-                        </fieldset>
+                        </fieldset> -->
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-4">
                         <fieldset class="form-group">
                             <strong class="text-muted">Programa academico</strong><br>
-                            <label for="name">Ingenieria informática</label>
+                            <label for="name">{{emprendimiento.programa_academico}}</label>
                         </fieldset>
                         <fieldset class="form-group">
                             <strong class="text-muted">Egresado</strong><br>
-                            <label for="name">No</label>
+                            <label for="name">{{emprendimiento.egresado}}</label>
                         </fieldset>
                         <fieldset class="form-group">
                             <strong class="text-muted">Etapa del proyecto</strong><br>
-                            <label for="name">Etapa #2</label>
+                            <label for="name">{{emprendimiento.etapa}}</label>
                         </fieldset>
                     </div>
                 </div>
@@ -69,69 +69,69 @@
                                         <div class="col-1">
                                             <!-- Para correr hacia la derecha la proxima columna xd -->
                                         </div>
-                                        <div class="col-11">
+                                        <div class="col-11 col-md-11">
                                             <div class="row">
-                                                <div class="col-3">
+                                                <div class="col-12 col-md-3">
                                                     <strong class="text-muted">NIT</strong><br>
-                                                    <label for="name">912.158.197-1</label>
+                                                    <label for="name">{{emprendimiento.nit}}</label>
                                                 </div>
-                                                <div class="col-3">
+                                                <div class="col-12 col-md-3">
                                                     <strong class="text-muted">Número de empleados</strong><br>
-                                                    <label for="name">13</label>
+                                                    <label for="name">{{emprendimiento.num_empleados}}</label>
                                                 </div>
-                                                <div class="col-3">
+                                                <div class="col-12 col-md-3">
                                                     <strong class="text-muted">Datos de contacto empresa</strong><br>
-                                                    <label for="name">300 77 77 77</label>
+                                                    <label for="name">{{emprendimiento.num_contacto}}</label>
                                                 </div>
-                                                <div class="col-3">
+                                                <div class="col-12 col-md-3">
                                                     <strong class="text-muted">Segmento de clientes</strong><br>
-                                                    <label for="name">----</label>
+                                                    <label for="name">{{emprendimiento.segmento_clientes}}</label>
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-3">
+                                                <div class="col-12 col-md-3">
                                                     <strong class="text-muted">Fecha de creacion</strong><br>
-                                                    <label for="name">27/01/1999</label>
+                                                    <label for="name">{{emprendimiento.fecha_creacion}}</label>
                                                 </div>
-                                                <div class="col-3">
+                                                <div class="col-12 col-md-3">
                                                     <strong class="text-muted">Datos de contacto emprendedor</strong><br>
-                                                    <label for="name">300 55 65 55</label>
+                                                    <label for="name">{{emprendimiento.telefono}}</label>
                                                 </div>
-                                                <div class="col-3">
+                                                <div class="col-12 col-md-3">
                                                     <strong class="text-muted">Propuesta de valor</strong><br>
-                                                    <label for="name">----</label>
+                                                    <label for="name">{{emprendimiento.propuesta_valor}}</label>
                                                 </div>
-                                                <div class="col-3">
+                                                <div class="col-12 col-md-3">
                                                     <strong class="text-muted">Canales</strong><br>
-                                                    <label for="name">----</label>
+                                                    <label for="name">{{emprendimiento.canales}}</label>
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-3">
+<!--                                                 <div class="col-3">
                                                     <strong class="text-muted">Relación con clientes</strong><br>
-                                                    <label for="name">----</label>
-                                                </div>
-                                                <div class="col-3">
+                                                    <label for="name">{{emprendimiento.}}</label>
+                                                </div> -->
+                                                <div class="col-12 col-md-3">
                                                     <strong class="text-muted">Fuente de ingresos</strong><br>
-                                                    <label for="name">----</label>
+                                                    <label for="name">{{emprendimiento.fuente_ingresos}}</label>
                                                 </div>
-                                                <div class="col-3">
+                                                <div class="col-12 col-md-3">
                                                     <strong class="text-muted">Recursos clave</strong><br>
-                                                    <label for="name">----</label>
+                                                    <label for="name">{{emprendimiento.recursos_clave}}</label>
                                                 </div>
-                                                <div class="col-3">
+                                                <div class="col-12 col-md-3">
                                                     <strong class="text-muted">Actividades clave</strong><br>
-                                                    <label for="name">----</label>
+                                                    <label for="name">{{emprendimiento.actividades_clave}}</label>
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-3">
+                                                <div class="col-12 col-md-3">
                                                     <strong class="text-muted">Socios clave</strong><br>
-                                                    <label for="name">----</label>
+                                                    <label for="name">{{emprendimiento.socios_clave}}</label>
                                                 </div>
-                                                <div class="col-3">
+                                                <div class="col-12 col-md-3">
                                                     <strong class="text-muted">Estructura de costos</strong><br>
-                                                    <label for="name">----</label>
+                                                    <label for="name">{{emprendimiento.estructura_costos}}</label>
                                                 </div>
                                             </div>
                                         </div>

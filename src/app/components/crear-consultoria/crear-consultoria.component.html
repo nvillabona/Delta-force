@@ -1,31 +1,20 @@
-
-<!-- <div class="card" style="width: 50rem;">
-    <form>
-        <div class="row">
-          <div class="col">
-            <input type="text" class="form-control" placeholder="Titulo">
-          </div>
-          <div class="col">
-              <select id="inputState" class="form-control" type="text" placeholder="Tipo" >
-                <option selected>Tipo consultoría...</option>
-                <option>...</option>
-              </select>
-          </div>
-        </div>
-        <div class="row">
-            <div class="col">
-              <input type="text" class="form-control" placeholder="Titulo">
-            </div>      
-          </div>
-    </form>
-</div> -->
+<!--  -->
 <div class="row">
   <div class="col-12 back">
     
       <a routerLink="/consultar-consultorias"><i class="fa fa-arrow-circle-left"></i> Atrás</a>
 </div>
 </div>
-<div class="consultor-cont card">
+<div class="consultoria-cont-succ mx-auto " *ngIf="status == 'failed'">
+  <div class="row">
+  <div class=" col-12 message success text-center" >
+    <img src="../../../assets/image/true.png" alt="" width="20%">
+    <br><br><br>
+    <h5>La consultoria se ha creado correctamente.</h5>
+  </div>
+</div>
+</div>
+<div class="consultor-cont mx-auto card" *ngIf="status == 'success'">
 
     <div class="row">
         <div class="col-12">
@@ -36,73 +25,67 @@
     </div>
 
     <div class="formActUsuario">
-        <form>
+        <form #consultoriaForm="ngForm" (ngSubmit)="onSubmit(consultoriaForm)">
             <div class="form-row align-items-center">
                 
-                    <fieldset class="form-group col-md-6">
-                        <input type="text" class="form-control" id="name" name="name" required>
-                        <label for="name">Titulo</label>
+                    <fieldset class="form-group col-12 col-md-6">
+                        <input type="text" class="form-control" id="titulo" name="titulo" #titulo="ngModel" [(ngModel)]="consultoria.titulo" required>
+                        <label for="titulo">Titulo</label>
+                        <span class="form-error" *ngIf="titulo.touched && !titulo.valid"> El titulo es obligatorio</span>
+
                     </fieldset>
-                    <fieldset class="form-group col-md-6">
-                        <select type="number" class="form-control" id="cedula" name="cedula" required>
-                          <option></option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
+                    <fieldset class="form-group col-12 col-md-6">
+                         <select type="text" class="form-control" id="tipo" name="tipo" #tipo="ngModel" [(ngModel)]="consultoria.tipo" required>
+                          <option [ngValue]="'Presencial'" >Presencial</option>
+                          <option [ngValue]="'Virtual'">Virtual</option>
+                          <option [ngValue]="'Telefonica'">Teléfonica</option>
                         </select>
-                        
-                        <label for="cedula">Tipo Consultoría</label>
+                        <label class="seleclab" for="tipo">Tipo Consultoría</label>
                     </fieldset>
             </div> 
             <div class="form-row align-items-cente">   
-              <div class="col-12">
+              <div class="col-12 col-md-12">
                 <fieldset class="form-group">
-                  <input type="text" class="form-control" id="area" name="lugar" required>
-                  <label for="area">Lugar</label>
+                  <input type="text" class="form-control" id="lugar" name="lugar" #lugar="ngModel" [(ngModel)]="consultoria.lugar" required>
+                  <label for="lugar">Lugar</label>
+                  <span class="form-error" *ngIf="lugar.touched && !lugar.valid"> El lugar es obligatorio</span>
                 </fieldset>
             </div>
             </div>
             <div class="form-row align-items-center">    
                 <fieldset class="form-group col-6">
-                  <input type="time" class="form-control" id="direccion" name="direccion" required placeholder="hora">
-                  <label for="direccion">Hora</label>
+                  <input type="time" class="form-control" id="hora" name="hora" #hora="ngModel" [(ngModel)]="consultoria.hora" required placeholder="hora">
+                  <label class="hora" for="hora">Hora</label>
+                  <span class="form-error" *ngIf="hora.touched && !hora.valid"> La hora es obligatoria</span>
                 </fieldset>
                 <fieldset class="form-group col-6">
-                  <input type="date" class="form-control" id="perfilprofecional" name="perfilprofecional">
-                  
+                  <input type="date" class="form-control" id="fecha" name="fecha" #fecha="ngModel" [(ngModel)]="consultoria.fecha"  required>
+                  <label class="fecha" for="fecha">Fecha</label>
+                  <span class="form-error" *ngIf="fecha.touched && !fecha.valid"> La fecha es obligatoria</span>
                 </fieldset>          
             </div>
             <div class="form-row align-items-center">    
-              <fieldset class="form-group col-6">
-                <select type="text" class="form-control" id="direccion" name="direccion" required>
-                  <option></option>
-                  <option>Fabian</option>
-                  <option>Andres</option>
-                  <option>Nicolas</option>
-                  <option>Camilo</option>
-                  <option>Valentina</option>
-                </select>
-                <label for="direccion">Consultor</label>
+              <fieldset class="form-group col-12 col-md-6">
+                <select  name="monitor" id="monitor" #monitor="ngModel" [(ngModel)]="consultoria.monitor"  required>
+                  <option *ngFor="let f of facilitadores" [ngValue]="f.cedula_facilitador">{{f.nombres}} {{f.apellidos}}</option>
+                  </select>
+                <label class="seleclab2" for="monitor">Facilitador</label>
+                <span class="form-error" *ngIf="monitor.touched && !monitor.valid"> El monitor es obligatorio</span>
               </fieldset>
-              <fieldset class="form-group col-6">
-                <select type="text" class="form-control" id="perfilprofecional" name="perfilprofecional">
-                  <option></option>
-                  <option>Fabian</option>
-                  <option>Andres</option>
-                  <option>Nicolas</option>
-                  <option>Camilo</option>
-                  <option>Valentina</option>
-
+              <fieldset class="form-group col-12 col-md-6">
+              <select name="emprendedor"  id="emprendedor" #emprendedor="ngModel" [(ngModel)]="consultoria.emprendedor" required>
+                <option *ngFor="let e of emprendedores"  [ngValue]="e.cedula_emprendedor" >{{e.nombres}} {{e.apellidos}}</option>
                 </select>
-                <label for="perfilprofecional">Emprendedor</label>
+                <label class="seleclab2" for="emprendedor">Emprendedor</label>
+                <span class="form-error" *ngIf="emprendedor.touched && !emprendedor.valid"> El emprendedor es obligatorio</span>
               </fieldset>          
             </div>
             <div class="form-row align-items-cente">   
               <div class="col-12">
                 <fieldset class="form-group">
-                  <input type="text" class="form-control" id="area" name="Descripción" required>
-                  <label for="area">Descripción</label>
+                  <input type="text" class="form-control" id="area" name="descripcion" #descripcion="ngModel" [(ngModel)]="consultoria.descripcion" required>
+                  <label for="descripcion">Descripción</label>
+                  <span class="form-error" *ngIf="descripcion.touched && !descripcion.valid"> La descripción es obligatoria</span>
                 </fieldset>
             </div>
             </div>

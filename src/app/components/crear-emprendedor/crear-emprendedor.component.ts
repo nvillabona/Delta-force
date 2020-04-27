@@ -24,7 +24,7 @@ export class CrearEmprendedorComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    
   }
 
   onSubmit(form){

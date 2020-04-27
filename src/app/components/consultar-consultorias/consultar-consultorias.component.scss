@@ -68,14 +68,7 @@ h1{
     font-size: 20px;
   }
   
-  .consultores-cont{
-    width: 96%;
-    background: white;
-    margin: 2% 2% 2% 2%;
-    margin-top: 2%;
-    padding: 40px;
-    border-radius: 6px;
-  }
+
   img#imagen_usuario {
   
     margin-left: 20px;
@@ -90,12 +83,7 @@ h1{
     box-shadow: 4px 3px 21px -8px rgba(0,0,0,0.13);
   }
   
-  .cont-filtro {
-    width: 100%;
-    margin-top: 20px;
-    margin-left: 20px;
-    margin-bottom: 40px;
-  }
+
   
   .list-emp{
     width: 100%;
@@ -109,9 +97,7 @@ h1{
     font-size: 14px;
   }
   
-  .boton {
-    margin-bottom: 40px;
-  }
+ 
   
   .btnE{
     color: #fff;
@@ -204,4 +190,65 @@ h1{
 }
 .btn-add i {
   color: white;
+}
+
+@media (min-width: 992px) {
+  .consultores-cont{
+    width: 96%;
+    background: white;
+    margin: 0;
+    margin-top: 0;
+    padding: 40px;
+    border-radius: 6px;
+  }
+  .cont-filtro {
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 40px;
+  }
+  .boton {
+    margin-bottom: 40px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .consultores-cont{
+    width: 96%;
+    background: white;
+    margin: 0;
+    margin-top: 0;
+    padding: 40px;
+    border-radius: 6px;
+  }
+  .cont-filtro {
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 40px;
+  }
+  .boton {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .consultores-cont{
+    width: auto;
+    background: white;
+    margin: 0;
+    margin-top: 0;
+    padding: 40px;
+    border-radius: 6px;
+  }
+  .cont-filtro {
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-bottom: 40px;
+  }
+  .boton {
+    margin-bottom: 40px;
+    margin-top: 20px;
+  }
 }

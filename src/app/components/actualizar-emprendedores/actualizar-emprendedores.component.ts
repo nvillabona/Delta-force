@@ -39,6 +39,8 @@ export class ActualizarEmprendedoresComponent implements OnInit {
       response => {        
         this.emprendedor = response;
 
+        
+
       },
       error => {
         console.log(<any>error);

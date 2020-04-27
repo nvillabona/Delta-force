@@ -1,10 +1,4 @@
-<!-- 
-        <full-calendar defaultView="dayGridMonth" [plugins]="calendarPlugins"></full-calendar>
-  
-
-
- -->
- <div class="row">
+  <div class="row">
          <div class="col-12 consultar">
                 <form>
                         <div class="form-group has-search">
@@ -16,24 +10,34 @@
 
  </div>
  <div class="row botonesCrear">
-         <div class="col-12">
-                <button type="button" class="btn btn-consultoria btn-lg">+ Crear consultoría</button>
-                <button type="button" class="btn btn-evento btn-lg">+ Crear evento</button>
-                <button type="button" class="btn btn-formulario btn-lg">+ Crear formulario</button>
+         <div class="col-12 d-none d-md-block">
+                <button type="button" class="btn btn-consultoria btn-lg" routerLink="/crear-consultoria">+ Crear consultoría</button>
+<!--                 <button type="button" class="btn btn-evento btn-lg" disabled>+ Crear evento</button>
+                <button type="button" class="btn btn-formulario btn-lg" disabled>+ Crear formulario</button> -->
          </div>
- </div>
+         <div class="col-12 d-block d-md-none text-center">
+            <button type="button" class="btn btn-consultoria btn-lg" routerLink="/crear-consultoria">+ Crear consultoría</button>
+<!--             <button type="button" class="btn btn-evento btn-lg" disabled>+ Crear evento</button>
+            <button type="button" class="btn btn-formulario btn-lg" disabled>+ Crear formulario</button> -->
+     </div>
 
- <div class="emprendedor-cont">
+<div class="emprendedor-cont mx-auto">
 
-        <div class="row">
-            <div class="col-12">
-                <h1  href="#">Calendario</h1>
-    
-                <hr>
+    <div class="row">
+        <div class="col-12">
+            <h1 href="#">Calendario</h1>
 
-            </div>
-            <div class="col-md-12 list-emp">
-                <full-calendar defaultView="dayGridMonth" [plugins]="calendarPlugins"></full-calendar>
-            </div>
+            <hr>
+
+        </div>
+        <div class="col-md-12 list-emp" > <!-- Se agrega el calendario y adentro sus eventos -->
+            
+            <full-calendar defaultView="dayGridMonth"
+                            [plugins]="calendarPlugins" 
+                            [locales]="locales"
+                            locale="es"
+                            [events]="eventSources">
+        </full-calendar>
         </div>
     </div>
+</div>
