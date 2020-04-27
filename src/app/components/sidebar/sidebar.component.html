@@ -10,22 +10,22 @@
             <li class="active">
 
                 <li>
-                    <a routerLink="/calendario">Calendario</a> <!-- Redirecciono a componente calendario -->
+                    <a [routerLink]="['/calendario']" [routerLinkActive]="['actived']">Calendario</a> <!-- Redirecciono a componente calendario -->
                 </li>
                 <li>
-                    <a routerLink="/consultar-consultorias" routerLinkActive="active" routerLinkActiveOptions="{exact:true}"  >Consultorías</a>
+                    <a [routerLink]="['/consultar-consultorias']" [routerLinkActive]="['actived']"  >Consultorías</a>
                 </li>
                 <li>
-                    <a routerLink="/consultores" routerLinkActive="active"  >Facilitadores</a>
+                    <a [routerLink]="['/consultores']" [routerLinkActive]="['actived']"  >Facilitadores</a>
                 </li>
                 <li>
-                    <a routerLink="/consultar-emprendimientos" routerLinkActive="active"  >Emprendimientos</a>
+                    <a [routerLink]="['/consultar-emprendimientos']" [routerLinkActive]="['actived']"  >Emprendimientos</a>
                 </li>
                 <li>
-                    <a routerLink="/emprendedores" routerLinkActive="active"  >Emprendedores</a>
+                    <a [routerLink]="['/emprendedores']" [routerLinkActive]="['actived']"  >Emprendedores</a>
                 </li>
                 <li>
-                  <a routerLink="/consultar-usuarios" routerLinkActive="active"  >Atención a Usuario</a>
+                  <a [routerLink]="['/consultar-usuarios']" [routerLinkActive]="['actived']"  >Atención a Usuario</a>
               </li>
                 <hr>
                 <ul class="list-unstyled CTAs">
