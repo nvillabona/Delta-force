@@ -30,11 +30,11 @@ export class SidebarComponent implements OnInit {
       $wrapper.classList.toggle('toggled');
     });
 
-    this.getLogin();
+  /*   this.getLogin(); */
 
   }
 
-  getLogin(){
+/*   getLogin(){
     this._loginService.login(this.logUsuario).subscribe(
       response =>{
         console.log(response);
@@ -53,7 +53,7 @@ export class SidebarComponent implements OnInit {
         
       }
     );
-  }
+  } */
   
   exit(){
 /*     Swal.fire({

@@ -49,8 +49,8 @@ en el boton crear -->
                         <span class="form-error" *ngIf="apellidos.touched && !apellidos.valid"> El apellido es obligatorio</span>
                       </fieldset>
                       <fieldset class="form-group">
-                        <input type="number" tabindex="3" class="form-control" id="cedula_emprendedor" name="cedula" #cedula_emprendedor="ngModel" [(ngModel)]="emprendedor.cedula_emprendedor" required>
-                        <label for="cedula_emprendedor" *ngIf="!emprendedor.cedula_emprendedor">Numero de Cédula</label>
+                        <input type="number" tabindex="3" class="form-control" id="cedula_emprendedor" name="cedula_emprendedor" #cedula_emprendedor="ngModel" [(ngModel)]="emprendedor.cedula_emprendedor" required>
+                        <label for="cedula_emprendedor" *ngIf="!emprendedor.cedula_emprendedor">Número de Cédula *</label>
                         <span class="form-error" *ngIf="cedula_emprendedor.touched && !cedula_emprendedor.valid"> La Cédula es obligatorio</span>
                       </fieldset>
                       <fieldset class="form-group">

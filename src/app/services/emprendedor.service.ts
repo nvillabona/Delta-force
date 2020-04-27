@@ -10,6 +10,8 @@ import { Global } from "./global";
 export class EmprendedorService{
 
     public url: string;
+    filtroEmprendedor: '';
+
 
     constructor(
         private _http: HttpClient

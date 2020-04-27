@@ -12,6 +12,8 @@ export class EmprendimientoService{
 
     public url: string;
 
+    filterEmprendimiento: '';
+
     constructor(
         private _http: HttpClient
     ){

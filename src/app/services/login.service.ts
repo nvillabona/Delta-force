@@ -13,6 +13,8 @@ export class LoginService {
     public loggedUser;
     public loggedIn: boolean;
 
+    filtroUser: '';
+
 
     constructor(
         private _http: HttpClient,
