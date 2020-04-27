@@ -30,12 +30,6 @@ import { Pagina404Component } from './components/pagina404/pagina404.component';
 import { CrearConsultorComponent } from './components/crear-consultor/crear-consultor.component';
 import { ConsultarUsuariosComponent } from './components/consultar-usuarios/consultar-usuarios.component';
 import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
-<<<<<<< HEAD
-import { ReportesConsultoriasComponent } from './components/reportes-consultorias/reportes-consultorias.component';
-
-
-
-=======
 import { EliminarEmprendimientoComponent } from './components/eliminar-emprendimiento/eliminar-emprendimiento.component';
 import { EliminarConsultoriaComponent } from './components/eliminar-consultoria/eliminar-consultoria.component';
 import { ActualizarEmprendimientoComponent } from './components/actualizar-emprendimiento/actualizar-emprendimiento.component';
@@ -45,7 +39,6 @@ import { FilterEmprendedorPipe } from './pipes/filter-emprendedor.pipe';
 import { FilterConsultorPipe } from './pipes/filter-consultor.pipe';
 import { FilterEmprendimientoPipe } from './pipes/filter-emprendimiento.pipe';
 import { FilterConsultoriaPipe } from './pipes/filter-consultoria.pipe';
->>>>>>> development
 
 
 
@@ -75,9 +68,6 @@ import { FilterConsultoriaPipe } from './pipes/filter-consultoria.pipe';
     Pagina404Component,
     ConsultarUsuariosComponent,
     CrearUsuarioComponent,
-<<<<<<< HEAD
-    ReportesConsultoriasComponent,
-=======
     EliminarEmprendimientoComponent,
     EliminarConsultoriaComponent,
     ActualizarEmprendimientoComponent,
@@ -88,7 +78,6 @@ import { FilterConsultoriaPipe } from './pipes/filter-consultoria.pipe';
     FilterEmprendimientoPipe,
     FilterConsultoriaPipe,
 
->>>>>>> development
 
 
 
