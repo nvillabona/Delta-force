@@ -34,6 +34,8 @@ import { EliminarEmprendimientoComponent } from './components/eliminar-emprendim
 import { EliminarConsultoriaComponent } from './components/eliminar-consultoria/eliminar-consultoria.component';
 import { ActualizarEmprendimientoComponent } from './components/actualizar-emprendimiento/actualizar-emprendimiento.component';
 import { ActualizarConsultoriasComponent } from './components/actualizar-consultorias/actualizar-consultorias.component';
+import { ReportesConsultoriasComponent} from './components/reportes-consultorias/reportes-consultorias.component';
+// pipes
 import { FilterUserPipe } from './pipes/filter.pipe';
 import { FilterEmprendedorPipe } from './pipes/filter-emprendedor.pipe';
 import { FilterConsultorPipe } from './pipes/filter-consultor.pipe';
@@ -72,6 +74,7 @@ import { FilterConsultoriaPipe } from './pipes/filter-consultoria.pipe';
     EliminarConsultoriaComponent,
     ActualizarEmprendimientoComponent,
     ActualizarConsultoriasComponent,
+    ReportesConsultoriasComponent,
     FilterUserPipe,
     FilterEmprendedorPipe,
     FilterConsultorPipe,
