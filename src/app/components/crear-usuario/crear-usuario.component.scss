@@ -2,14 +2,6 @@ h1{
     font-size: 20px;
   }
   
-  .usuario-cont{
-    width: 70%;
-    background: white;
-    margin: 20% 20% 10% 20%;
-    margin-top: 0%;
-    padding: 40px;
-    border-radius: 6px;
-  }
   img#imagen_usuario {
   
     margin-left: 20px;
@@ -88,7 +80,7 @@ h1{
   }
   
   .back{
-    margin:20px
+    margin:10px
   }
  
   .formActUsuario input{
@@ -162,4 +154,86 @@ h1{
  
 .form {
   width: 450px;
+}
+select {
+  outline: 0;
+  border-width: 0 0 1px;
+  border-color: #e2e2e2;
+  border-radius: 0px;
+  font-size: 14px;
+}
+
+.seleclab {
+position: absolute;
+top: 0.4rem;
+left: 1rem;
+transition: all 0.1s ease-in-out;
+cursor: text;
+}
+
+.back i {
+  color: #9A66A8;
+  font-size: 30px;
+}
+.fecha{
+  color: #F37920;
+  top: -.9rem;
+  background: white;
+}
+
+@media (min-width: 992px) {
+  .usuario-cont{
+    width: 70%;
+    background: white;
+    margin: 0;
+    margin-top: 0%;
+    padding: 40px;
+    border-radius: 6px;
+  }
+  .emprendedor-cont-succ{
+    width: 800px;
+    background: white;
+    margin: 0;
+    margin-top: 0;
+    padding: 40px;
+    border-radius: 6px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+.usuario-cont{
+  width: auto;
+  background: white;
+  margin: 0;
+  margin-top: 0%;
+  padding: 40px;
+  border-radius: 6px;
+}
+.emprendedor-cont-succ{
+  width: 800px;
+  background: white;
+  margin: 0;
+  margin-top: 0;
+  padding: 40px;
+  border-radius: 6px;
+}
+}
+
+@media (max-width: 767px) {
+.usuario-cont{
+  width: auto;
+  background: white;
+  margin: 0;
+  margin-top: 0%;
+  padding: 40px;
+  border-radius: 6px;
+}
+.emprendedor-cont-succ{
+  width: auto;
+  background: white;
+  margin: 0;
+  margin-top: 0;
+  padding: 40px;
+  border-radius: 6px;
+}
 }
