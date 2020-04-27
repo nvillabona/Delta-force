@@ -14,7 +14,7 @@
                 <form>
                     <div class="form-group has-search">
                         <span class="fa fa-search form-control-feedback"></span>
-                        <input type="text" class="form-control" placeholder="Search">
+                        <input type="text" class="form-control" placeholder="Search" name="filterConsultoria" [(ngModel)]="_consultoriaService.filterConsultoria">
                       </div>
                   </form>
             </div>
@@ -30,7 +30,7 @@
                 <h1 *ngIf="isFirst" >Total: {{consultorias.length}}</h1>
             </div>
                 <br>
-                <div class="row mb-2" id="caja_info" *ngFor="let consultoria of consultorias" >
+                <div class="row mb-2" id="caja_info" *ngFor="let consultoria of consultorias|filterConsultoria:'titulo':_consultoriaService.filterConsultoria" >
                     <div class="col-md-12">
                       <div class="card flex-md-row mb-4 box-shadow h-md-250 d-flex" id="cuadro_info" >                      
                         <div class="card-body  align-items-start" >

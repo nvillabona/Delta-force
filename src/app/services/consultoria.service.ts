@@ -13,6 +13,7 @@ import { Global } from "./global";
 export class ConsultoriaService{
 
     public url: string;
+    filterConsultoria: '';
 
     constructor(
         private _http: HttpClient

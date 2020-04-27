@@ -24,6 +24,7 @@ export class ConsultarUsuariosComponent implements OnInit {
     this.getAtencion();
   }
 
+
   
   getAtencion(){
     this._atencinoService.getAtenciones().subscribe(
