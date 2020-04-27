@@ -1,0 +1,38 @@
+
+<div class="row">
+    <div class="col-12 back">
+      
+        <a routerLink="/consultar-emprendimientos"><i class="fa fa-arrow-circle-left"></i> Atrás</a>
+</div>
+</div>
+
+<div class="emprendedor-cont mx-auto">
+
+    <div class="row">
+        <div class="col-10">
+            <h1  href="#">Eliminar Emprendimiento</h1>
+           
+        </div>
+        <div class="col-2">
+            <a routerLink="/emprendedores"><b class="float-right">X</b></a>
+        </div>
+        <div class="col-12">
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-12 text-center">
+            <br>
+            <h6>Estas seguro que deseas eliminar el emprendedor <b style="color: #EE7202;">{{consecutivo}} - {{titulo}}</b></h6>
+            <br><br>
+            <a routerLink="/emprendedores"><button type="button" class="btn btn-lg btn-danger">Cancelar</button></a> &nbsp;&nbsp;&nbsp;
+            <button (click)="deleteEmprendimiento(consecutivo)" type="button" class="btn btn-lg btn-true">Aceptar</button>
+        </div>
+        <div class="col-1"></div>
+    </div>
+</div>
+
+
+
+

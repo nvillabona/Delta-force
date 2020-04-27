@@ -12,6 +12,8 @@ export class EmprendimientoService{
 
     public url: string;
 
+    filterEmprendimiento: '';
+
     constructor(
         private _http: HttpClient
     ){
@@ -46,6 +48,11 @@ export class EmprendimientoService{
         let headers = new HttpHeaders().set('Content-Type', 'application/json');
         
         return this._http.get(this.url+'/emprendimientos/'+consecutivo, {headers: headers});
+    }
+    getEmprendimientoE(consecutivo): Observable<any>{
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+        
+        return this._http.get(this.url+'/emprendimientos/getone/'+consecutivo, {headers: headers});
     }
 
     updateEmprendimiento(emprendimento:Emprendimiento): Observable<any>{

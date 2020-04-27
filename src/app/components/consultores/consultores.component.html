@@ -1,58 +1,60 @@
 <!-- Aquí se encuentra el código HTML del componente "consultores" que se ejecuta
 al dar click en el boton consultores de la sidebar -->
 
-    <div class="consultores-cont">
+    <div class="consultores-cont mx-auto">
 
         <div class="row">
             <div class="col-12">
-                <h1  href="#">Consultores</h1>
+                <h1  href="#">Facilitadores</h1>
     
                 <hr>
     
                 <h1>Filtro</h1>
             </div>
-            <div class="cont-filtro col-10">
-                <form>
-                    <div class="form-group has-search">
-                        <span class="fa fa-search form-control-feedback"></span>
-                        <input type="text" class="form-control" placeholder="Search">
-                      </div>
-                  </form>
+            <div class="cont-filtro col-8 col-md-10">
+                <div class="form-group has-search">
+                    <span class="fa fa-search form-control-feedback"></span>
+                    <input type="text" class="form-control" placeholder="Search" name="filterConsultor" [(ngModel)]="_facilitadorService.filterConsultor">
+                  </div>
             </div>
             <div class="plus col-1">
                 <button type="button" class="btn btn-add btn-circle btn-xl" routerLink="/crear-consultor"><i class="fa fa-plus"></i></button>
 
             </div>
             <div class="col-md-12 list-emp">
-                <h1>Total: 55</h1>
+                <div *ngFor="let facilitador of facilitadores; first as isFirst">
+
+                
+                    <h1 *ngIf="isFirst" >Total: {{facilitadores.length}}</h1>
+                </div>
     
                 <br>
                 <div class="row mb-2" id="caja_info">
                     <div class="col-md-12">
-                      <div class="card flex-md-row mb-4 box-shadow h-md-250 d-flex" id="cuadro_info" *ngFor="let facilitador of facilitadores">
-                        <img class="card-img-left flex-auto d-none d-md-block justify-content-center align-self-center" src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png" alt="Card image cap" id="imagen_usuario">
+                      <div class="card flex-md-row mb-4 box-shadow h-md-250 d-flex" id="cuadro_info" *ngFor="let facilitador of facilitadores|filterConsultor:'nombres':_facilitadorService.filterConsultor">
+                        <img class="card-img-left flex-auto justify-content-center align-self-center" src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png" alt="Card image cap" id="imagen_usuario">
                         <div class="card-body  align-items-start" >
                             <div class="row">
-                                <div class="col-8">
+                                <div class="col-12  col-md-8">
                                     <strong class="text-muted">{{facilitador.nombres}} {{facilitador.apellidos}}</strong>
                                     <div class="row">
-                                        <div class="col-6">
+                                        <div class="col-12 col-md-6">
                                             <p class="text-muted">{{facilitador.profesion}}</p>
                                         </div>
-                                        <div class="col-6">
+                                        <div class="col-12 col-md-6">
                                             <div class="mb-1 text-muted float-left"><b>Correo:</b> {{facilitador.email}}</div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-6">
+                                        <div class="col-12 col-md-6">
                                             <p class="text-muted"><b>Teléfono:</b> {{facilitador.telefono}}</p>
                                         </div>
-                                        <div class="col-6">
+                                        <div class="col-12 col-md-6">
                                             <div class="mb-1 text-muted float-left"><b>Dirección:</b> {{facilitador.direccion}}</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-4">                                       
+                                <div class="col-12 col-md-4">                                       
                                         <div class="otrosbtn float-right" >
                                         
                                             <a [routerLink]="['/actualizar-consultor',facilitador.cedula_facilitador]"><span class="fa fa-pencil"></span> Editar</a> &nbsp;&nbsp;

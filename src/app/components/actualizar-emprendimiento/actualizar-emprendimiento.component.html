@@ -1,0 +1,161 @@
+<!-- <i class="fa fa-arrow-circle-left"></i> -->
+<div class="row">
+    <div class="col-12 back">
+      
+        <a routerLink="/consultar-emprendimientos"><i class="fa fa-arrow-circle-left"></i> Atrás</a>
+</div>
+</div>
+<div class="emprendedor-cont-succ" *ngIf="status == 'failed'">
+    <div class="row">
+    <div class=" col-12 message success text-center" >
+      <img src="../../../assets/image/true.png" alt="" width="20%">
+      <br><br><br>
+      <h5>El emprendimiento se actualizo correctamente.</h5>
+    </div>
+  </div>
+  </div>
+<div class="consultores-cont" *ngIf="status == 'success' && emprendimiento">
+
+    <div class="row">
+        <div class="col-12">
+            <h1><strong class="text-muted"> Actualizar emprendimiento </strong></h1>
+            <hr>
+        </div>
+        <div class="formActUsuario">
+            <form #actemprendimientoForm="ngForm" (ngSubmit)="onSubmit(actemprendimientoForm)">
+                <div class="form-row align-items-center">
+                    <div class="col-12 col-md-3 ml-5">
+                        <img class="justify-content-center align-self-center"
+                            src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png"
+                            alt="Card image cap" id="imagen_usuario">
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <fieldset class="form-group">
+<!--                             <input type="text" class="form-control" id="perfilprofecional" name="perfilprofecional">
+ -->                            <select class="selectN" name="c_emprendedor" #c_emprendedor="ngModel" [(ngModel)]="emprendimiento.c_emprendedor" required>
+                                <option *ngFor="let e of emprendedores" [ngValue]="e.cedula_emprendedor">{{e.nombres}} {{e.apellidos}}</option>
+                                </select>
+                            <label class="seleclab" *ngIf="!emprendimiento.c_emprendedor" for="perfilprofecional">Nombre del emprendedor</label>
+                            <span class="form-error" *ngIf="c_emprendedor.touched && !c_emprendedor.valid"> El emprendedor es obligatorio</span>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <input type="text" class="form-control" id="facultad" name="facultad" #facultad="ngModel" [(ngModel)]="emprendimiento.facultad" >
+                            <label for="facultad" *ngIf="!emprendimiento.facultad">Facultad</label>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <input type="text" class="form-control" id="perfilprofecional" name="sector" #sector="ngModel" [(ngModel)]="emprendimiento.sector" required>
+                            <label for="sector" *ngIf="!emprendimiento.sector">Sector Asociado al emprendimiento</label>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <input type="text" class="form-control" id="" name=""  required>
+                            <label for="">¿Empresa formalizada?</label>
+                        </fieldset>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <fieldset class="form-group">
+                            <input type="text" class="form-control" id="titulo" name="titulo" #titulo="ngModel" [(ngModel)]="emprendimiento.titulo" required>
+                            <label for="titulo" *ngIf="!emprendimiento.titulo">Titulo del emprendimiento</label>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <input type="text" class="form-control" id="programa_academico" name="programa_academico" #programa_academico="ngModel" [(ngModel)]="emprendimiento.programa_academico">
+                            <label for="programa_academico" *ngIf="!emprendimiento.programa_academico">Programa academico</label>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <input type="text" class="form-control" id="egresado" name="egresado" #egresado="ngModel" [(ngModel)]="emprendimiento.egresado" required>
+                            <label for="egresado" *ngIf="!emprendimiento.egresado">¿Egresado?</label>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <input type="text" class="form-control" id="etapa" name="etapa" #etapa="ngModel" [(ngModel)]="emprendimiento.etapa" required>
+                            <label for="etapa" *ngIf="!emprendimiento.etapa">Etapa del proyecto</label>
+                        </fieldset>
+                    </div>
+                </div>
+       
+
+
+                                            <!-- INICIO FORMULARIO EMPRESA -->
+            <!-- EL FORMULARIO DE EMPRESA SOLO SE EJECUTA SI "¿EMPRESA FORMALIZADA?" ES VERDADERA -->
+
+            <div class="col-md-12 list-emp">
+                <div class="row mb-2" id="caja_info">
+                    <div class="col-md-12">
+                        <div class="card flex-md-row mb-4 box-shadow h-md-250 d-flex" id="cuadro_info">
+                            <div class="card-body  align-items-start">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h1><strong class="text-muted"> Datos de la empresa </strong></h1>
+                                        <hr>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 ml-4">
+                                            <div class="row">
+                                                <div class="col-10 col-md-3">
+                                                    <input type="text" class="form-control" id="NIT" name="NIT" #NIT="ngModel" [(ngModel)]="emprendimiento.NIT">
+                                                    <label for="NIT" style="margin-left: 30px;" *ngIf="!emprendimiento.NIT">NIT</label>
+                                                </div>
+                                                <div class="col-10 col-md-3">
+                                                    <input type="text" class="form-control" id="num_empleados" name="num_empleados" #num_empleados="ngModel" [(ngModel)]="emprendimiento.num_empleados">
+                                                    <label for="num_empleados" style="margin-left: 30px;" *ngIf="!emprendimiento.num_empleados">Numero de empleados</label>
+                                                </div>
+                                                <div class="col-10 col-md-3">
+                                                    <input type="text" class="form-control" id="num_contacto" name="num_contacto" #num_contacto="ngModel" [(ngModel)]="emprendimiento.num_contacto">
+                                                    <label for="num_contacto" style="margin-left: 30px;" *ngIf="!emprendimiento.num_contacto">Telefono empresa</label>
+                                                </div>
+                                                <div class="col-10 col-md-3">
+                                                    <input type="text" class="form-control" id="segmento_clientes" name="segmento_clientes" #segmento_clientes="ngModel" [(ngModel)]="emprendimiento.segmento_clientes">
+                                                    <label for="segmento_clientes" *ngIf="!emprendimiento.segmento_clientes">Segmento de clientes</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-10 col-md-3">
+                                                    <input type="date" class="form-control" id="fecha_creacion" name="fecha_creacion" #fecha_creacion="ngModel" [(ngModel)]="emprendimiento.fecha_creacion">
+                                                    <label for="fecha_creacion" *ngIf="!emprendimiento.fecha_creacion">Fecha de creación</label>
+                                                </div>
+                                                <div class="col-10 col-md-3">
+                                                    <input type="text" class="form-control" id="propuesta_valor" name="propuesta_valor" #propuesta_valor="ngModel" [(ngModel)]="emprendimiento.propuesta_valor">
+                                                    <label for="propuesta_valor" *ngIf="!emprendimiento.propuesta_valor">Propuesta de valor</label>
+                                                </div>
+                                                <div class="col-10 col-md-3">
+                                                    <input type="text" class="form-control" id="canales" name="canales" #canales="ngModel" [(ngModel)]="emprendimiento.canales">
+                                                    <label for="canales" *ngIf="!emprendimiento.canales">Canales</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-10 col-md-3">
+                                                    <input type="text" class="form-control" id="fuente_ingresos" name="fuente_ingresos" #fuente_ingresos="ngModel" [(ngModel)]="emprendimiento.fuente_ingresos">
+                                                    <label for="fuente_ingresos" *ngIf="!emprendimiento.fuente_ingresos">Fuente de ingresos</label>
+                                                </div>
+                                                <div class="col-10 col-md-3">
+                                                    <input type="text" class="form-control" id="recursos_clave" name="recursos_clave" #recursos_clave="ngModel" [(ngModel)]="emprendimiento.recursos_clave">
+                                                    <label for="recursos_clave" *ngIf="!emprendimiento.recursos_clave">Recursos clave</label>
+                                                </div>
+                                                <div class="col-10 col-md-3">
+                                                    <input type="text" class="form-control" id="actividades_clave" name="actividades_clave" #actividades_clave="ngModel" [(ngModel)]="emprendimiento.actividades_clave">
+                                                    <label for="actividades_clave" *ngIf="!emprendimiento.actividades_clave">Actividades clave</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-10 col-md-3">
+                                                    <input type="text" class="form-control" id="socios_clave" name="socios_clave" #socios_clave="ngModel" [(ngModel)]="emprendimiento.socios_clave">
+                                                    <label for="socios_clave" *ngIf="!emprendimiento.socios_clave">Socios clave</label>
+                                                </div>
+                                                <div class="col-10 col-md-3">
+                                                    <input type="text" class="form-control" id="estructura_costos" name="estructura_costos" #estructura_costos="ngModel" [(ngModel)]="emprendimiento.estructura_costos">
+                                                    <label for="estructura_costos" style="margin-left: 30px;" *ngIf="!emprendimiento.estructura_costos">Estructura de costos</label>
+                                                </div>
+                                                <button type="submit" class="btn btn-success btn-lg float-right" [disabled]="!actemprendimientoForm.form.valid">+ Actualizar emprendimiento</button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+                                            <!-- FIN FORMULARIO EMPRESA -->
+        </div>
+    </div>
+</div>

@@ -11,10 +11,10 @@ en el boton crear -->
 </div>
 </div>
 
-<div class="emprendedor-cont">
+<div class="emprendedor-cont mx-auto">
 
     <div class="row">
-        <div class="col-10">
+        <div class="col-12 col-md-10">
             <h1  href="#">Eliminar Emprendedor</h1>
            
         </div>
@@ -27,9 +27,10 @@ en el boton crear -->
     </div>
     <div class="row">
         <div class="col-1"></div>
-        <div class="col-10 text-center">
+        <div class="col-12 col-md-10 text-center">
             <br>
             <h5>Estas seguro que deseas eliminar el emprendedor <b style="color: #EE7202;">{{nombre}} {{apellido}}</b></h5>
+            <span> (No puede eliminar un emprendeor si tiene un emprendimiento asociado)</span>
             <br><br>
             <a routerLink="/emprendedores"><button type="button" class="btn btn-lg btn-danger">Cancelar</button></a> &nbsp;&nbsp;&nbsp;
             <button (click)="deleteEmprendedor(cedula)" type="button" class="btn btn-lg btn-true">Aceptar</button>

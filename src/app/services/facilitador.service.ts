@@ -10,6 +10,7 @@ import { Global } from "./global";
 export class FacilitadorService{
 
     public url: string;
+    filtroFacilitador: '';
 
     constructor(
         private _http: HttpClient

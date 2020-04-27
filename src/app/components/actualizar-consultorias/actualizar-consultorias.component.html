@@ -1,0 +1,105 @@
+<!-- "
+ -->
+ <div class="row">
+    <div class="col-12 back">
+      
+        <a routerLink="/consultar-consultorias"><i class="fa fa-arrow-circle-left"></i> Atrás</a>
+  </div>
+  </div>
+  <div class="consultoria-cont-succ mx-auto" *ngIf="status == 'failed'" >
+    <div class="row">
+    <div class=" col-12 message success text-center" >
+      <img src="../../../assets/image/true.png" alt="" width="20%">
+      <br><br><br>
+      <h5>La consultoria se actualizo correctamente.</h5>
+    </div>
+  </div>
+  </div>
+  <div class="consultor-cont mx-auto card" *ngIf="status == 'success' && consultoria">
+  
+      <div class="row">
+          <div class="col-12">
+              <h1  href="#">Actualizar Consultoría</h1>
+  
+              <hr>
+          </div>
+      </div>
+  
+      <div class="formActUsuario">
+          <form #actconsultoriaForm="ngForm" (ngSubmit)="onSubmit(actconsultoriaForm)">
+              <div class="form-row align-items-center">
+                  
+                      <fieldset class="form-group col-md-6">
+                          <input type="text" class="form-control" id="titulo" name="titulo" #titulo="ngModel" [(ngModel)]="consultoria.titulo" required>
+                          <label for="titulo" *ngIf="!consultoria.titulo">Titulo</label>
+                          <span class="form-error" *ngIf="titulo.touched && !titulo.valid"> El titulo es obligatorio</span>
+  
+                      </fieldset>
+                      <fieldset class="form-group col-md-6">
+                           <select type="text" class="form-control" id="tipo" name="tipo" #tipo="ngModel" [(ngModel)]="consultoria.tipo" required>
+                            <option [ngValue]="'Presencial'" >Presencial</option>
+                            <option [ngValue]="'Virtual'">Virtual</option>
+                            <option [ngValue]="'Telefonica'">Teléfonica</option>
+                          </select>
+                          <label class="seleclab" for="tipo" *ngIf="!consultoria.tipo">Tipo Consultoría</label>
+                      </fieldset>
+              </div> 
+              <div class="form-row align-items-cente">   
+                <div class="col-12">
+                  <fieldset class="form-group">
+                    <input type="text" class="form-control" id="lugar" name="lugar" #lugar="ngModel" [(ngModel)]="consultoria.lugar" required>
+                    <label for="lugar" *ngIf="!consultoria.lugar">Lugar</label>
+                    <span class="form-error" *ngIf="lugar.touched && !lugar.valid"> El lugar es obligatorio</span>
+                  </fieldset>
+              </div>
+              </div>
+              <div class="form-row align-items-center">    
+                  <fieldset class="form-group col-6">
+                    <input type="time" class="form-control" id="hora" name="hora" #hora="ngModel" [(ngModel)]="consultoria.hora" required placeholder="hora">
+                    <label for="hora" *ngIf="!consultoria.hora">Hora</label>
+                    <span class="form-error" *ngIf="hora.touched && !hora.valid"> La hora es obligatoria</span>
+                  </fieldset>
+                  <fieldset class="form-group col-6">
+                    <input type="date" class="form-control" id="fecha" name="fecha" #fecha="ngModel" [(ngModel)]="consultoria.fecha"  required>
+                    <label for="fecha" *ngIf="!consultoria.fecha">Fecha</label>
+                    <span class="form-error" *ngIf="fecha.touched && !fecha.valid"> La fecha es obligatoria</span>
+                  </fieldset>          
+              </div>
+              <div class="form-row align-items-center">    
+                <fieldset class="form-group col-12 col-md-6">
+                  <select name="monitor" id="monitor" #monitor="ngModel" [(ngModel)]="consultoria.monitor"  required>
+                    <option *ngFor="let f of facilitadores" [ngValue]="f.cedula_facilitador">{{f.nombres}} {{f.apellidos}}</option>
+                    </select>
+                  <label class="seleclab2" for="monitor" *ngIf="!consultoria.monitor">Facilitador</label>
+                  <span class="form-error" *ngIf="monitor.touched && !monitor.valid"> El monitor es obligatorio</span>
+                </fieldset>
+                <fieldset class="form-group col-12 col-md-6">
+                <select name="emprendedor"  id="emprendedor" #emprendedor="ngModel" [(ngModel)]="consultoria.emprendedor" required>
+                  <option *ngFor="let e of emprendedores"  [ngValue]="e.cedula_emprendedor" >{{e.nombres}} {{e.apellidos}}</option>
+                  </select>
+                  <label class="seleclab2" for="emprendedor" *ngIf="!consultoria.emprendedor">Emprendedor</label>
+                  <span class="form-error" *ngIf="emprendedor.touched && !emprendedor.valid"> El emprendedor es obligatorio</span>
+                </fieldset>          
+              </div>
+              <div class="form-row align-items-cente">   
+                <div class="col-12">
+                  <fieldset class="form-group">
+                    <input type="text" class="form-control" id="area" name="descripcion" #descripcion="ngModel" [(ngModel)]="consultoria.descripcion" required>
+                    <label for="descripcion" *ngIf="!consultoria.descripcion">Descripción</label>
+                    <span class="form-error" *ngIf="descripcion.touched && !descripcion.valid"> La descripción es obligatoria</span>
+                  </fieldset>
+              </div>
+              </div>
+              <div class="form-row align-items-cente">   
+                <div class="col-12">
+                  <fieldset class="form-group">
+                    <div class="col-12">
+                      <button type="submit" class="btn btn-success btn-lg float-right" >+ Crear consultoria</button>
+                    </div>
+                  </fieldset>
+              </div>
+              </div>
+          </form>
+      </div>
+  </div>
+  

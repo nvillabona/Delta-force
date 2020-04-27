@@ -1,7 +1,7 @@
 <!-- Aquí se encuentra el código HTML del componente "emprendedores" que se ejecuta
 al dar click en el boton emprededores de la sidebar -->
 
-<div class="emprendedor-cont">
+<div class="emprendedor-cont mx-auto">
 
     <div class="row">
         <div class="col-12">
@@ -11,8 +11,16 @@ al dar click en el boton emprededores de la sidebar -->
 
             <h1>Filtro</h1>
         </div>
-        <div class="cont-filtro col-10">
-            <form>
+        <div class="cont-filtro col-8 col-md-10">
+
+            
+                <div class="form-group has-search">
+                    <span class="fa fa-search form-control-feedback"></span>
+                    <input type="text" class="form-control" placeholder="Search" name="filterEmprendedor" [(ngModel)]="_emprededorService.filterEmprendedor">
+                  </div>
+              
+       
+<!--             <form>
                 <div class="form-row align-items-center">
                   <div class="col-md-3">
                     <select class="form-control form-control-lg">
@@ -33,45 +41,56 @@ al dar click en el boton emprededores de la sidebar -->
                     <button type="submit" class="btn btnSearch mb-2">Buscar</button>
                   </div>
                 </div>
-              </form>
+              </form> -->
         </div>
-        <div class="plus col-1">
+        <div class="plus col-2">
             <button type="button" class="btn btn-add btn-circle btn-xl" routerLink="/crear-emprendedor"><i class="fa fa-plus"></i></button>
         </div>
         <div class="col-md-12 list-emp">
-            <h1>Total: 55</h1>
+            <div *ngFor="let emprendedor of emprendedores; first as isFirst">
+
+                
+                <h1 *ngIf="isFirst" >Total: {{emprendedores.length}}</h1>
+            </div>
 
             <br>
             <div class="row mb-2" id="caja_info" >
+<<<<<<< HEAD
                 <div class="col-12">
                   <div class="card flex-md-row mb-4 box-shadow h-md-250 d-flex" id="cuadro_info"  *ngFor="let emprendedor of emprendedores">
                     <img class="card-img-left flex-auto d-none d-md-block justify-content-center align-self-center" src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png" alt="Card image cap" id="imagen_usuario">
+=======
+                <div class="col-md-12">
+                  <div class="card flex-md-row mb-4 box-shadow h-md-250 d-flex" id="cuadro_info"  *ngFor="let emprendedor of emprendedores|filterEmprendedor:'nombres':_emprededorService.filterEmprendedor">
+                    <img class="card-img-left flex-auto justify-content-center align-self-center" src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png" alt="Card image cap" id="imagen_usuario">
+>>>>>>> development
                     <div class="card-body  align-items-start" >
                         <div class="row">
-                            <div class="col-8">
+                            <div class="col-12 col-md-8">
                                 <ul>
                                 </ul>
-                                <strong class="text-muted">{{emprendedor.nombres}} {{emprendedor.apellidos}}</strong>
+                                <strong class="text-muted">{{emprendedor.nombres}} {{emprendedor.apellidos}}</strong><br>
+                                <span>{{emprendedor.cedula_emprendedor}}</span>
                                 <div class="row">
-                                    <div class="col-6">
+                                    <div class="col-12 col-md-6">
                                         <p class="text-muted">{{emprendedor.programa_academico}} </p>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-12 col-md-6">
                                         <div class="mb-1 text-muted float-left"><b>Correo:</b> {{emprendedor.email}}</div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-6">
+                                    <div class="col-12 col-md-6">
                                         <p class="text-muted"><b>Teléfono:</b> {{emprendedor.telefono}}</p>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-12 col-md-6">
                                         <div class="mb-1 text-muted float-left"><b>Dirección:</b> {{emprendedor.direccion}}</div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-12 col-md-4">
                                 
-                                   <div class="boton float-right"><button class="btn btnE"> Proceso de atención</button></div>
+<!--                                    <div class="boton float-right"><button class="btn btnE"> Proceso de atención</button></div> -->
                                    
                                     <div class="otrosbtn float-right" >
                                     

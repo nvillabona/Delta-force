@@ -1,21 +1,5 @@
-
 h1{
     font-size: 20px;
-  }
-  
-  .emprendedor-cont{
-    width: 80%;
-    background: white;
-    margin: 30% 30% 10% 30%;
-    margin-top: 0%;
-    padding: 40px;
-    border-radius: 6px;
-  }
-  img#imagen_usuario {
-  
-    margin-left: 20px;
-    margin-right: 20px;
-    height: 100px;
   }
   
   #cuadro_info{
@@ -172,3 +156,36 @@ h1{
     background: #25b165;   
 
    }
+
+@media (min-width: 992px) {
+  .emprendedor-cont{
+    width: 60%;
+    background: white;
+    margin: 0;
+    margin-top: 0%;
+    padding: 40px;
+    border-radius: 6px;
+  }
+  }
+  
+@media (min-width: 768px) and (max-width: 991px) {
+  .emprendedor-cont{
+    width: 80%;
+    background: white;
+    margin: 0;
+    margin-top: 0%;
+    padding: 40px;
+    border-radius: 6px;
+  }
+  }
+  
+@media (max-width: 767px) {
+  .emprendedor-cont{
+    width: auto;
+    background: white;
+    margin: 0;
+    margin-top: 0%;
+    padding: 40px;
+    border-radius: 6px;
+  }
+  }
