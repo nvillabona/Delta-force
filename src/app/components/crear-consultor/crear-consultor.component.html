@@ -47,7 +47,7 @@ darle click al boton agregar   -->
                       </fieldset>
                       <fieldset class="form-group">
                         <input type="number" class="form-control" id="cedula_facilitador" name="cedula_facilitador" #cedula_facilitador="ngModel" [(ngModel)]="facilitador.cedula_facilitador" required>
-                        <label for="cedula_facilitador" *ngIf="!facilitador.cedula_facilitador">Numero de Cédula</label>
+                        <label for="cedula_facilitador" style="margin-left: 20px;" *ngIf="!facilitador.cedula_facilitador">Numero de Cédula</label>
                         <span class="form-error" *ngIf="cedula_facilitador.touched && !cedula_facilitador.valid"> La cédula es obligatoria</span>
                       </fieldset>
                       <fieldset class="form-group">
@@ -57,7 +57,7 @@ darle click al boton agregar   -->
                       </fieldset>
                       <fieldset class="form-group">
                         <input type="text" class="form-control" id="telefono" name="telefono" #telefono="ngModel" [(ngModel)]="facilitador.telefono" required>
-                        <label for="telefono" *ngIf="!facilitador.telefono">Teléfono</label>
+                        <label for="telefono" style="margin-left: 20px;" *ngIf="!facilitador.telefono">Teléfono</label>
                         <span class="form-error" *ngIf="telefono.touched && !telefono.valid"> El teléfono es obligatorio</span>
                       </fieldset>
                 </div>

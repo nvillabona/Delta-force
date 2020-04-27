@@ -38,7 +38,7 @@ export class ActualizarEmprendedoresComponent implements OnInit {
     this._emprendedorService.getEmprendedor(cedula).subscribe(
       response => {        
         this.emprendedor = response;
-
+        console.log(this.emprendedor)
         
 
       },
@@ -55,6 +55,8 @@ export class ActualizarEmprendedoresComponent implements OnInit {
       response => {
         if (response) {
           this.save_emprendedor = response;
+          console.log(this.save_emprendedor);
+          
           this.status = "failed";
         }else {
           this.status = "success"
