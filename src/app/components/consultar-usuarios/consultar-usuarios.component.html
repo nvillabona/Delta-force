@@ -33,7 +33,7 @@
                   <div class="card flex-md-row mb-4 box-shadow h-md-250 d-flex" id="cuadro_info">
                     <div class="card-body  align-items-start" >
                         <div class="row">
-                            <div class="col-12 col-md-8">
+                            <div class="col-12 col-md-12">
                                 <strong class="text-muted"><b>Nombre:</b> {{atencion.nombre}}</strong>
                                 <div class="row">
                                     <div class="col-12 col-md-6">
@@ -49,20 +49,21 @@
                                         <p class="text-muted"><b>Titulo:</b> {{atencion.titulo}}</p>
                                     </div>
                                     <div class="col-12 col-md-6">
-                                        <div class="mb-1 text-muted float-left"><b>Descripcion:</b>{{atencion.descripcion}}</div>
+                                        <div class="mb-1 text-muted float-left"><b>Descripcion:</b> {{atencion.descripcion}}</div>
                                     </div>
 
                                 </div>
+                                <div class="row">
+                                    <div class="col-12 col-md-6">
+                                        <p class="text-muted"><b>Tiempo de duración:</b> {{atencion.tiempo}}</p>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="mb-1 text-muted float-left"><b>Canal:</b> {{atencion.canal}}</div>
+                                    </div>
+
+                                </div> 
                             </div>
-                            <div class="col-12 col-md-4">                                       
-<!--                                     <div class="otrosbtn float-right" >
-                                    
-                                        <a routerLink="/actualizar-consultor"><span class="fa fa-pencil"></span> Editar</a> &nbsp;&nbsp;
-                                        <a routerLink="/eliminar-consultor"><span class="fa fa-trash"></span> Eliminar</a>
-                                   
-                                        </div> -->
-                                
-                            </div>
+
 
                         </div>
                       </div>  
