@@ -37,7 +37,8 @@ export class ActualizarConsultorComponent implements OnInit {
     this._facilitadorService.getFacilitador(cedula).subscribe(
       response => {        
         this.facilitador = response;
-
+        console.log(this.facilitador);
+        
       },
       error => {
         console.log(<any>error);
@@ -51,6 +52,8 @@ export class ActualizarConsultorComponent implements OnInit {
       response => {
         if (response) {
           this.save_facilitador = response;
+          console.log(this.save_facilitador);
+          
           this.status = "failed";
         }else {
           this.status = "success"
