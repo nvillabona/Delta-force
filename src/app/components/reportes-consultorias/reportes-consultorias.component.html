@@ -1,0 +1,99 @@
+<div class="consultores-cont">
+
+    <div class="row">
+        <div class="col-md-12">
+            <h1  href="#">Reportes Consultorías</h1>
+
+            <hr>
+            <br />
+            <h1>Seleccione un mes a consultar</h1>
+        </div >
+        <div class="col-md-11">
+            <select class="form-control form-control-lg">
+                <option>Mes</option>
+                <!-- las opciones de abajo deberán ser tomadas de la bd -->
+                <option>Enero</option>
+                <option>Febrero</option>
+                <option>Marzo</option>
+              </select>
+          </div>
+        <div class="plus col-md-1">
+            <button type="button" class="btn btn-primary btn-buscar" routerLink="/crear-consultoria">Buscar
+            </button>
+        </div>
+
+        <div class="col-md-12 list-emp">
+            
+            <hr />
+
+            <br>
+            <div class="row mb-2" id="caja_info" >
+                <div class="col-md-12">
+                  <div class="card flex-md-row mb-4 box-shadow h-md-250 d-flex" id="cuadro_info" >                      
+                    <div class="card-body  align-items-start" >
+                        <div class="row">
+                            <div class="header-card col-md-6">
+                                <h5>Mes</h5>
+                                
+                              </div>
+                              <div class="col-md-3">
+                                 
+                              </div>
+                              <div class="col-md-3">
+                                
+                             </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <hr>
+                            </div>
+                            
+                          </div>
+                        <div class="row" >
+                            
+                            <div class="col-md-12">
+                                <div class="row" >
+                                    <div class="col-md-4" >
+                                                <h6>Enero</h6>
+                                                <b>{{emprendedor.nombre}}</b>
+ 
+                                    </div>
+
+                                    <div class="col-md-1" >
+                                        
+
+                                    </div>
+                                    <div class="col-md-3" >
+                                        <p class="text-muted">Reporte consolidado </p>
+                                        <div class="mb-1 text-muted float-left"></div>
+                                    </div>
+                                    <div class="col-md-4"  >
+                                
+                                        <div class="boton float-right"><button class="btn btnE"> Descargar</button></div>
+                                        <div class="otrosbtn float-right" >
+                                    
+                                            <a routerLink="/actualizar-emprendedores"><span class="fa fa-pencil"></span> Editar</a> &nbsp;&nbsp;
+                                            <a routerLink="/eliminar-emprendedores"><span class="fa fa-trash"></span> Eliminar</a> &nbsp;&nbsp;
+                                            <a routerLink="/detalle-emprendimiento"><span class="fa fa-eye"></span> Ver más</a>
+                                            &nbsp;
+                                            </div>
+                                    
+                                    </div>
+                                    <div class="row">
+                                        <hr />
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+
+                        </div>
+                      </div>  
+                </div>
+                </div>
+              </div>
+
+        </div>
+    </div>
+</div>

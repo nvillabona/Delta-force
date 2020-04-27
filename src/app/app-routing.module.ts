@@ -23,8 +23,7 @@ import { EliminarEmprendimientoComponent } from "./components/eliminar-emprendim
 import { ActualizarEmprendimientoComponent } from "./components/actualizar-emprendimiento/actualizar-emprendimiento.component";
 import { EliminarConsultoriaComponent } from "./components/eliminar-consultoria/eliminar-consultoria.component";
 import { ActualizarConsultoriasComponent } from "./components/actualizar-consultorias/actualizar-consultorias.component";
-
-
+import { ReportesConsultoriasComponent } from "./components/reportes-consultorias/reportes-consultorias.component";
 
 
 
@@ -116,6 +115,9 @@ const routes: Routes = [
   },
   {
     path: 'crear-usuario', component: CrearUsuarioComponent  /* Importo consultar usuario */
+  },
+  {
+    path: 'reportes-consultorias', component: ReportesConsultoriasComponent /* Importo reportes consultoría*/
   },
   
   { /* ¡¡ Debe ser siempre el ultimo !! */
