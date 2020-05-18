@@ -14,12 +14,12 @@
                 <form>
                     <div class="form-group has-search">
                         <span class="fa fa-search form-control-feedback"></span>
-                        <input type="text" class="form-control" placeholder="Search" name="filterConsultoria" [(ngModel)]="_consultoriaService.filterConsultoria">
+                        <input type="text" class="form-control" placeholder="Buscar por título" name="filterConsultoria" [(ngModel)]="_consultoriaService.filterConsultoria">
                       </div>
                   </form>
             </div>
             <div class="plus col-1">
-                <button type="button" class="btn btn-add btn-circle btn-xl" routerLink="/crear-consultoria"><i class="fa fa-plus"></i>
+                <button type="button" class="btn btn-add btn-circle btn-xl" routerLink="/consultar-consultorias/crear-consultoria"><i class="fa fa-plus"></i>
                 </button>
             </div>
 
@@ -79,7 +79,7 @@
                                        
                                         <div class="otrosbtn float-right" >
                                         
-                                            <a [routerLink]="['/actualizar-consultorias',consultoria.consecutivo]"><span class="fa fa-pencil"></span> Editar</a> &nbsp;&nbsp;
+                                            <a [routerLink]="['/consultar-consultorias/actualizar-consultorias',consultoria.consecutivo]"><span class="fa fa-pencil"></span> Editar</a> &nbsp;&nbsp;
                                             <a (click)="deleteConsultorias(consultoria.consecutivo, consultoria.titulo)"><span class="fa fa-trash"></span> Eliminar</a> &nbsp;&nbsp;
 <!--                                             <a routerLink="/detalle-consultorias"><span class="fa fa-eye"></span> Ver más</a> -->
                                             

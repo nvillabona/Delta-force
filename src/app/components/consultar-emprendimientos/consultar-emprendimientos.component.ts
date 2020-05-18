@@ -46,7 +46,7 @@ export class ConsultarEmprendimientosComponent implements OnInit {
 
   deleteEmprendimiento(consecutivo, titulo){
     
-    this._router.navigate(['/eliminar-emprendimientos/'+ consecutivo + '/'+ titulo ]);   
+    this._router.navigate(['/consultar-emprendimientos/eliminar-emprendimientos/'+ consecutivo + '/'+ titulo ]);   
       
   }
 

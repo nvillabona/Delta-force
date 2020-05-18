@@ -87,7 +87,7 @@ en el boton crear -->
                 <div class="col-md-6">
                     <fieldset class="form-group">
                         <input type="text" tabindex="6" class="form-control" id="telefono" name="telefono" #telefono="ngModel" [(ngModel)]="emprendedor.telefono" required>
-                        <label for="telefono" *ngIf="!emprendedor.telefono">Teléfono</label>
+                        <label for="telefono" *ngIf="!emprendedor.telefono">Teléfono *</label>
                         <span class="form-error" *ngIf="telefono.touched && !telefono.valid"> El teléfono es obligatorio</span>
                       </fieldset>
                       <fieldset class="form-group">

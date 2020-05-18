@@ -13,7 +13,7 @@ export class LoginService {
     public loggedUser;
     public loggedIn: boolean;
 
-    filtroUser: '';
+    filterUser: '';
 
 
     constructor(

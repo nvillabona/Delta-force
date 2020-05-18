@@ -211,3 +211,59 @@ select.form-control.form-control-lg {
   pointer-events: none;
   color: #aaa;
 }
+.emprendedor-cont-succ {
+  width: 800px;
+  background: white;
+  margin: 0;
+  margin-top: 50px;
+  padding: 40px;
+  border-radius: 6px;
+}
+.emprendedor-faild {
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  outline: 0;
+}
+
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.fade.show {
+  opacity: 1;
+}
+.modal {
+  z-index: 1072;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  outline: 0;
+}
+.fade {
+  opacity: 0;
+  transition: opacity .15s linear;
+}
+
+
+.btn-true{
+  background: #2ED47A;   
+  color: white;
+ }
+
+ .btn-true:hover{
+   background: #25b165;   
+
+  }

@@ -10,7 +10,7 @@ import { Global } from "./global";
 export class EmprendedorService{
 
     public url: string;
-    filtroEmprendedor: '';
+    filterEmprendedor: '';
 
 
     constructor(
@@ -34,6 +34,12 @@ export class EmprendedorService{
         let headers = new HttpHeaders().set('Content-Type', 'application/json');
         return this._http.get(this.url+'/emprendedores', {headers:headers})
     }
+
+    getEmprendimiento(cedula): Observable<any>{
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+        return this._http.get(this.url+'/emprendedores/empredimiento/'+cedula, {headers:headers})
+    }
+
     deleteEmprendedor(cedula): Observable<any>{
         let headers = new HttpHeaders().set('Content-Type', 'application/json')
     

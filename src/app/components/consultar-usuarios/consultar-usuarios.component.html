@@ -2,7 +2,7 @@
 
     <div class="row">
         <div class="col-12">
-            <h1  href="#">Atención usuario</h1>
+            <h1  href="#">Atención al usuario</h1>
 
             <hr>
         </div>
@@ -10,13 +10,13 @@
             
                 <div class="form-group has-search">
                     <span class="fa fa-search form-control-feedback"></span>
-                    <input type="text" class="form-control" placeholder="Search" name="filterUser" [(ngModel)]="_atencinoService.filterUser">
+                    <input type="text" class="form-control" placeholder="Buscar por nombre" name="filterUser" [(ngModel)]="_atencinoService.filterUser">
                   </div>
               
         </div>
         <div class="plus col-1">
 
-            <button type="button" class="btn btn-add btn-circle btn-xl" routerLink="/crear-usuario"><i class="fa fa-plus"></i></button>
+            <button type="button" class="btn btn-add btn-circle btn-xl" routerLink="/consultar-usuarios/crear-usuario"><i class="fa fa-plus"></i></button>
 
         </div>
         <div class="col-md-12 list-emp" >
@@ -34,10 +34,10 @@
                     <div class="card-body  align-items-start" >
                         <div class="row">
                             <div class="col-12 col-md-12">
-                                <strong class="text-muted"><b>Nombre:</b> </strong>{{atencion.nombre}}
+                                <strong class="text-muted"><b>Nombre:</b> </strong> {{atencion.nombre}}
                                 <div class="row">
                                     <div class="col-12 col-md-6">
-                                        <p class="text-muted"><b>Cedula:</b> {{atencion.cedula}}</p>
+                                        <p class="text-muted"><b>Cédula:</b> {{atencion.cedula}}</p>
                                     </div>
                                     <div class="col-12 col-md-6">
                                         <div class="mb-1 text-muted float-left"><b>Fecha:</b> {{atencion.fecha}}</div>
@@ -46,10 +46,10 @@
                               
                                 <div class="row">
                                     <div class="col-12 col-md-6">
-                                        <p class="text-muted"><b>Titulo:</b> {{atencion.titulo}}</p>
+                                        <p class="text-muted"><b>Título:</b> {{atencion.titulo}}</p>
                                     </div>
                                     <div class="col-12 col-md-6">
-                                        <div class="mb-1 text-muted float-left"><b>Descripcion:</b> {{atencion.descripcion}}</div>
+                                        <div class="mb-1 text-muted float-left"><b>Descripción:</b> {{atencion.descripcion}}</div>
                                     </div>
 
                                 </div>

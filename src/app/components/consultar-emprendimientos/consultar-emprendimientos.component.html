@@ -17,11 +17,11 @@ al dar click en el boton emprendimientos de la sidebar -->
         <div class="cont-filtro col-8 col-md-10">
             <div class="form-group has-search">
                 <span class="fa fa-search form-control-feedback"></span>
-                <input type="text" class="form-control" placeholder="Search" name="filterEmprendimiento" [(ngModel)]="_emprendimientoService.filterEmprendimiento">
+                <input type="text" class="form-control" placeholder="Buscar por título" name="filterEmprendimiento" [(ngModel)]="_emprendimientoService.filterEmprendimiento">
               </div>
         </div>
         <div class="plus col-1">
-            <button type="button" class="btn btn-add btn-circle btn-xl" routerLink="/crear-emprendimiento"><i class="fa fa-plus"></i></button>
+            <button type="button" class="btn btn-add btn-circle btn-xl" routerLink="/consultar-emprendimientos/crear-emprendimiento"><i class="fa fa-plus"></i></button>
         </div>
         <div class="col-md-12 list-emp">
             <div *ngFor="let emprendimiento of emprendimientos; first as isFirst">
@@ -67,9 +67,9 @@ al dar click en el boton emprendimientos de la sidebar -->
                                    
                                     <div class="otrosbtn float-right" >
                                     
-                                        <a [routerLink]="['/actualizar-emprendimientos',emprendimiento.consecutivo]"><span class="fa fa-pencil"></span> Editar</a> &nbsp;&nbsp;
+                                        <a [routerLink]="['/consultar-emprendimientos/actualizar-emprendimientos',emprendimiento.consecutivo]"><span class="fa fa-pencil"></span> Editar</a> &nbsp;&nbsp;
                                         <a (click)="deleteEmprendimiento(emprendimiento.consecutivo, emprendimiento.titulo)"><span class="fa fa-trash"></span> Eliminar</a> &nbsp;&nbsp;
-                                        <a [routerLink]="['/detalle-emprendimiento',emprendimiento.consecutivo]" ><span class="fa fa-eye"></span> Ver más</a>
+                                        <a [routerLink]="['/consultar-emprendimientos/detalle-emprendimiento',emprendimiento.consecutivo]" ><span class="fa fa-eye"></span> Ver más</a>
                                    
                                         </div>
                                 

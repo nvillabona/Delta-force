@@ -10,7 +10,7 @@
   <div class=" col-12 message success text-center" >
     <img src="../../../assets/image/true.png" alt="" width="20%">
     <br><br><br>
-    <h5>La consultoria se ha creado correctamente.</h5>
+    <h5>La consultoría se ha creado correctamente.</h5>
   </div>
 </div>
 </div>
@@ -30,8 +30,8 @@
                 
                     <fieldset class="form-group col-12 col-md-6">
                         <input type="text" class="form-control" id="titulo" name="titulo" #titulo="ngModel" [(ngModel)]="consultoria.titulo" required>
-                        <label for="titulo" *ngIf="!consultoria.titulo">Titulo</label>
-                        <span class="form-error" *ngIf="titulo.touched && !titulo.valid"> El titulo es obligatorio</span>
+                        <label for="titulo" *ngIf="!consultoria.titulo">Título</label>
+                        <span class="form-error" *ngIf="titulo.touched && !titulo.valid"> El título es obligatorio</span>
 
                     </fieldset>
                     <fieldset class="form-group col-12 col-md-6">
@@ -84,7 +84,7 @@
               <div class="col-12">
                 <fieldset class="form-group">
                   <input type="text" class="form-control" id="area" name="descripcion" #descripcion="ngModel" [(ngModel)]="consultoria.descripcion" required>
-                  <label for="descripcion" *ngIf="!consultoria.direccion">Descripción</label>
+                  <label for="descripcion" *ngIf="!consultoria.descripcion">Descripción</label>
                   <span class="form-error" *ngIf="descripcion.touched && !descripcion.valid"> La descripción es obligatoria</span>
                 </fieldset>
             </div>

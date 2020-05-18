@@ -47,7 +47,7 @@ export class ConsultarConsultoriasComponent implements OnInit {
   }
   deleteConsultorias(consecutivo, titulo){
     
-    this._router.navigate(['/eliminar-consultorias/'+ consecutivo + '/'+ titulo ]);   
+    this._router.navigate(['/consultar-consultorias/eliminar-consultorias/'+ consecutivo + '/'+ titulo ]);   
       
   }
 
