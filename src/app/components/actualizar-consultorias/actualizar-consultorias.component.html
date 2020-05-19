@@ -11,7 +11,7 @@
     <div class=" col-12 message success text-center" >
       <img src="../../../assets/image/true.png" alt="" width="20%">
       <br><br><br>
-      <h5>La consultoria se actualizo correctamente.</h5>
+      <h5>La consultoría se actualizo correctamente.</h5>
     </div>
   </div>
   </div>
@@ -31,8 +31,8 @@
                   
                       <fieldset class="form-group col-md-6">
                           <input type="text" class="form-control" id="titulo" name="titulo" #titulo="ngModel" [(ngModel)]="consultoria.titulo" required>
-                          <label for="titulo" *ngIf="!consultoria.titulo">Titulo</label>
-                          <span class="form-error" *ngIf="titulo.touched && !titulo.valid"> El titulo es obligatorio</span>
+                          <label for="titulo" *ngIf="!consultoria.titulo">Título</label>
+                          <span class="form-error" *ngIf="titulo.touched && !titulo.valid"> El título es obligatorio</span>
   
                       </fieldset>
                       <fieldset class="form-group col-md-6">
@@ -71,7 +71,7 @@
                     <option *ngFor="let f of facilitadores" [ngValue]="f.cedula_facilitador">{{f.nombres}} {{f.apellidos}}</option>
                     </select>
                   <label class="seleclab2" for="monitor" *ngIf="!consultoria.monitor">Facilitador</label>
-                  <span class="form-error" *ngIf="monitor.touched && !monitor.valid"> El monitor es obligatorio</span>
+                  <span class="form-error" *ngIf="monitor.touched && !monitor.valid"> El facilitador es obligatorio</span>
                 </fieldset>
                 <fieldset class="form-group col-12 col-md-6">
                 <select name="emprendedor"  id="emprendedor" #emprendedor="ngModel" [(ngModel)]="consultoria.emprendedor" required>
@@ -94,7 +94,7 @@
                 <div class="col-12">
                   <fieldset class="form-group">
                     <div class="col-12">
-                      <button type="submit" class="btn btn-success btn-lg float-right" >+ Crear consultoria</button>
+                      <button type="submit" class="btn btn-success btn-lg float-right" >Actualizar consultoría</button>
                     </div>
                   </fieldset>
               </div>

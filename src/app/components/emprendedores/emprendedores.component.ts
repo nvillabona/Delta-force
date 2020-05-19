@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Emprendedor } from "../../models/emprendedor";
+import { EmprendedorList, Emprendedor } from "../../models/emprendedor";
 import { EmprendedorService } from "../../services/emprendedor.service";
 import { HttpHeaders } from '@angular/common/http';
 import { Router, ActivatedRoute, Params } from "@angular/router";
@@ -14,17 +14,53 @@ import { Router, ActivatedRoute, Params } from "@angular/router";
 })
 export class EmprendedoresComponent implements OnInit {
   public emprendedores: Emprendedor[];
+  public emprendedorList: EmprendedorList[];
+  public status:string;
 
   constructor(
     private _emprededorService: EmprendedorService,
     private _router: Router,
     private _route: ActivatedRoute,
   ) {
+    this.status = "false";
    }
 
   ngOnInit() {
     this.getEmprendedores();
+    
 
+  }
+
+
+
+  abrirPop(cedula, nombres, apellidos){
+      this._emprededorService.getEmprendimiento(cedula).subscribe(
+        response => {
+          if(response.length > 0){
+            
+            console.log(response.length);
+            
+            this.emprendedorList = response;
+            console.log(this.emprendedorList);
+            this.status = "true";
+
+            
+          }else{
+
+            this._router.navigate(['/emprendedores/eliminar-emprendedores/'+ cedula + '/'+ nombres + '/' + apellidos]);  
+          }
+
+        },
+        error => {
+          console.log(error);
+        }
+      );
+
+    
+  }
+
+  cerrarPop(){
+    this.status="false";
   }
 
   getEmprendedores(){
@@ -50,7 +86,7 @@ export class EmprendedoresComponent implements OnInit {
 
   deleteEmprendedor(cedula, nombres, apellidos){
     
-    this._router.navigate(['/eliminar-emprendedores/'+ cedula + '/'+ nombres + '/' + apellidos]);   
+    this._router.navigate(['/emprendedores/eliminar-emprendedores/'+ cedula + '/'+ nombres + '/' + apellidos]);   
       
   }
 

@@ -13,7 +13,6 @@ import { LoginService } from "../../services/login.service";
 })
 export class SidebarComponent implements OnInit {
   public logUsuario: LoginUsuario;
-  public user: string;
 
   constructor(
     private _router: Router,
@@ -22,11 +21,7 @@ export class SidebarComponent implements OnInit {
 
   }
   
-  ngOnInit() {
-
-    this.user = this._loginService.dentro();
-    console.log(this.user);
-    
+  ngOnInit() {        
     const $button  = document.querySelector('#sidebar-toggle');
     const $wrapper = document.querySelector('#wrapper');
     
@@ -35,9 +30,33 @@ export class SidebarComponent implements OnInit {
       $wrapper.classList.toggle('toggled');
     });
 
+  /*   this.getLogin(); */
+
   }
+
+/*   getLogin(){
+    this._loginService.login(this.logUsuario).subscribe(
+      response =>{
+        console.log(response);
+        if(response){
+        
+          this.logUsuario = response;
+          console.log(this.logUsuario);
+          
+        }else{
+          
+        }
+ 
+      },
+      error => {
+        console.log(error);
+        
+      }
+    );
+  } */
+  
   exit(){
-    Swal.fire({
+     Swal.fire({
       title: 'Estás saliendo',
       text: '¿Deseas salir?',
       icon: 'warning',
@@ -46,8 +65,10 @@ export class SidebarComponent implements OnInit {
       confirmButtonColor: '#6d6e71',
       cancelButtonColor: '#f47920',
       showCancelButton: true
-    })
+    }) 
+/*     this._loginService.logout(); */
   }
+
 
   
 

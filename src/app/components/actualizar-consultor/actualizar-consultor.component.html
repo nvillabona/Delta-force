@@ -74,16 +74,16 @@ darle click al boton editar de un consultor -->
                       <fieldset class="form-group">
                         <input type="text" class="form-control" id="area_enfoque" name="area_enfoque" #area_enfoque="ngModel" [(ngModel)]="facilitador.area_enfoque" required>
                         <label for="area_enfoque" *ngIf="!facilitador.area_enfoque">Área de enfoque</label>
-                        <span class="form-error" *ngIf="area_enfoque.touched && !area_enfoque.valid"> El Area de enfoque es obligatoria</span>
+                        <span class="form-error" *ngIf="area_enfoque.touched && !area_enfoque.valid"> El Área de enfoque es obligatoria</span>
                       </fieldset>
                       <fieldset class="form-group">
                         <input type="text" class="form-control" id="password" name="password" #password="ngModel" [(ngModel)]="facilitador.password" required>
                         <label for="password" *ngIf="!facilitador.password">Contraseña</label>
-                        <span class="form-error" *ngIf="password.touched && !password.valid"> La password es obligatoria</span>
+                        <span class="form-error" *ngIf="password.touched && !password.valid"> La contraseña es obligatoria</span>
                       </fieldset>
                 </div>
                 <div class="col-12">
-                    <button type="submit" class="btn btn-success btn-lg float-right" [disabled]="!actfacilitadorForm.form.valid">+ Actualiar facilitador</button>
+                    <button type="submit" class="btn btn-success btn-lg float-right" [disabled]="!actfacilitadorForm.form.valid">Actualizar facilitador</button>
                 </div>
             </div> 
           </form>

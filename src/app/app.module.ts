@@ -4,8 +4,11 @@ import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { AccordionModule } from 'ngx-bootstrap/accordion'; /* Importado manualmente -- Importa animaciones de Bootstrap */
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; /* Importado manualmente -- Importa animaciones de Bootstrap como el acordeon en este caso */
-import { AppRoutingModule } from './app-routing.module';
+import { routing, appRoutingProviders } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+
+
 import { LoginComponent } from './components/login/login.component';
 import { PaginaPrincipalComponent } from './components/pagina-principal/pagina-principal.component';
 import { EliminarEmprendedorComponent } from './components/eliminar-emprendedor/eliminar-emprendedor.component';
@@ -31,6 +34,11 @@ import { EliminarEmprendimientoComponent } from './components/eliminar-emprendim
 import { EliminarConsultoriaComponent } from './components/eliminar-consultoria/eliminar-consultoria.component';
 import { ActualizarEmprendimientoComponent } from './components/actualizar-emprendimiento/actualizar-emprendimiento.component';
 import { ActualizarConsultoriasComponent } from './components/actualizar-consultorias/actualizar-consultorias.component';
+import { FilterUserPipe } from './pipes/filter.pipe';
+import { FilterEmprendedorPipe } from './pipes/filter-emprendedor.pipe';
+import { FilterConsultorPipe } from './pipes/filter-consultor.pipe';
+import { FilterEmprendimientoPipe } from './pipes/filter-emprendimiento.pipe';
+import { FilterConsultoriaPipe } from './pipes/filter-consultoria.pipe';
 
 
 
@@ -64,6 +72,11 @@ import { ActualizarConsultoriasComponent } from './components/actualizar-consult
     EliminarConsultoriaComponent,
     ActualizarEmprendimientoComponent,
     ActualizarConsultoriasComponent,
+    FilterUserPipe,
+    FilterEmprendedorPipe,
+    FilterConsultorPipe,
+    FilterEmprendimientoPipe,
+    FilterConsultoriaPipe,
 
 
 
@@ -71,14 +84,17 @@ import { ActualizarConsultoriasComponent } from './components/actualizar-consult
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    routing,
+/*     AppRoutingModule, */
     FormsModule,
     FullCalendarModule, // for FullCalendar!
     AccordionModule.forRoot(), /* Añadido manualmente -- Importo animacion acordeon Bootstrap -- forRoot() para funcionar en toda la aplicacion */
     BrowserAnimationsModule, /* Añadido manualmente -- Modulo para Animaciones Bootstrap */
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    appRoutingProviders
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

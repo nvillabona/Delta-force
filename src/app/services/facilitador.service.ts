@@ -10,6 +10,7 @@ import { Global } from "./global";
 export class FacilitadorService{
 
     public url: string;
+    filterConsultor: '';
 
     constructor(
         private _http: HttpClient
@@ -41,6 +42,10 @@ export class FacilitadorService{
         let headers = new HttpHeaders().set('Content-Type', 'application/json');
         
         return this._http.get(this.url+'/facilitadores/'+cedula, {headers: headers});
+    }
+    getConsultoria(cedula): Observable<any>{
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+        return this._http.get(this.url+'/facilitadores/consultoria/'+cedula, {headers:headers})
     }
 
     updateFacilitador(facilitador: Facilitador): Observable<any>{

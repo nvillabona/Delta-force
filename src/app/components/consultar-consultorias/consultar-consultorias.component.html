@@ -1,6 +1,6 @@
 
 <!-- INICIA CONSULTORÍAS NAVBAR -->
-<div class="consultores-cont">
+<div class="consultores-cont mx-auto">
 
         <div class="row">
             <div class="col-12">
@@ -14,12 +14,12 @@
                 <form>
                     <div class="form-group has-search">
                         <span class="fa fa-search form-control-feedback"></span>
-                        <input type="text" class="form-control" placeholder="Search">
+                        <input type="text" class="form-control" placeholder="Buscar por título" name="filterConsultoria" [(ngModel)]="_consultoriaService.filterConsultoria">
                       </div>
                   </form>
             </div>
             <div class="plus col-1">
-                <button type="button" class="btn btn-add btn-circle btn-xl" routerLink="/crear-consultoria"><i class="fa fa-plus"></i>
+                <button type="button" class="btn btn-add btn-circle btn-xl" routerLink="/consultar-consultorias/crear-consultoria"><i class="fa fa-plus"></i>
                 </button>
             </div>
 
@@ -30,13 +30,13 @@
                 <h1 *ngIf="isFirst" >Total: {{consultorias.length}}</h1>
             </div>
                 <br>
-                <div class="row mb-2" id="caja_info" *ngFor="let consultoria of consultorias" >
+                <div class="row mb-2" id="caja_info" *ngFor="let consultoria of consultorias|filterConsultoria:'titulo':_consultoriaService.filterConsultoria" >
                     <div class="col-md-12">
                       <div class="card flex-md-row mb-4 box-shadow h-md-250 d-flex" id="cuadro_info" >                      
                         <div class="card-body  align-items-start" >
                             <div class="row">
                                 <div class="header-card col-12 col-md-4">
-                                    <h3>{{consultoria.titulo}}</h3>
+                                    <h4>{{consultoria.titulo}}</h4>
                                     
                                   </div>
                                    <div class="col-12 col-md-2">
@@ -75,11 +75,11 @@
                                 </div>
                                 <div class="col-12 col-md-4">
                                     
-                                       <div class="boton float-right"><button class="btn btnE"> Ruta de proceso</button></div>
+<!--                                        <div class="boton float-right"><button class="btn btnE"> Ruta de proceso</button></div> -->
                                        
                                         <div class="otrosbtn float-right" >
                                         
-                                            <a [routerLink]="['/actualizar-consultorias',consultoria.consecutivo]"><span class="fa fa-pencil"></span> Editar</a> &nbsp;&nbsp;
+                                            <a [routerLink]="['/consultar-consultorias/actualizar-consultorias',consultoria.consecutivo]"><span class="fa fa-pencil"></span> Editar</a> &nbsp;&nbsp;
                                             <a (click)="deleteConsultorias(consultoria.consecutivo, consultoria.titulo)"><span class="fa fa-trash"></span> Eliminar</a> &nbsp;&nbsp;
 <!--                                             <a routerLink="/detalle-consultorias"><span class="fa fa-eye"></span> Ver más</a> -->
                                             

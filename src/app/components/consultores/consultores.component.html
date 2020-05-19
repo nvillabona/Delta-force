@@ -1,6 +1,19 @@
 <!-- Aquí se encuentra el código HTML del componente "consultores" que se ejecuta
 al dar click en el boton consultores de la sidebar -->
-
+<div class="emprendedor-faild" *ngIf="status == 'true'">
+    <div class="emprendedor-cont-succ mx-auto" >
+        <div class="row">
+        <div class=" col-12 message success text-center" >
+          <img src="../../../assets/image/warning.png" alt="" width="10%">
+          <br><br><br>
+          <h5>El facilitador no se puede eliminar, ya que tiene una consultoría asociada.
+            Debes eliminar primero la consultoría.
+          </h5>
+          <button (click)="cerrarPop()"  type="button" class="btn btn-lg btn-true">Cerrar</button>
+        </div>
+      </div>
+      </div>
+    </div>
     <div class="consultores-cont mx-auto">
 
         <div class="row">
@@ -12,15 +25,13 @@ al dar click en el boton consultores de la sidebar -->
                 <h1>Filtro</h1>
             </div>
             <div class="cont-filtro col-8 col-md-10">
-                <form>
-                    <div class="form-group has-search">
-                        <span class="fa fa-search form-control-feedback"></span>
-                        <input type="text" class="form-control" placeholder="Search">
-                      </div>
-                  </form>
+                <div class="form-group has-search">
+                    <span class="fa fa-search form-control-feedback"></span>
+                    <input type="text" class="form-control" placeholder="Buscar por nombre" name="filterConsultor" [(ngModel)]="_facilitadorService.filterConsultor">
+                  </div>
             </div>
             <div class="plus col-1">
-                <button type="button" class="btn btn-add btn-circle btn-xl" routerLink="/crear-consultor"><i class="fa fa-plus"></i></button>
+                <button type="button" class="btn btn-add btn-circle btn-xl" routerLink="/consultores/crear-consultor"><i class="fa fa-plus"></i></button>
 
             </div>
             <div class="col-md-12 list-emp">
@@ -33,7 +44,7 @@ al dar click en el boton consultores de la sidebar -->
                 <br>
                 <div class="row mb-2" id="caja_info">
                     <div class="col-md-12">
-                      <div class="card flex-md-row mb-4 box-shadow h-md-250 d-flex" id="cuadro_info" *ngFor="let facilitador of facilitadores">
+                      <div class="card flex-md-row mb-4 box-shadow h-md-250 d-flex" id="cuadro_info" *ngFor="let facilitador of facilitadores|filterConsultor:'nombres':_facilitadorService.filterConsultor">
                         <img class="card-img-left flex-auto justify-content-center align-self-center" src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png" alt="Card image cap" id="imagen_usuario">
                         <div class="card-body  align-items-start" >
                             <div class="row">
@@ -59,8 +70,8 @@ al dar click en el boton consultores de la sidebar -->
                                 <div class="col-12 col-md-4">                                       
                                         <div class="otrosbtn float-right" >
                                         
-                                            <a [routerLink]="['/actualizar-consultor',facilitador.cedula_facilitador]"><span class="fa fa-pencil"></span> Editar</a> &nbsp;&nbsp;
-                                            <a (click)="deleteFacilitador(facilitador.cedula_facilitador, facilitador.nombres, facilitador.apellidos)"><span class="fa fa-trash"></span> Eliminar</a>
+                                            <a [routerLink]="['/consultores/actualizar-consultor',facilitador.cedula_facilitador]"><span class="fa fa-pencil"></span> Editar</a> &nbsp;&nbsp;
+                                            <a (click)="abrirPop(facilitador.cedula_facilitador, facilitador.nombres, facilitador.apellidos)"><span class="fa fa-trash"></span> Eliminar</a>
                                        
                                             </div>
                                     
