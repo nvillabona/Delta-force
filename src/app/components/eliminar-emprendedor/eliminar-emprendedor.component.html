@@ -2,7 +2,59 @@
 <!-- Aquí se encuentra el código HTML del formulario de inscripcion de un emprendedor,
 el cual se ejecuta dar click en el boton emprendedor de la sidebar y luego dar click
 en el boton crear -->
-
+<div id="wrapper">
+    <aside id="sidebar-wrapper">
+      <div class="sidebar-brand">
+        <img class="logo" src="https://sinapsis.uao.edu.co/wp-content/uploads/sites/13/2019/10/FINAL_SinapsisUAO_Mesa-de-trabajo-1-copia-2.png" alt="" srcset="">
+      </div>
+      <ul class="sidebar-nav">
+        <li class="active">
+    
+            <li>
+                <a [routerLink]="['/calendario']" [routerLinkActive]="['actived']">Calendario</a> <!-- Redirecciono a componente calendario-->
+            </li>
+            <li>
+                <a [routerLink]="['/consultar-consultorias']" [routerLinkActive]="['actived']"  >Consultorías</a>
+            </li>
+            <li>
+                <a [routerLink]="['/consultores']" [routerLinkActive]="['actived']"  >Facilitadores</a>
+            </li>
+            <li>
+                <a [routerLink]="['/consultar-emprendimientos']" [routerLinkActive]="['actived']"  >Emprendimientos</a>
+            </li>
+            <li>
+                <a [routerLink]="['/emprendedores']" [routerLinkActive]="['actived']"  >Emprendedores</a>
+            </li>
+            <li>
+              <a [routerLink]="['/consultar-usuarios']" [routerLinkActive]="['actived']"  >Atención al Usuario</a>
+          </li>
+            <hr>
+            <ul class="list-unstyled CTAs">
+    
+              <li>
+                <div class="boton"><button class="btn btnE" (click)="logOut()"> Salir</button></div>
+    
+              </li>
+          </ul>
+      </ul>
+    
+    </aside>
+    
+    <div id="navbar-wrapper">
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a href="#" class="navbar-brand" id="sidebar-toggle"><i class="fa fa-bars"></i></a>  <span style="font-size:15px;">Bienvenido {{user}}</span>
+          </div>
+        </div>
+      </nav>
+    </div> 
+    <section id="content-wrapper">
+      <div class="row">
+        <div class="col-lg-12" style="width: 100%;">
+           <!-- Aqui se ejecutan todos los demás componentes -->
+    
+    
 
 <div class="row">
     <div class="col-12 back">
@@ -30,7 +82,6 @@ en el boton crear -->
         <div class="col-12 col-md-10 text-center">
             <br>
             <h5>Estas seguro que deseas eliminar el emprendedor <b style="color: #EE7202;">{{nombre}} {{apellido}}</b></h5>
-            <span> (No puede eliminar un emprendedor si tiene un emprendimiento asociado)</span>
             <br><br>
             <a routerLink="/emprendedores"><button type="button" class="btn btn-lg btn-danger">Cancelar</button></a> &nbsp;&nbsp;&nbsp;
             <button (click)="deleteEmprendedor(cedula)" type="button" class="btn btn-lg btn-true">Aceptar</button>
@@ -38,7 +89,10 @@ en el boton crear -->
         <div class="col-1"></div>
     </div>
 </div>
-
+</div>
+</div>
+</section>
+</div>
 
 
 

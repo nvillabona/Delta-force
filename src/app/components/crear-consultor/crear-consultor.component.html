@@ -1,6 +1,58 @@
 <!-- Aqui se encuentra el codigo del formulario para crear consultor,
 el cual se ejecuta al darle click al boton consultores de la sidebar y luego
 darle click al boton agregar   -->
+<div id="wrapper">
+  <aside id="sidebar-wrapper">
+    <div class="sidebar-brand">
+      <img class="logo" src="https://sinapsis.uao.edu.co/wp-content/uploads/sites/13/2019/10/FINAL_SinapsisUAO_Mesa-de-trabajo-1-copia-2.png" alt="" srcset="">
+    </div>
+    <ul class="sidebar-nav">
+      <li class="active">
+  
+          <li>
+              <a [routerLink]="['/calendario']" [routerLinkActive]="['actived']">Calendario</a> <!-- Redirecciono a componente calendario-->
+          </li>
+          <li>
+              <a [routerLink]="['/consultar-consultorias']" [routerLinkActive]="['actived']"  >Consultorías</a>
+          </li>
+          <li>
+              <a [routerLink]="['/consultores']" [routerLinkActive]="['actived']"  >Facilitadores</a>
+          </li>
+          <li>
+              <a [routerLink]="['/consultar-emprendimientos']" [routerLinkActive]="['actived']"  >Emprendimientos</a>
+          </li>
+          <li>
+              <a [routerLink]="['/emprendedores']" [routerLinkActive]="['actived']"  >Emprendedores</a>
+          </li>
+          <li>
+            <a [routerLink]="['/consultar-usuarios']" [routerLinkActive]="['actived']"  >Atención al Usuario</a>
+        </li>
+          <hr>
+          <ul class="list-unstyled CTAs">
+  
+            <li>
+              <div class="boton"><button class="btn btnE" (click)="logOut()"> Salir</button></div>
+  
+            </li>
+        </ul>
+    </ul>
+  
+  </aside>
+  
+  <div id="navbar-wrapper">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a href="#" class="navbar-brand" id="sidebar-toggle"><i class="fa fa-bars"></i></a>  <span style="font-size:15px;">Bienvenido {{user}}</span>
+        </div>
+      </div>
+    </nav>
+  </div> 
+  <section id="content-wrapper">
+    <div class="row">
+      <div class="col-lg-12" style="width: 100%;">
+         <!-- Aqui se ejecutan todos los demás componentes -->
+  
 <div class="row">
   <div class="col-12 back">
     
@@ -36,29 +88,29 @@ darle click al boton agregar   -->
                 </div>
                 <div class="col-md-6">
                     <fieldset class="form-group">
-                        <input type="text" class="form-control" id="nombres" name="nombres" #nombres="ngModel" [(ngModel)]="facilitador.nombres" required>
+                        <input type="text" onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))" class="form-control" id="nombres" name="nombres" #nombres="ngModel" [(ngModel)]="facilitador.nombres" required>
                         <label for="nombres" *ngIf="!facilitador.nombres">Nombre</label>
                         <span class="form-error" *ngIf="nombres.touched && !nombres.valid"> El nombre es obligatorio</span>
                       </fieldset>
                       <fieldset class="form-group">
-                        <input type="text" class="form-control" id="apellidos" name="apellidos" #apellidos="ngModel" [(ngModel)]="facilitador.apellidos" required>
+                        <input type="text" onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))" class="form-control" id="apellidos" name="apellidos" #apellidos="ngModel" [(ngModel)]="facilitador.apellidos" required>
                         <label for="apellidos" *ngIf="!facilitador.apellidos">Apellido</label>
                         <span class="form-error" *ngIf="apellidos.touched && !apellidos.valid"> El Apellido es obligatorio</span>
                       </fieldset>
                       <fieldset class="form-group">
-                        <input type="number" class="form-control" id="cedula_facilitador" name="cedula_facilitador" #cedula_facilitador="ngModel" [(ngModel)]="facilitador.cedula_facilitador" required>
-                        <label for="cedula_facilitador" style="margin-left: 20px;" *ngIf="!facilitador.cedula_facilitador">Numero de Cédula</label>
-                        <span class="form-error" *ngIf="cedula_facilitador.touched && !cedula_facilitador.valid"> La cédula es obligatoria</span>
+                        <input type="number"  class="form-control" id="cedula_facilitador" name="cedula_facilitador" #cedula_facilitador="ngModel" [(ngModel)]="facilitador.cedula_facilitador" required>
+                        <label for="cedula_facilitador" style="margin-left: 20px;" *ngIf="!facilitador.cedula_facilitador">Numero de Cédula *</label>
+                        <span class="form-error" *ngIf="cedula_facilitador.touched && !cedula_facilitador.valid || cedula_facilitador.touched && facilitador.cedula_facilitador<1"> La cédula es obligatoria</span>
                       </fieldset>
                       <fieldset class="form-group">
-                        <input type="email" class="form-control" id="email" name="email" #email="ngModel" [(ngModel)]="facilitador.email" required>
+                        <input type="email"  class="form-control" id="email" name="email" #email="ngModel" [(ngModel)]="facilitador.email" required>
                         <label for="email" *ngIf="!facilitador.email">Email</label>
                         <span class="form-error" *ngIf="email.touched && !email.valid"> El Correo es obligatorio</span>
                       </fieldset>
                       <fieldset class="form-group">
-                        <input type="text" class="form-control" id="telefono" name="telefono" #telefono="ngModel" [(ngModel)]="facilitador.telefono" required>
-                        <label for="telefono" style="margin-left: 20px;" *ngIf="!facilitador.telefono">Teléfono</label>
-                        <span class="form-error" *ngIf="telefono.touched && !telefono.valid"> El teléfono es obligatorio</span>
+                        <input type="text" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" class="form-control" id="telefono" name="telefono" #telefono="ngModel" [(ngModel)]="facilitador.telefono" required>
+                        <label for="telefono" style="margin-left: 20px;" *ngIf="!facilitador.telefono">Teléfono *</label>
+                        <span class="form-error" *ngIf="telefono.touched && !telefono.valid || telefono.touched && facilitador.telefono<1"> El teléfono es obligatorio</span>
                       </fieldset>
                 </div>
                 <div class="col-md-6">
@@ -68,21 +120,21 @@ darle click al boton agregar   -->
                         <span class="form-error" *ngIf="direccion.touched && !direccion.valid"> La dirección es obligatoria</span>
                       </fieldset>
                       <fieldset class="form-group">
-                        <input type="text" class="form-control" id="profesion" name="profesion" #profesion="ngModel" [(ngModel)]="facilitador.profesion">
+                        <input type="text" onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))" class="form-control" id="profesion" name="profesion" #profesion="ngModel" [(ngModel)]="facilitador.profesion">
                         <label for="profesion" *ngIf="!facilitador.profesion">Profesión</label>
                          <small class="text-muted">Este campo no es obligatorio</small>
                       </fieldset>
                 </div>
                 <div class="col-md-6">
                       <fieldset class="form-group">
-                        <input type="text" class="form-control" id="area_enfoque" name="area_enfoque" #area_enfoque="ngModel" [(ngModel)]="facilitador.area_enfoque" required>
-                        <label for="area_enfoque" *ngIf="!facilitador.area_enfoque">Área de enfoque</label>
-                        <span class="form-error" *ngIf="area_enfoque.touched && !area_enfoque.valid"> El area de enfoque es obligatoria</span>
+                        <input type="text" onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))" class="form-control" id="area_enfoque" name="area_enfoque" #area_enfoque="ngModel" [(ngModel)]="facilitador.area_enfoque" required>
+                        <label for="area_enfoque" *ngIf="!facilitador.area_enfoque">Área de enfoque (Ej: Marketing Digital)</label>
+                        <span class="form-error" *ngIf="area_enfoque.touched && !area_enfoque.valid"> El área de enfoque es obligatoria</span>
                       </fieldset>
                       <fieldset class="form-group">
                         <input type="text" class="form-control" id="password" name="password" #password="ngModel" [(ngModel)]="facilitador.password" required>
                         <label for="password" *ngIf="!facilitador.password">Contraseña</label>
-                        <span class="form-error" *ngIf="password.touched && !password.valid"> La password es obligatoria</span>
+                        <span class="form-error" *ngIf="password.touched && !password.valid"> La contraseña es obligatoria</span>
                       </fieldset>
                 </div>
                 <div class="col-12">
@@ -92,7 +144,10 @@ darle click al boton agregar   -->
           </form>
     </div>
 </div>
-
+</div>
+</div>
+</section>
+</div>
 
 
 

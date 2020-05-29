@@ -1,4 +1,56 @@
-<!-- <i class="fa fa-arrow-circle-left"></i> -->
+<div id="wrapper">
+    <aside id="sidebar-wrapper">
+      <div class="sidebar-brand">
+        <img class="logo" src="https://sinapsis.uao.edu.co/wp-content/uploads/sites/13/2019/10/FINAL_SinapsisUAO_Mesa-de-trabajo-1-copia-2.png" alt="" srcset="">
+      </div>
+      <ul class="sidebar-nav">
+        <li class="active">
+    
+            <li>
+                <a [routerLink]="['/calendario']" [routerLinkActive]="['actived']">Calendario</a> <!-- Redirecciono a componente calendario-->
+            </li>
+            <li>
+                <a [routerLink]="['/consultar-consultorias']" [routerLinkActive]="['actived']"  >Consultorías</a>
+            </li>
+            <li>
+                <a [routerLink]="['/consultores']" [routerLinkActive]="['actived']"  >Facilitadores</a>
+            </li>
+            <li>
+                <a [routerLink]="['/consultar-emprendimientos']" [routerLinkActive]="['actived']"  >Emprendimientos</a>
+            </li>
+            <li>
+                <a [routerLink]="['/emprendedores']" [routerLinkActive]="['actived']"  >Emprendedores</a>
+            </li>
+            <li>
+              <a [routerLink]="['/consultar-usuarios']" [routerLinkActive]="['actived']"  >Atención al Usuario</a>
+          </li>
+            <hr>
+            <ul class="list-unstyled CTAs">
+    
+              <li>
+                <div class="boton"><button class="btn btnE" (click)="logOut()"> Salir</button></div>
+    
+              </li>
+          </ul>
+      </ul>
+    
+    </aside>
+    
+    <div id="navbar-wrapper">
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a href="#" class="navbar-brand" id="sidebar-toggle"><i class="fa fa-bars"></i></a> <span style="font-size:15px;">Bienvenido {{user}}</span>
+          </div>
+        </div>
+      </nav>
+    </div> 
+    <section id="content-wrapper">
+      <div class="row">
+        <div class="col-lg-12" style="width: 100%;">
+           <!-- Aqui se ejecutan todos los demás componentes -->
+    
+    
 <div class="row">
     <div class="col-12 back">
       
@@ -54,11 +106,11 @@
                     <div class="col-12 col-md-4">
                         <fieldset class="form-group">
                             <input type="text" class="form-control" id="titulo" name="titulo" #titulo="ngModel" [(ngModel)]="emprendimiento.titulo" required>
-                            <label for="titulo" *ngIf="!emprendimiento.titulo">Titulo del emprendimiento</label>
+                            <label for="titulo" *ngIf="!emprendimiento.titulo">Título del emprendimiento</label>
                         </fieldset>
                         <fieldset class="form-group">
                             <input type="text" class="form-control" id="programa_academico" name="programa_academico" #programa_academico="ngModel" [(ngModel)]="emprendimiento.programa_academico">
-                            <label for="programa_academico" *ngIf="!emprendimiento.programa_academico">Programa academico</label>
+                            <label for="programa_academico" *ngIf="!emprendimiento.programa_academico">Programa académico</label>
                         </fieldset>
                         <fieldset class="form-group">
                             <input type="text" class="form-control" id="egresado" name="egresado" #egresado="ngModel" [(ngModel)]="emprendimiento.egresado" required>
@@ -95,11 +147,11 @@
                                                 </div>
                                                 <div class="col-10 col-md-3">
                                                     <input type="text" class="form-control" id="num_empleados" name="num_empleados" #num_empleados="ngModel" [(ngModel)]="emprendimiento.num_empleados">
-                                                    <label for="num_empleados" style="margin-left: 30px;" *ngIf="!emprendimiento.num_empleados">Numero de empleados</label>
+                                                    <label for="num_empleados" style="margin-left: 30px;" *ngIf="!emprendimiento.num_empleados">Número de empleados</label>
                                                 </div>
                                                 <div class="col-10 col-md-3">
                                                     <input type="text" class="form-control" id="num_contacto" name="num_contacto" #num_contacto="ngModel" [(ngModel)]="emprendimiento.num_contacto">
-                                                    <label for="num_contacto" style="margin-left: 30px;" *ngIf="!emprendimiento.num_contacto">Telefono empresa</label>
+                                                    <label for="num_contacto" style="margin-left: 30px;" *ngIf="!emprendimiento.num_contacto">Teléfono empresa</label>
                                                 </div>
                                                 <div class="col-10 col-md-3">
                                                     <input type="text" class="form-control" id="segmento_clientes" name="segmento_clientes" #segmento_clientes="ngModel" [(ngModel)]="emprendimiento.segmento_clientes">
@@ -143,7 +195,7 @@
                                                     <input type="text" class="form-control" id="estructura_costos" name="estructura_costos" #estructura_costos="ngModel" [(ngModel)]="emprendimiento.estructura_costos">
                                                     <label for="estructura_costos" style="margin-left: 30px;" *ngIf="!emprendimiento.estructura_costos">Estructura de costos</label>
                                                 </div>
-                                                <button type="submit" class="btn btn-success btn-lg float-right" [disabled]="!actemprendimientoForm.form.valid">+ Actualizar emprendimiento</button>
+                                                <button type="submit" class="btn btn-success btn-lg float-right" [disabled]="!actemprendimientoForm.form.valid">Actualizar emprendimiento</button>
 
                                             </div>
                                         </div>
@@ -158,4 +210,8 @@
                                             <!-- FIN FORMULARIO EMPRESA -->
         </div>
     </div>
+</div>
+</div>
+</div>
+</section>
 </div>

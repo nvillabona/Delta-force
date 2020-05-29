@@ -22,13 +22,13 @@ export class SidebarComponent implements OnInit {
   }
   
   ngOnInit() {        
-    const $button  = document.querySelector('#sidebar-toggle');
+/*     const $button  = document.querySelector('#sidebar-toggle');
     const $wrapper = document.querySelector('#wrapper');
     
     $button.addEventListener('click', (e) => {
       e.preventDefault();
       $wrapper.classList.toggle('toggled');
-    });
+    }); */
 
   /*   this.getLogin(); */
 
@@ -56,7 +56,7 @@ export class SidebarComponent implements OnInit {
   } */
   
   exit(){
-/*     Swal.fire({
+     Swal.fire({
       title: 'Estás saliendo',
       text: '¿Deseas salir?',
       icon: 'warning',
@@ -65,8 +65,8 @@ export class SidebarComponent implements OnInit {
       confirmButtonColor: '#6d6e71',
       cancelButtonColor: '#f47920',
       showCancelButton: true
-    }) */
-    this._loginService.logout();
+    }) 
+/*     this._loginService.logout(); */
   }
 
 

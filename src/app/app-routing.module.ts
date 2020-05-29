@@ -46,11 +46,11 @@ const routes: Routes = [
   },
 
   {
-    path: 'crear-emprendedor', component: CrearEmprendedorComponent /* Importo el componente para crear un emprendedor */
+    path: 'emprendedores/crear-emprendedor', component: CrearEmprendedorComponent /* Importo el componente para crear un emprendedor */
   },
 
   {
-    path: 'actualizar-emprendedores/:cedula', component: ActualizarEmprendedoresComponent /* Importo componente para actualizar emprendedor*/
+    path: 'emprendedores/actualizar-emprendedores/:cedula', component: ActualizarEmprendedoresComponent /* Importo componente para actualizar emprendedor*/
   },
 
   {
@@ -58,7 +58,7 @@ const routes: Routes = [
   },
   
   {
-    path: 'eliminar-emprendedores/:cedula/:nombres/:apellidos', component: EliminarEmprendedorComponent /* Importo componente para eliminar emprendedores */
+    path: 'emprendedores/eliminar-emprendedores/:cedula/:nombres/:apellidos', component: EliminarEmprendedorComponent /* Importo componente para eliminar emprendedores */
   },
 
   {
@@ -66,21 +66,21 @@ const routes: Routes = [
   },
 
   {
-    path: 'actualizar-consultor/:cedula', component:ActualizarConsultorComponent /* Importo componente para actualizar consultores */
+    path: 'consultores/actualizar-consultor/:cedula', component:ActualizarConsultorComponent /* Importo componente para actualizar consultores */
   },
 
   {
-    path: 'eliminar-consultor/:cedula/:nombres/:apellidos', component: EliminarConsultorComponent /* Importo componente para eliminar consultores */
+    path: 'consultores/eliminar-consultor/:cedula/:nombres/:apellidos', component: EliminarConsultorComponent /* Importo componente para eliminar consultores */
   },
 
   {
     path: 'consultar-consultorias', component: ConsultarConsultoriasComponent /* Importo componente para consultar consultorias programadas */
   },
   {
-    path: 'eliminar-consultorias/:consecutivo/:titulo', component: EliminarConsultoriaComponent /* Importo componente para consultar consultorias programadas */
+    path: 'consultar-consultorias/eliminar-consultorias/:consecutivo/:titulo', component: EliminarConsultoriaComponent /* Importo componente para consultar consultorias programadas */
   },
   {
-    path: 'actualizar-consultorias/:consecutivo', component: ActualizarConsultoriasComponent /* Importo componente para consultar consultorias programadas */
+    path: 'consultar-consultorias/actualizar-consultorias/:consecutivo', component: ActualizarConsultoriasComponent /* Importo componente para consultar consultorias programadas */
   },
 
   {
@@ -88,33 +88,33 @@ const routes: Routes = [
   },
 
   {
-    path: 'eliminar-emprendimientos/:consecutivo/:titulo', component: EliminarEmprendimientoComponent  /* Importo componente para consultar emprendimientos */
+    path: 'consultar-emprendimientos/eliminar-emprendimientos/:consecutivo/:titulo', component: EliminarEmprendimientoComponent  /* Importo componente para consultar emprendimientos */
   },
   
   {
-    path: 'actualizar-emprendimientos/:consecutivo', component: ActualizarEmprendimientoComponent
+    path: 'consultar-emprendimientos/actualizar-emprendimientos/:consecutivo', component: ActualizarEmprendimientoComponent
   },
 
   {
-    path: 'crear-consultor', component: CrearConsultorComponent  /* Importo componente para crear consultor */
+    path: 'consultores/crear-consultor', component: CrearConsultorComponent  /* Importo componente para crear consultor */
   },
   {
-    path: 'crear-consultoria', component: CrearConsultoriaComponent /* Importo componente para crear consultoría */
+    path: 'consultar-consultorias/crear-consultoria', component: CrearConsultoriaComponent /* Importo componente para crear consultoría */
   },
 
 
   {
-    path: 'detalle-emprendimiento/:consecutivo', component: DetalleEmprendimientoComponent  /* Importo componente para ver el detalle de un emprendimiento */
+    path: 'consultar-emprendimientos/detalle-emprendimiento/:consecutivo', component: DetalleEmprendimientoComponent  /* Importo componente para ver el detalle de un emprendimiento */
   },
 
   {
-    path: 'crear-emprendimiento', component: CrearEmprendimientoComponent  /* Importo componente para crear un emprendimiento */
+    path: 'consultar-emprendimientos/crear-emprendimiento', component: CrearEmprendimientoComponent  /* Importo componente para crear un emprendimiento */
   },
   {
     path: 'consultar-usuarios', component: ConsultarUsuariosComponent  /* Importo consultar usuario */
   },
   {
-    path: 'crear-usuario', component: CrearUsuarioComponent  /* Importo consultar usuario */
+    path: 'consultar-usuarios/crear-usuario', component: CrearUsuarioComponent  /* Importo consultar usuario */
   },
   {
     path: 'reportes-consultorias', component: ReportesConsultoriasComponent /* Importo reportes consultoría*/

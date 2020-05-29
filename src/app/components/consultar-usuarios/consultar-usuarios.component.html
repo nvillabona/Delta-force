@@ -1,8 +1,61 @@
+<div id="wrapper">
+    <aside id="sidebar-wrapper">
+      <div class="sidebar-brand">
+        <img class="logo" src="https://sinapsis.uao.edu.co/wp-content/uploads/sites/13/2019/10/FINAL_SinapsisUAO_Mesa-de-trabajo-1-copia-2.png" alt="" srcset="">
+      </div>
+      <ul class="sidebar-nav">
+        <li class="active">
+    
+            <li>
+                <a [routerLink]="['/calendario']" [routerLinkActive]="['actived']">Calendario</a> <!-- Redirecciono a componente calendario-->
+            </li>
+            <li>
+                <a [routerLink]="['/consultar-consultorias']" [routerLinkActive]="['actived']"  >Consultorías</a>
+            </li>
+            <li>
+                <a [routerLink]="['/consultores']" [routerLinkActive]="['actived']"  >Facilitadores</a>
+            </li>
+            <li>
+                <a [routerLink]="['/consultar-emprendimientos']" [routerLinkActive]="['actived']"  >Emprendimientos</a>
+            </li>
+            <li>
+                <a [routerLink]="['/emprendedores']" [routerLinkActive]="['actived']"  >Emprendedores</a>
+            </li>
+            <li>
+              <a [routerLink]="['/consultar-usuarios']" [routerLinkActive]="['actived']"  >Atención al Usuario</a>
+          </li>
+            <hr>
+            <ul class="list-unstyled CTAs">
+    
+              <li>
+                <div class="boton"><button class="btn btnE" (click)="logOut()"> Salir</button></div>
+    
+              </li>
+          </ul>
+      </ul>
+    
+    </aside>
+    
+    <div id="navbar-wrapper">
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a href="#" class="navbar-brand" id="sidebar-toggle"><i class="fa fa-bars"></i></a> <span style="font-size:15px;">Bienvenido {{user}}</span>
+          </div>
+        </div>
+      </nav>
+    </div> 
+    <section id="content-wrapper">
+      <div class="row">
+        <div class="col-lg-12" style="width: 100%;">
+           <!-- Aqui se ejecutan todos los demás componentes -->
+    
+    
 <div class="consultores-cont mx-auto">
 
     <div class="row">
         <div class="col-12">
-            <h1  href="#">Atención usuario</h1>
+            <h1  href="#">Atención al usuario</h1>
 
             <hr>
         </div>
@@ -10,13 +63,13 @@
             
                 <div class="form-group has-search">
                     <span class="fa fa-search form-control-feedback"></span>
-                    <input type="text" class="form-control" placeholder="Search" name="filterUser" [(ngModel)]="_atencinoService.filterUser">
+                    <input type="text" class="form-control" placeholder="Buscar por nombre" name="filterUser" [(ngModel)]="_atencinoService.filterUser">
                   </div>
               
         </div>
         <div class="plus col-1">
 
-            <button type="button" class="btn btn-add btn-circle btn-xl" routerLink="/crear-usuario"><i class="fa fa-plus"></i></button>
+            <button type="button" class="btn btn-add btn-circle btn-xl" routerLink="/consultar-usuarios/crear-usuario"><i class="fa fa-plus"></i></button>
 
         </div>
         <div class="col-md-12 list-emp" >
@@ -34,10 +87,10 @@
                     <div class="card-body  align-items-start" >
                         <div class="row">
                             <div class="col-12 col-md-12">
-                                <strong class="text-muted"><b>Nombre:</b> </strong>{{atencion.nombre}}
+                                <strong class="text-muted"><b>Nombre:</b> </strong> {{atencion.nombre}}
                                 <div class="row">
                                     <div class="col-12 col-md-6">
-                                        <p class="text-muted"><b>Cedula:</b> {{atencion.cedula}}</p>
+                                        <p class="text-muted"><b>Cédula:</b> {{atencion.cedula}}</p>
                                     </div>
                                     <div class="col-12 col-md-6">
                                         <div class="mb-1 text-muted float-left"><b>Fecha:</b> {{atencion.fecha}}</div>
@@ -46,10 +99,10 @@
                               
                                 <div class="row">
                                     <div class="col-12 col-md-6">
-                                        <p class="text-muted"><b>Titulo:</b> {{atencion.titulo}}</p>
+                                        <p class="text-muted"><b>Título:</b> {{atencion.titulo}}</p>
                                     </div>
                                     <div class="col-12 col-md-6">
-                                        <div class="mb-1 text-muted float-left"><b>Descripcion:</b> {{atencion.descripcion}}</div>
+                                        <div class="mb-1 text-muted float-left"><b>Descripción:</b> {{atencion.descripcion}}</div>
                                     </div>
 
                                 </div>
@@ -72,4 +125,8 @@
               </div>
         </div>
     </div>
+</div>
+</div>
+</div>
+</section>
 </div>

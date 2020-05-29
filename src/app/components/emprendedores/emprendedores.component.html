@@ -1,6 +1,72 @@
 <!-- Aquí se encuentra el código HTML del componente "emprendedores" que se ejecuta
 al dar click en el boton emprededores de la sidebar -->
+<div id="wrapper">
+<aside id="sidebar-wrapper">
+  <div class="sidebar-brand">
+    <img class="logo" src="https://sinapsis.uao.edu.co/wp-content/uploads/sites/13/2019/10/FINAL_SinapsisUAO_Mesa-de-trabajo-1-copia-2.png" alt="" srcset="">
+  </div>
+  <ul class="sidebar-nav">
+    <li class="active">
 
+        <li>
+            <a [routerLink]="['/calendario']" [routerLinkActive]="['actived']">Calendario</a> <!-- Redirecciono a componente calendario-->
+        </li>
+        <li>
+            <a [routerLink]="['/consultar-consultorias']" [routerLinkActive]="['actived']"  >Consultorías</a>
+        </li>
+        <li>
+            <a [routerLink]="['/consultores']" [routerLinkActive]="['actived']"  >Facilitadores</a>
+        </li>
+        <li>
+            <a [routerLink]="['/consultar-emprendimientos']" [routerLinkActive]="['actived']"  >Emprendimientos</a>
+        </li>
+        <li>
+            <a [routerLink]="['/emprendedores']" [routerLinkActive]="['actived']"  >Emprendedores</a>
+        </li>
+        <li>
+          <a [routerLink]="['/consultar-usuarios']" [routerLinkActive]="['actived']"  >Atención al Usuario</a>
+      </li>
+        <hr>
+        <ul class="list-unstyled CTAs">
+
+          <li>
+            <div class="boton"><button class="btn btnE" (click)="logOut()"> Salir</button></div>
+
+          </li>
+      </ul>
+  </ul>
+
+</aside>
+
+<div id="navbar-wrapper">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a href="#" class="navbar-brand" id="sidebar-toggle"><i class="fa fa-bars"></i></a><span style="font-size:15px;">Bienvenido {{user}}</span>
+      </div>
+    </div>
+  </nav>
+</div> 
+<section id="content-wrapper">
+  <div class="row">
+    <div class="col-lg-12" style="width: 100%;">
+       <!-- Aqui se ejecutan todos los demás componentes -->
+
+
+<div class="emprendedor-faild" *ngIf="status == 'true'">
+<div class="emprendedor-cont-succ mx-auto" >
+    <div class="row">
+    <div class=" col-12 message success text-center" >
+      <img src="../../../assets/image/warning.png" alt="" width="10%">
+      <br><br><br>
+      <h5>El emprendedor no se puede eliminar, ya que tiene un emprendimiento asociado.
+          Debes eliminar primero el emprendimiento.
+      </h5>
+      <button (click)="cerrarPop()"  type="button" class="btn btn-lg btn-true">Cerrar</button>
+    </div>
+  </div>
+  </div>
+</div>
 <div class="emprendedor-cont mx-auto">
 
     <div class="row">
@@ -16,7 +82,7 @@ al dar click en el boton emprededores de la sidebar -->
             
                 <div class="form-group has-search">
                     <span class="fa fa-search form-control-feedback"></span>
-                    <input type="text" class="form-control" placeholder="Search" name="filterEmprendedor" [(ngModel)]="_emprededorService.filterEmprendedor">
+                    <input type="text" class="form-control" placeholder="Buscar por nombre" name="filterEmprendedor" [(ngModel)]="_emprededorService.filterEmprendedor">
                   </div>
               
        
@@ -44,7 +110,7 @@ al dar click en el boton emprededores de la sidebar -->
               </form> -->
         </div>
         <div class="plus col-2">
-            <button type="button" class="btn btn-add btn-circle btn-xl" routerLink="/crear-emprendedor"><i class="fa fa-plus"></i></button>
+            <button type="button" class="btn btn-add btn-circle btn-xl" routerLink="/emprendedores/crear-emprendedor"><i class="fa fa-plus"></i></button>
         </div>
         <div class="col-md-12 list-emp">
             <div *ngFor="let emprendedor of emprendedores; first as isFirst">
@@ -64,10 +130,10 @@ al dar click en el boton emprededores de la sidebar -->
                                 <ul>
                                 </ul>
                                 <strong class="text-muted">{{emprendedor.nombres}} {{emprendedor.apellidos}}</strong><br>
-                                <span>{{emprendedor.cedula_emprendedor}}</span>
+                                <span><b>Cédula:</b> {{emprendedor.cedula_emprendedor}}</span>
                                 <div class="row">
                                     <div class="col-12 col-md-6">
-                                        <p class="text-muted">{{emprendedor.programa_academico}} </p>
+                                        <p class="text-muted"><b>Programa academico:</b> {{emprendedor.programa_academico}} </p>
                                     </div>
                                     <div class="col-12 col-md-6">
                                         <div class="mb-1 text-muted float-left"><b>Correo:</b> {{emprendedor.email}}</div>
@@ -88,8 +154,8 @@ al dar click en el boton emprededores de la sidebar -->
                                    
                                     <div class="otrosbtn float-right" >
                                     
-                                        <a class="nodelete" [routerLink]="['/actualizar-emprendedores',emprendedor.cedula_emprendedor]"><span class="fa fa-pencil"></span> Editar</a> &nbsp;&nbsp;
-                                        <a class="delete" (click)="deleteEmprendedor(emprendedor.cedula_emprendedor, emprendedor.nombres, emprendedor.apellidos)"><span class="fa fa-trash"></span> Eliminar</a>
+                                        <a class="nodelete" [routerLink]="['/emprendedores//actualizar-emprendedores',emprendedor.cedula_emprendedor]"><span class="fa fa-pencil"></span> Editar</a> &nbsp;&nbsp;
+                                        <a class="delete" (click)="abrirPop(emprendedor.cedula_emprendedor, emprendedor.nombres, emprendedor.apellidos)"><span class="fa fa-trash"></span> Eliminar</a>
                                    
                                         </div>
                                 
@@ -102,4 +168,8 @@ al dar click en el boton emprededores de la sidebar -->
               </div>
         </div>
     </div>
+</div>
+</div>
+</div>
+</section>
 </div>

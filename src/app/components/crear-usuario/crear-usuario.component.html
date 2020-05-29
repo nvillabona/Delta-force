@@ -1,3 +1,55 @@
+<div id="wrapper">
+  <aside id="sidebar-wrapper">
+    <div class="sidebar-brand">
+      <img class="logo" src="https://sinapsis.uao.edu.co/wp-content/uploads/sites/13/2019/10/FINAL_SinapsisUAO_Mesa-de-trabajo-1-copia-2.png" alt="" srcset="">
+    </div>
+    <ul class="sidebar-nav">
+      <li class="active">
+  
+          <li>
+              <a [routerLink]="['/calendario']" [routerLinkActive]="['actived']">Calendario</a> <!-- Redirecciono a componente calendario-->
+          </li>
+          <li>
+              <a [routerLink]="['/consultar-consultorias']" [routerLinkActive]="['actived']"  >Consultorías</a>
+          </li>
+          <li>
+              <a [routerLink]="['/consultores']" [routerLinkActive]="['actived']"  >Facilitadores</a>
+          </li>
+          <li>
+              <a [routerLink]="['/consultar-emprendimientos']" [routerLinkActive]="['actived']"  >Emprendimientos</a>
+          </li>
+          <li>
+              <a [routerLink]="['/emprendedores']" [routerLinkActive]="['actived']"  >Emprendedores</a>
+          </li>
+          <li>
+            <a [routerLink]="['/consultar-usuarios']" [routerLinkActive]="['actived']"  >Atención al Usuario</a>
+        </li>
+          <hr>
+          <ul class="list-unstyled CTAs">
+  
+            <li>
+              <div class="boton"><button class="btn btnE" (click)="logOut()"> Salir</button></div>
+  
+            </li>
+        </ul>
+    </ul>
+  
+  </aside>
+  
+  <div id="navbar-wrapper">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a href="#" class="navbar-brand" id="sidebar-toggle"><i class="fa fa-bars"></i></a> <span style="font-size:15px;">Bienvenido {{user}}</span>
+        </div>
+      </div>
+    </nav>
+  </div> 
+  <section id="content-wrapper">
+    <div class="row">
+      <div class="col-lg-12" style="width: 100%;">
+         <!-- Aqui se ejecutan todos los demás componentes -->
+  
 <div class="row">
   <div class="col-12 back">
     
@@ -18,7 +70,7 @@
 
       <div class="row">
           <div class="col-12">
-              <h1  href="#">Atención a Usuario</h1>
+              <h1  href="#">Atención al Usuario</h1>
 
               <hr>
           </div>
@@ -29,7 +81,7 @@
               <div class="form-row align-items-center">
                   
                       <fieldset class="form-group col-md-6">
-                          <input type="text" class="form-control" id="nombre" name="nombre" #nombre="ngModel" [(ngModel)]="atencion.nombre" required>
+                          <input type="text" onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))" class="form-control" id="nombre" name="nombre" #nombre="ngModel" [(ngModel)]="atencion.nombre" required>
                           <label for="nombre" *ngIf="!atencion.nombre">Nombre</label>
                           <span class="form-error" *ngIf="nombre.touched && !nombre.valid"> El nombre es obligatorio</span>
                       </fieldset>
@@ -94,7 +146,7 @@
         </fieldset>
           <fieldset class="form-group col-7 col-md-9">
               <input type="text" class="form-control" id="entidad" name="entidad" #entidad="ngModel" [(ngModel)]="atencion.entidad" >
-              <label for="entidad" *ngIf="!atencion.entidad">Entidad vinuclada</label>
+              <label for="entidad" *ngIf="!atencion.entidad">Entidad vinculada</label>
 
           </fieldset>
 
@@ -107,11 +159,11 @@
         <option value="no">No</option>
       </select>
       
-      <label class="seleclab" for="colaborador" *ngIf="!atencion.externo">¿Es colaboraor?</label>
+      <label class="seleclab" for="colaborador" *ngIf="!atencion.externo">¿Es colaborador?</label>
   </fieldset>
     <fieldset class="form-group col-7 col-md-9">
         <input type="text" class="form-control" id="dependencia" name="dependencia" #dependencia="ngModel" [(ngModel)]="atencion.dependencia" >
-        <label for="dependencia" *ngIf="!atencion.entidad">Dependecia</label>
+        <label for="dependencia" *ngIf="!atencion.entidad">Dependencia</label>
 
     </fieldset>
 
@@ -119,8 +171,8 @@
               <div class="form-row align-items-center">    
                 <fieldset class="form-group col-12 col-md-6">
                   <input type="text" class="form-control" id="titulo" name="titulo" #titulo="ngModel" [(ngModel)]="atencion.titulo" required>
-                  <label for="titulo" *ngIf="!atencion.titulo">Titulo</label>
-                  <span class="form-error" *ngIf="titulo.touched && !titulo.valid"> El titulo es obligatorio</span>
+                  <label for="titulo" *ngIf="!atencion.titulo">Título</label>
+                  <span class="form-error" *ngIf="titulo.touched && !titulo.valid"> El título es obligatorio</span>
 
                 </fieldset>  
                 <fieldset class="form-group col-12 col-md-6">
@@ -154,4 +206,8 @@
           </form>
       </div>
   </div>
+</div>
+</div>
+</div>
+</section>
 </div>

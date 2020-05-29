@@ -1,7 +1,59 @@
 <!-- Aqui se encuentra el codigo del formulario para actualizar emprendedor,
 el cual se ejecuta al darle click al boton emprededores de la sidebar y luego
 darle click al boton editar de un emprendedor -->
-
+<div id="wrapper">
+  <aside id="sidebar-wrapper">
+    <div class="sidebar-brand">
+      <img class="logo" src="https://sinapsis.uao.edu.co/wp-content/uploads/sites/13/2019/10/FINAL_SinapsisUAO_Mesa-de-trabajo-1-copia-2.png" alt="" srcset="">
+    </div>
+    <ul class="sidebar-nav">
+      <li class="active">
+  
+          <li>
+              <a [routerLink]="['/calendario']" [routerLinkActive]="['actived']">Calendario</a> <!-- Redirecciono a componente calendario-->
+          </li>
+          <li>
+              <a [routerLink]="['/consultar-consultorias']" [routerLinkActive]="['actived']"  >Consultorías</a>
+          </li>
+          <li>
+              <a [routerLink]="['/consultores']" [routerLinkActive]="['actived']"  >Facilitadores</a>
+          </li>
+          <li>
+              <a [routerLink]="['/consultar-emprendimientos']" [routerLinkActive]="['actived']"  >Emprendimientos</a>
+          </li>
+          <li>
+              <a [routerLink]="['/emprendedores']" [routerLinkActive]="['actived']"  >Emprendedores</a>
+          </li>
+          <li>
+            <a [routerLink]="['/consultar-usuarios']" [routerLinkActive]="['actived']"  >Atención al Usuario</a>
+        </li>
+          <hr>
+          <ul class="list-unstyled CTAs">
+  
+            <li>
+              <div class="boton"><button class="btn btnE" (click)="logOut()"> Salir</button></div>
+  
+            </li>
+        </ul>
+    </ul>
+  
+  </aside>
+  
+  <div id="navbar-wrapper">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a href="#" class="navbar-brand" id="sidebar-toggle"><i class="fa fa-bars"></i></a> <span style="font-size:15px;">Bienvenido {{user}}</span>
+        </div>
+      </div>
+    </nav>
+  </div> 
+  <section id="content-wrapper">
+    <div class="row">
+      <div class="col-lg-12" style="width: 100%;">
+         <!-- Aqui se ejecutan todos los demás componentes -->
+  
+  
 <div class="row">
   <div class="col-12 back">
     
@@ -47,7 +99,7 @@ darle click al boton editar de un emprendedor -->
                   </fieldset>
                   <fieldset class="form-group">
                     <input type="number" tabindex="3" class="form-control" id="cedula_emprendedor" name="cedula_emprendedor" #cedula_emprendedor="ngModel" [(ngModel)]="emprendedor.cedula_emprendedor" required>
-                    <label for="cedula_emprendedor" *ngIf="!emprendedor.cedula_emprendedor">Numero de Cédula</label>
+                    <label for="cedula_emprendedor" *ngIf="!emprendedor.cedula_emprendedor">Número de Cédula</label>
                     <span class="form-error" *ngIf="cedula_emprendedor.touched && !cedula_emprendedor.valid"> La Cédula es obligatorio</span>
                   </fieldset>
                   <fieldset class="form-group">
@@ -64,7 +116,7 @@ darle click al boton editar de un emprendedor -->
                   <fieldset class="form-group">
                     <input type="text" tabindex="7" class="form-control" id="direccion" name="direccion" #direccion="ngModel" [(ngModel)]="emprendedor.direccion" required>
                     <label for="direccion" *ngIf="!emprendedor.direccion">Dirección</label>
-                    <span class="form-error" *ngIf="direccion.touched && !direccion.valid"> La dirección es obligatorio</span>
+                    <span class="form-error" *ngIf="direccion.touched && !direccion.valid"> La dirección es obligatoria</span>
                   </fieldset>
                   <fieldset class="form-group">
                     <input type="text" tabindex="9" class="form-control" id="programa_academico" name="programa_academico " #programa_academico="ngModel" [(ngModel)]="emprendedor.programa_academico">
@@ -73,7 +125,7 @@ darle click al boton editar de un emprendedor -->
                   <fieldset class="form-group">
                     <input type="text" tabindex="11" class="form-control" id="profesion" name="profesion" #profesion="ngModel" [(ngModel)]="emprendedor.profesion" required>
                     <label for="profesion" *ngIf="!emprendedor.profesion">Profesión</label>
-                    <span class="form-error" *ngIf="profesion.touched && !profesion.valid"> La profesión es obligatorio</span>
+                    <span class="form-error" *ngIf="profesion.touched && !profesion.valid"> La profesión es obligatoria</span>
                   </fieldset>
                   <fieldset class="form-group">
                     <input type="text" tabindex="13" class="form-control" id="password" name="password" #password="ngModel" [(ngModel)]="emprendedor.password" required>
@@ -106,14 +158,14 @@ darle click al boton editar de un emprendedor -->
                   <fieldset class="form-group">
                     <input type="text" tabindex="12" class="form-control" id="area" name="area_enfoque" #area_enfoque="ngModel" [(ngModel)]="emprendedor.area_enfoque" required>
                     <label for="area_enfoque" *ngIf="!emprendedor.area_enfoque">Área de enfoque</label>
-                    <span class="form-error" *ngIf="area_enfoque.touched && !area_enfoque.valid"> El Area de enfoque es obligatorio</span>
+                    <span class="form-error" *ngIf="area_enfoque.touched && !area_enfoque.valid"> El área de enfoque es obligatoria</span>
                   </fieldset>
                   <fieldset class="form-group" style="display: none;">
                     <input type="text" tabindex="14" class="form-control" id="rol" name="rol" value="emprendimiento" #rol="ngModel" [(ngModel)]="emprendedor.rol" readonly>
                     <label for="rol" *ngIf="!emprendedor.rol">Rol</label>
                   </fieldset>
                   
-                  <button type="submit" tabindex="15" class="btn btn-success btn-lg float-right" [disabled]="!actemprendedorForm.form.valid">+ Actualizar emprendedor</button>
+                  <button type="submit" tabindex="15" class="btn btn-success btn-lg float-right" [disabled]="!actemprendedorForm.form.valid">Actualizar emprendedor</button>
             </div>
             <div class="col-12">
 
@@ -122,6 +174,9 @@ darle click al boton editar de un emprendedor -->
       </form>
     </div>
 </div>
-
+</div>
+</div>
+</section>
+</div>
 
 
