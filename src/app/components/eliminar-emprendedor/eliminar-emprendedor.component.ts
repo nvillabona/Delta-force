@@ -3,6 +3,7 @@ import { HttpHeaders } from '@angular/common/http';
 import { Emprendedor } from "../../models/emprendedor";
 import { EmprendedorService } from "../../services/emprendedor.service";
 import { Router, ActivatedRoute, Params } from "@angular/router";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-eliminar-emprendedor',
@@ -28,7 +29,28 @@ export class EliminarEmprendedorComponent implements OnInit {
       this.cedula = params.cedula;
       console.log(params);
   });
-  }
+  const $button  = document.querySelector('#sidebar-toggle');
+  const $wrapper = document.querySelector('#wrapper');
+  
+  $button.addEventListener('click', (e) => {
+    e.preventDefault();
+    $wrapper.classList.toggle('toggled');
+  });
+}
+
+exit(){
+  Swal.fire({
+   title: 'Estás saliendo',
+   text: '¿Deseas salir?',
+   icon: 'warning',
+   confirmButtonText: 'Sí',
+   cancelButtonText: 'No',
+   confirmButtonColor: '#6d6e71',
+   cancelButtonColor: '#f47920',
+   showCancelButton: true
+ }) 
+/*     this._loginService.logout(); */
+}
   deleteEmprendedor(cedulaE){
     this._emprededorService.deleteEmprendedor(cedulaE).subscribe(
       response => {

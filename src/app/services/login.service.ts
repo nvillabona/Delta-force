@@ -9,9 +9,10 @@ import { Router } from '@angular/router';
 export class LoginService {
     public url: string;
     public resultado;
-    public emailRes:string;
-    public loggedUser;
-    public loggedIn: boolean;
+    public UserLogin: string;
+    public idLogin: number;
+/*     public loggedUser;
+    public loggedIn: boolean; */
 
     filterUser: '';
 
@@ -24,7 +25,7 @@ export class LoginService {
 
     }
 
-    login(user: LoginUsuario) {
+/*     login(user: LoginUsuario) {
         if (user.email !== '' && user.password !== '' ) {
           this.loggedUser= user;
           this.loggedIn = true;
@@ -32,8 +33,8 @@ export class LoginService {
 
           return this.loggedUser;
         }
-      }
-
+      } */
+/* 
       getLogin(){
         return this.loggedUser;
       }
@@ -42,18 +43,28 @@ export class LoginService {
         this.loggedIn = false;
         this.router.navigate(['/login']);
         return this.loggedIn;
-      }
+      } */
 
     loginUsers(email,password){
         this.resultado = this._http.get(this.url+"/users"+"/"+ email + "/"+password);
-        this.emailRes = this.resultado.email;
-         return this.resultado
-    } 
 
-    dentro(){
-        return this.emailRes;
+         return this.resultado
+    }
+    setUser(userEmail){
+      this.UserLogin = userEmail;
+      console.log(this.UserLogin);
+      
+      let user_email = userEmail;
+      localStorage.setItem("currentUser", user_email);
+    } 
+    setToken(token): void {
+      localStorage.setItem("accessToken", token);
     }
 
+/*     dentro(){
+        return this.emailRes;
+    }
+ */
     getUsers(){
         return this._http.get(this.url+"/users");
     }

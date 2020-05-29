@@ -3,6 +3,7 @@ import { Facilitador } from "../../models/facilitador";
 import { FacilitadorService } from "../../services/facilitador.service";
 import { Router, ActivatedRoute, Params } from "@angular/router";
 import { Global } from "../../services/global";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-actualizar-consultor',
@@ -29,9 +30,31 @@ export class ActualizarConsultorComponent implements OnInit {
   ngOnInit() {
     this._route.params.subscribe(params=>{
       let cedula= params.cedula;
-      this.getFacilitador(cedula);
+      this.getFacilitador(cedula);  
+    });
+
+    const $button  = document.querySelector('#sidebar-toggle');
+    const $wrapper = document.querySelector('#wrapper');
+    
+    $button.addEventListener('click', (e) => {
+      e.preventDefault();
+      $wrapper.classList.toggle('toggled');
     });
   }
+
+  exit(){
+    Swal.fire({
+     title: 'Estás saliendo',
+     text: '¿Deseas salir?',
+     icon: 'warning',
+     confirmButtonText: 'Sí',
+     cancelButtonText: 'No',
+     confirmButtonColor: '#6d6e71',
+     cancelButtonColor: '#f47920',
+     showCancelButton: true
+   }) 
+/*     this._loginService.logout(); */
+ }
 
   getFacilitador(cedula){
     this._facilitadorService.getFacilitador(cedula).subscribe(

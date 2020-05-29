@@ -223,16 +223,16 @@ body {
   
   @media (max-width: 767px) {
     #wrapper {
-      padding-left: 0;
+      padding-left: 50%;
     }
   
-    #sidebar-wrapper {
+     #sidebar-wrapper {
       width: 0;
-    }
-  
-    #wrapper.toggled #sidebar-wrapper {
+    } 
+
+/*     #wrapper.toggled #sidebar-wrapper {
       width: 266px;
-    }
+    } */
     #wrapper.toggled #navbar-wrapper {
       position: absolute;
       margin-right: -266px;

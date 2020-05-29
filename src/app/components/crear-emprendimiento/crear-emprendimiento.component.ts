@@ -5,6 +5,7 @@ import { EmprendedorService } from "../../services/emprendedor.service";
 import { EmprendimientoService } from "../../services/emprendimiento.service";
 import { HttpHeaders } from '@angular/common/http';
 import { Router, ActivatedRoute, Params } from "@angular/router";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-crear-emprendimiento',
@@ -30,7 +31,28 @@ export class CrearEmprendimientoComponent implements OnInit {
 
   ngOnInit() {
     this.getEmprendedores();
+    const $button  = document.querySelector('#sidebar-toggle');
+    const $wrapper = document.querySelector('#wrapper');
+    
+    $button.addEventListener('click', (e) => {
+      e.preventDefault();
+      $wrapper.classList.toggle('toggled');
+    });
   }
+
+  exit(){
+    Swal.fire({
+     title: 'Estás saliendo',
+     text: '¿Deseas salir?',
+     icon: 'warning',
+     confirmButtonText: 'Sí',
+     cancelButtonText: 'No',
+     confirmButtonColor: '#6d6e71',
+     cancelButtonColor: '#f47920',
+     showCancelButton: true
+   }) 
+/*     this._loginService.logout(); */
+ }
 
   getEmprendedores(){
     this._emprededorService.getEmprendedores().subscribe(
