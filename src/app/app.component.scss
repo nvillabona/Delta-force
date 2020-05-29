@@ -1,2 +1,11 @@
 @import '~@fullcalendar/core/main.css'; /* css Calendario */
 @import '~@fullcalendar/daygrid/main.css'; /* css Calendario */
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    padding-bottom: 30px;
+    position: relative;
+    min-height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+  }

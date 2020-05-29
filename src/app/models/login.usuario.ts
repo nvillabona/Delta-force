@@ -8,6 +8,15 @@ export class LoginUsuario {
 
     }
 }
+export class UsuarioLoggeado {
+    constructor(
+        public email: string,
+        public rol: string,
+        public cedula_usuario: number
+    ){
+
+    }
+}
 
 export class AtencionUsuario {
     constructor(

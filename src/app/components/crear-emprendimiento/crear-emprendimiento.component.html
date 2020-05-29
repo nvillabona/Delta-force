@@ -1,4 +1,55 @@
-<!-- <i class="fa fa-arrow-circle-left"></i> -->
+<div id="wrapper">
+    <aside id="sidebar-wrapper">
+      <div class="sidebar-brand">
+        <img class="logo" src="https://sinapsis.uao.edu.co/wp-content/uploads/sites/13/2019/10/FINAL_SinapsisUAO_Mesa-de-trabajo-1-copia-2.png" alt="" srcset="">
+      </div>
+      <ul class="sidebar-nav">
+        <li class="active">
+    
+            <li>
+                <a [routerLink]="['/calendario']" [routerLinkActive]="['actived']">Calendario</a> <!-- Redirecciono a componente calendario-->
+            </li>
+            <li>
+                <a [routerLink]="['/consultar-consultorias']" [routerLinkActive]="['actived']"  >Consultorías</a>
+            </li>
+            <li>
+                <a [routerLink]="['/consultores']" [routerLinkActive]="['actived']"  >Facilitadores</a>
+            </li>
+            <li>
+                <a [routerLink]="['/consultar-emprendimientos']" [routerLinkActive]="['actived']"  >Emprendimientos</a>
+            </li>
+            <li>
+                <a [routerLink]="['/emprendedores']" [routerLinkActive]="['actived']"  >Emprendedores</a>
+            </li>
+            <li>
+              <a [routerLink]="['/consultar-usuarios']" [routerLinkActive]="['actived']"  >Atención al Usuario</a>
+          </li>
+            <hr>
+            <ul class="list-unstyled CTAs">
+    
+              <li>
+                <div class="boton"><button class="btn btnE" (click)="logOut()"> Salir</button></div>
+    
+              </li>
+          </ul>
+      </ul>
+    
+    </aside>
+    
+    <div id="navbar-wrapper">
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a href="#" class="navbar-brand" id="sidebar-toggle"><i class="fa fa-bars"></i></a> <span style="font-size:15px;">Bienvenido {{user}}</span>
+          </div>
+        </div>
+      </nav>
+    </div> 
+    <section id="content-wrapper">
+      <div class="row">
+        <div class="col-lg-12" style="width: 100%;">
+           <!-- Aqui se ejecutan todos los demás componentes -->
+    
 <div class="row">
     <div class="col-12 back">
       
@@ -39,11 +90,11 @@
                             <span class="form-error" *ngIf="c_emprendedor.touched && !c_emprendedor.valid"> El emprendedor es obligatorio</span>
                         </fieldset>
                         <fieldset class="form-group">
-                            <input type="text" tabindex="3" class="form-control" id="facultad" name="facultad" #facultad="ngModel" [(ngModel)]="emprendimiento.facultad" >
+                            <input type="text" onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))" tabindex="3" class="form-control" id="facultad" name="facultad" #facultad="ngModel" [(ngModel)]="emprendimiento.facultad" >
                             <label for="facultad" *ngIf="!emprendimiento.facultad">Facultad</label>
                         </fieldset>
                         <fieldset class="form-group">
-                            <input type="text" tabindex="5" class="form-control" id="perfilprofecional" name="sector" #sector="ngModel" [(ngModel)]="emprendimiento.sector" required>
+                            <input type="text" tabindex="5" onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))" class="form-control" id="perfilprofecional" name="sector" #sector="ngModel" [(ngModel)]="emprendimiento.sector" required>
                             <label for="sector" *ngIf="!emprendimiento.sector">Sector Asociado al emprendimiento</label>
                         </fieldset>
 <!--                         <fieldset class="form-group">
@@ -53,19 +104,19 @@
                     </div>
                     <div class="col-12 col-md-4">
                         <fieldset class="form-group">
-                            <input type="text" tabindex="2" class="form-control" id="titulo" name="titulo" #titulo="ngModel" [(ngModel)]="emprendimiento.titulo" required>
+                            <input type="text" onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))" tabindex="2" class="form-control" id="titulo" name="titulo" #titulo="ngModel" [(ngModel)]="emprendimiento.titulo" required>
                             <label for="titulo" *ngIf="!emprendimiento.titulo">Título del emprendimiento</label>
                         </fieldset>
                         <fieldset class="form-group">
-                            <input type="text" tabindex="4" class="form-control" id="programa_academico" name="programa_academico" #programa_academico="ngModel" [(ngModel)]="emprendimiento.programa_academico">
+                            <input type="text" onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))" tabindex="4" class="form-control" id="programa_academico" name="programa_academico" #programa_academico="ngModel" [(ngModel)]="emprendimiento.programa_academico">
                             <label for="programa_academico" *ngIf="!emprendimiento.programa_academico">Programa académico</label>
                         </fieldset>
                         <fieldset class="form-group">
-                            <input type="text" tabindex="6" class="form-control" id="egresado" name="egresado" #egresado="ngModel" [(ngModel)]="emprendimiento.egresado" required>
+                            <input type="text" onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))" tabindex="6" class="form-control" id="egresado" name="egresado" #egresado="ngModel" [(ngModel)]="emprendimiento.egresado" required>
                             <label for="egresado" *ngIf="!emprendimiento.egresado">¿Egresado?</label>
                         </fieldset>
                         <fieldset class="form-group">
-                            <input type="text" tabindex="8" class="form-control" id="etapa" name="etapa" #etapa="ngModel" [(ngModel)]="emprendimiento.etapa" required>
+                            <input type="text" onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))" tabindex="8" class="form-control" id="etapa" name="etapa" #etapa="ngModel" [(ngModel)]="emprendimiento.etapa" required>
                             <label for="etapa" *ngIf="!emprendimiento.etapa">Etapa del proyecto</label>
                         </fieldset>
                     </div>
@@ -102,7 +153,7 @@
                                                     <label for="num_contacto"  style="margin-left: 30px;" *ngIf="!emprendimiento.num_contacto">Teléfono empresa</label>
                                                 </div>
                                                 <div class="col-10 col-md-3">
-                                                    <input type="text" tabindex="12" class="form-control" id="segmento_clientes" name="segmento_clientes" #segmento_clientes="ngModel" [(ngModel)]="emprendimiento.segmento_clientes">
+                                                    <input type="text" onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))" tabindex="12" class="form-control" id="segmento_clientes" name="segmento_clientes" #segmento_clientes="ngModel" [(ngModel)]="emprendimiento.segmento_clientes">
                                                     <label for="segmento_clientes" *ngIf="!emprendimiento.segmento_clientes">Segmento de clientes</label>
                                                 </div>
                                             </div>
@@ -116,7 +167,7 @@
                                                     <label for="propuesta_valor" *ngIf="!emprendimiento.propuesta_valor">Propuesta de valor</label>
                                                 </div>
                                                 <div class="col-10 col-md-3">
-                                                    <input type="text" tabindex="15" class="form-control" id="canales" name="canales" #canales="ngModel" [(ngModel)]="emprendimiento.canales">
+                                                    <input type="text" onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))" tabindex="15" class="form-control" id="canales" name="canales" #canales="ngModel" [(ngModel)]="emprendimiento.canales">
                                                     <label for="canales" *ngIf="!emprendimiento.canales">Canales</label>
                                                 </div>
                                             </div>
@@ -126,17 +177,17 @@
                                                     <label for="fuente_ingresos" *ngIf="!emprendimiento.fuente_ingresos">Fuente de ingresos</label>
                                                 </div>
                                                 <div class="col-10 col-md-3">
-                                                    <input type="text" tabindex="17" class="form-control" id="recursos_clave" name="recursos_clave" #recursos_clave="ngModel" [(ngModel)]="emprendimiento.recursos_clave">
+                                                    <input type="text" onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))" tabindex="17" class="form-control" id="recursos_clave" name="recursos_clave" #recursos_clave="ngModel" [(ngModel)]="emprendimiento.recursos_clave">
                                                     <label for="recursos_clave" *ngIf="!emprendimiento.recursos_clave">Recursos clave</label>
                                                 </div>
                                                 <div class="col-10 col-md-3">
-                                                    <input type="text" tabindex="18" class="form-control" id="actividades_clave" name="actividades_clave" #actividades_clave="ngModel" [(ngModel)]="emprendimiento.actividades_clave">
+                                                    <input type="text" onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))" tabindex="18" class="form-control" id="actividades_clave" name="actividades_clave" #actividades_clave="ngModel" [(ngModel)]="emprendimiento.actividades_clave">
                                                     <label for="actividades_clave" *ngIf="!emprendimiento.actividades_clave">Actividades clave</label>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-10 col-md-3">
-                                                    <input type="text" tabindex="19" class="form-control" id="socios_clave" name="socios_clave" #socios_clave="ngModel" [(ngModel)]="emprendimiento.socios_clave">
+                                                    <input type="text" onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))" tabindex="19" class="form-control" id="socios_clave" name="socios_clave" #socios_clave="ngModel" [(ngModel)]="emprendimiento.socios_clave">
                                                     <label for="socios_clave" *ngIf="!emprendimiento.socios_clave">Socios clave</label>
                                                 </div>
                                                 <div class="col-10 col-md-3">
@@ -158,4 +209,8 @@
                                             <!-- FIN FORMULARIO EMPRESA -->
         </div>
     </div>
+</div>
+</div>
+</div>
+</section>
 </div>

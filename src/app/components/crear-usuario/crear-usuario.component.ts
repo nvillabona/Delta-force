@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AtencionUsuarioAdd } from "../../models/login.usuario";
 import { Router, ActivatedRoute, Params} from "@angular/router";
 import { LoginService } from "../../services/login.service";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-crear-usuario',
@@ -12,6 +13,7 @@ import { LoginService } from "../../services/login.service";
 export class CrearUsuarioComponent implements OnInit {
   public atencion: AtencionUsuarioAdd;
   public status:string;
+  public user: string;
 
   constructor(
     private _router: Router,
@@ -23,7 +25,37 @@ export class CrearUsuarioComponent implements OnInit {
   }
   
   ngOnInit() {
+    this.user = this._loginService.getCurrentUser();
+    if (!this.user) {
+      this._router.navigate(['/login']); 
+    }
+    const $button  = document.querySelector('#sidebar-toggle');
+    const $wrapper = document.querySelector('#wrapper');
+    
+    $button.addEventListener('click', (e) => {
+      e.preventDefault();
+      $wrapper.classList.toggle('toggled');
+    });
   }
+
+  exit(){
+    Swal.fire({
+     title: 'Estás saliendo',
+     text: '¿Deseas salir?',
+     icon: 'warning',
+     confirmButtonText: 'Sí',
+     cancelButtonText: 'No',
+     confirmButtonColor: '#6d6e71',
+     cancelButtonColor: '#f47920',
+     showCancelButton: true
+   }) 
+/*     this._loginService.logout(); */
+ }
+ logOut(){
+  this._loginService.logoutUser();
+  this._router.navigate(['/login']); 
+}
+
 
   onSubmit(form){
     console.log(this.atencion);
