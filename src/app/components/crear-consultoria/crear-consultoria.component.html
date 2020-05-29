@@ -56,7 +56,7 @@
       <a routerLink="/consultar-consultorias"><i class="fa fa-arrow-circle-left"></i> Atrás</a>
 </div>
 </div>
-<div class="consultoria-cont-succ mx-auto " *ngIf="status == 'failed'">
+<div class="consultoria-cont-succ mx-auto " *ngIf="status === 'failed'">
   <div class="row">
   <div class=" col-12 message success text-center" >
     <img src="../../../assets/image/true.png" alt="" width="20%">
@@ -65,7 +65,7 @@
   </div>
 </div>
 </div>
-<div class="consultor-cont mx-auto card" *ngIf="status == 'success'">
+<div class="consultor-cont mx-auto card" *ngIf="status === 'success'">
 
     <div class="row">
         <div class="col-12">
