@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable, BehaviorSubject } from "rxjs";
-import { LoginUsuario, AtencionUsuario, AtencionUsuarioAdd } from "../models/login.usuario";
+import { LoginUsuario, AtencionUsuario, AtencionUsuarioAdd, UsuarioLoggeado } from "../models/login.usuario";
 import { Global } from "../services/global";
 import { Router } from '@angular/router';
 
@@ -50,15 +50,65 @@ export class LoginService {
 
          return this.resultado
     }
-    setUser(userEmail){
-      this.UserLogin = userEmail;
+    setUser(user:UsuarioLoggeado){
+      this.UserLogin = JSON.stringify(user);
       console.log(this.UserLogin);
       
-      let user_email = userEmail;
-      localStorage.setItem("currentUser", user_email);
+      let user_email = user.email;
+      localStorage.setItem("currentUser", this.UserLogin);
     } 
     setToken(token): void {
       localStorage.setItem("accessToken", token);
+    }
+    setRol(rol): void {
+      localStorage.setItem("rol", rol);
+    }
+
+    getToken() {
+      return localStorage.getItem("accessToken");
+    }
+    getCurrentUser() {
+      let user_string = localStorage.getItem("currentUser");
+      let user_id = localStorage.getItem("accessToken");
+      let user_rol = localStorage.getItem("rol");
+      if (user_string) {
+        let user = user_string;
+        console.log(user);
+        
+        return user;        
+      } else {
+        return null;
+      }
+    }
+    getCurrentToken() {
+      let user_id = localStorage.getItem("accessToken");
+      if (user_id) {
+        let id = user_id;
+        console.log(id);
+        
+        return id;        
+      } else {
+        return null;
+      }
+    }
+
+    getCurrentRol() {
+      let user_rol = localStorage.getItem("rol");
+      if (user_rol) {
+        let rol = user_rol;
+        console.log(rol);
+        
+        return rol;        
+      } else {
+        return null;
+      }
+    }
+
+    logoutUser() {
+      localStorage.removeItem("accessToken");
+      localStorage.removeItem("currentUser");
+      localStorage.removeItem("rol");
+      return "Sesion cerrada";
     }
 
 /*     dentro(){

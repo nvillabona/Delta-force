@@ -51,6 +51,8 @@ export class LoginComponent implements OnInit {
         if (resultado) {
           console.log(resultado);
           this._loginService.setUser(resultado.email);
+          this._loginService.setToken(resultado.cedula_usuario);
+          this._loginService.setRol(resultado.rol);
           this._router.navigate(['/calendario']); 
         }else{
           form.reset();

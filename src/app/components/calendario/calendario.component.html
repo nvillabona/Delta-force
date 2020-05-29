@@ -2,6 +2,7 @@
     <aside id="sidebar-wrapper">
       <div class="sidebar-brand">
         <img class="logo" src="https://sinapsis.uao.edu.co/wp-content/uploads/sites/13/2019/10/FINAL_SinapsisUAO_Mesa-de-trabajo-1-copia-2.png" alt="" srcset="">
+       
       </div>
       <ul class="sidebar-nav">
         <li class="active">
@@ -28,7 +29,7 @@
             <ul class="list-unstyled CTAs">
     
               <li>
-                <div class="boton"><button class="btn btnE" (click)="exit()"> Salir</button></div>
+                <div class="boton"><button class="btn btnE" (click)="logOut()"> Salir</button></div>
     
               </li>
           </ul>
@@ -40,7 +41,7 @@
       <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a href="#" class="navbar-brand" id="sidebar-toggle"><i class="fa fa-bars"></i></a>
+            <a href="#" class="navbar-brand" id="sidebar-toggle"><i class="fa fa-bars"></i></a>  <span style="font-size:15px;">Bienvenido {{user}}</span>
           </div>
         </div>
       </nav>
