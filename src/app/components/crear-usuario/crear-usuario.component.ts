@@ -13,6 +13,7 @@ import Swal from 'sweetalert2';
 export class CrearUsuarioComponent implements OnInit {
   public atencion: AtencionUsuarioAdd;
   public status:string;
+  public user: string;
 
   constructor(
     private _router: Router,
@@ -24,6 +25,7 @@ export class CrearUsuarioComponent implements OnInit {
   }
   
   ngOnInit() {
+    this.user = this._loginService.getCurrentUser().replace('"', '').replace('"', '');
     const $button  = document.querySelector('#sidebar-toggle');
     const $wrapper = document.querySelector('#wrapper');
     
@@ -46,6 +48,11 @@ export class CrearUsuarioComponent implements OnInit {
    }) 
 /*     this._loginService.logout(); */
  }
+ logOut(){
+  this._loginService.logoutUser();
+  this._router.navigate(['/login']); 
+}
+
 
   onSubmit(form){
     console.log(this.atencion);

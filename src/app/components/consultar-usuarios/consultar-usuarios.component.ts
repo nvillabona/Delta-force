@@ -13,6 +13,7 @@ import Swal from 'sweetalert2';
 })
 export class ConsultarUsuariosComponent implements OnInit {
   public atenciones: AtencionUsuario[];
+  public user: string;
 
   constructor(
     private _atencinoService: LoginService,
@@ -22,6 +23,7 @@ export class ConsultarUsuariosComponent implements OnInit {
     }
 
   ngOnInit() {
+    this.user = this._atencinoService.getCurrentUser().replace('"', '').replace('"', '');
     this.getAtencion();
     const $button  = document.querySelector('#sidebar-toggle');
     const $wrapper = document.querySelector('#wrapper');
@@ -46,6 +48,10 @@ export class ConsultarUsuariosComponent implements OnInit {
 /*     this._loginService.logout(); */
  }
 
+ logOut(){
+  this._atencinoService.logoutUser();
+  this._router.navigate(['/login']); 
+}
 
   
   getAtencion(){

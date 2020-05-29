@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmprendimientoList } from "../../models/emprendimiento";
 import { EmprendimientoService } from "../../services/emprendimiento.service";
+import { LoginService } from "../../services/login.service";
 import { Router, ActivatedRoute, Params } from "@angular/router";
 import Swal from 'sweetalert2';
 
@@ -8,20 +9,22 @@ import Swal from 'sweetalert2';
   selector: 'app-consultar-emprendimientos',
   templateUrl: './consultar-emprendimientos.component.html',
   styleUrls: ['./consultar-emprendimientos.component.scss'],
-  providers:[EmprendimientoService]
+  providers:[EmprendimientoService, LoginService]
 })
 export class ConsultarEmprendimientosComponent implements OnInit {
   public emprendimientos: EmprendimientoList[];
-
+  public user: string;
 
   constructor(
     private _emprendimientoService: EmprendimientoService,
+    private _loginService: LoginService,
     private _router: Router,
     private _route: ActivatedRoute,
   ) { }
 
   ngOnInit() {
     this.getEmprendimientos();
+    this.user = this._loginService.getCurrentUser().replace('"', '').replace('"', '');
     const $button  = document.querySelector('#sidebar-toggle');
     const $wrapper = document.querySelector('#wrapper');
     
@@ -44,6 +47,11 @@ export class ConsultarEmprendimientosComponent implements OnInit {
    }) 
 /*     this._loginService.logout(); */
  }
+ logOut(){
+  this._loginService.logoutUser();
+  this._router.navigate(['/login']); 
+}
+
 
   getEmprendimientos(){
     this._emprendimientoService.getEmprendimientos().subscribe(

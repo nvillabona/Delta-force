@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Facilitador, FacilitadorList } from "../../models/facilitador";
 import { FacilitadorService } from "../../services/facilitador.service";
+import { LoginService } from "../../services/login.service";
 import Swal from 'sweetalert2';
 import { HttpHeaders } from '@angular/common/http';
 import { Router, ActivatedRoute, Params } from "@angular/router";
@@ -9,16 +10,18 @@ import { Router, ActivatedRoute, Params } from "@angular/router";
   selector: 'app-consultores',
   templateUrl: './consultores.component.html',
   styleUrls: ['./consultores.component.scss'],
-  providers :[FacilitadorService]
+  providers :[FacilitadorService, LoginService]
 })
 export class ConsultoresComponent implements OnInit {
   public facilitadores: Facilitador[];
   public facilitadoresList: FacilitadorList[];
   public status:string;
   public menu: string;
+  public user: string;
 
   constructor(
     private _facilitadorService: FacilitadorService,
+    private _loginService: LoginService,
     private _router: Router,
     private _route: ActivatedRoute,
   ) { 
@@ -26,6 +29,7 @@ export class ConsultoresComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.user = this._loginService.getCurrentUser().replace('"', '').replace('"', '');
     this.getFacilitadores();
     const $button  = document.querySelector('#sidebar-toggle');
     const $wrapper = document.querySelector('#wrapper');
@@ -106,4 +110,9 @@ cerrarPop(){
    }) 
 /*     this._loginService.logout(); */
  }
+ logOut(){
+  this._loginService.logoutUser();
+  this._router.navigate(['/login']); 
+}
+
 }

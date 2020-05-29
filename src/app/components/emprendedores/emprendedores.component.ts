@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EmprendedorList, Emprendedor } from "../../models/emprendedor";
 import { EmprendedorService } from "../../services/emprendedor.service";
 import { HttpHeaders } from '@angular/common/http';
+import { LoginService } from "../../services/login.service";
 import { Router, ActivatedRoute, Params } from "@angular/router";
 import Swal from 'sweetalert2';
 
@@ -10,16 +11,18 @@ import Swal from 'sweetalert2';
   selector: 'app-emprendedores',
   templateUrl: './emprendedores.component.html',
   styleUrls: ['./emprendedores.component.scss'],
-  providers:[EmprendedorService]
+  providers:[EmprendedorService, LoginService]
   
 })
 export class EmprendedoresComponent implements OnInit {
   public emprendedores: Emprendedor[];
   public emprendedorList: EmprendedorList[];
   public status:string;
+  public user:string;
 
   constructor(
     private _emprededorService: EmprendedorService,
+    private _loginService: LoginService,
     private _router: Router,
     private _route: ActivatedRoute,
   ) {
@@ -27,6 +30,7 @@ export class EmprendedoresComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.user = this._loginService.getCurrentUser().replace('"', '').replace('"', '');
     this.getEmprendedores();
     
     const $button  = document.querySelector('#sidebar-toggle');
@@ -51,6 +55,11 @@ export class EmprendedoresComponent implements OnInit {
    }) 
 /*     this._loginService.logout(); */
  }
+ logOut(){
+  this._loginService.logoutUser();
+  this._router.navigate(['/login']); 
+}
+
 
   abrirPop(cedula, nombres, apellidos){
       this._emprededorService.getEmprendimiento(cedula).subscribe(

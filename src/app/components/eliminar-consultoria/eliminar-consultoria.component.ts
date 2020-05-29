@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConsultoriaService } from "../../services/consultoria.service";
+import { LoginService } from "../../services/login.service";
 import { Router, ActivatedRoute, Params } from "@angular/router";
 import Swal from 'sweetalert2';
 
@@ -7,19 +8,22 @@ import Swal from 'sweetalert2';
   selector: 'app-eliminar-consultoria',
   templateUrl: './eliminar-consultoria.component.html',
   styleUrls: ['./eliminar-consultoria.component.scss'],
-  providers:[ConsultoriaService]
+  providers:[ConsultoriaService, LoginService]
 })
 export class EliminarConsultoriaComponent implements OnInit {
   public titulo: string;
   public consecutivo: number;
+  public user: string;
 
   constructor(
     private _consultoriaService: ConsultoriaService,
+    private _loginService: LoginService,
     private _router: Router,
     private _route: ActivatedRoute,
   ) { }
 
   ngOnInit() {
+    this.user = this._loginService.getCurrentUser().replace('"', '').replace('"', '');
     this._route.params.subscribe((params:Params)=>{
       this.titulo= params.titulo;
       this.consecutivo = params.consecutivo;
@@ -46,6 +50,10 @@ exit(){
    showCancelButton: true
  }) 
 /*     this._loginService.logout(); */
+}
+logOut(){
+  this._loginService.logoutUser();
+  this._router.navigate(['/login']); 
 }
 
   deleteConsultoria(consecutivo){

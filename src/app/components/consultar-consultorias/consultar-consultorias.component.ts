@@ -1,6 +1,7 @@
 import { Component, OnInit, RootRenderer } from '@angular/core';
 import { Consultoria } from "../../models/consultoria";
 import { ConsultoriaService } from "../../services/consultoria.service";
+import { LoginService } from "../../services/login.service";
 import { Router, ActivatedRoute, Params } from "@angular/router";
 import Swal from 'sweetalert2';
 
@@ -8,19 +9,22 @@ import Swal from 'sweetalert2';
   selector: 'app-consultar-consultorias',
   templateUrl: './consultar-consultorias.component.html',
   styleUrls: ['./consultar-consultorias.component.scss'],
-  providers:[ConsultoriaService]
+  providers:[ConsultoriaService, LoginService]
 })
 export class ConsultarConsultoriasComponent implements OnInit {
   public consultorias: Consultoria[];
   public tamaño: number;
+  public user: string;
 
   constructor(
     private _consultoriaService: ConsultoriaService,
+    private _loginService: LoginService,
     private _router: Router,
     private _route: ActivatedRoute
   ) { }
 
   ngOnInit() {
+    this.user = this._loginService.getCurrentUser().replace('"', '').replace('"', '');
     this.getConsultoria();
     const $button  = document.querySelector('#sidebar-toggle');
     const $wrapper = document.querySelector('#wrapper');
@@ -44,6 +48,11 @@ export class ConsultarConsultoriasComponent implements OnInit {
    }) 
 /*     this._loginService.logout(); */
  }
+ logOut(){
+  this._loginService.logoutUser();
+  this._router.navigate(['/login']); 
+}
+
 
   getConsultoria(){
     this._consultoriaService.getConsultorias().subscribe(

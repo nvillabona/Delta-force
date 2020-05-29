@@ -1,26 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { Facilitador } from "../../models/facilitador";
 import { FacilitadorService  } from "../../services/facilitador.service";
+import { LoginService } from "../../services/login.service";
+import { Router, ActivatedRoute, Params } from "@angular/router";
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-crear-consultor',
   templateUrl: './crear-consultor.component.html',
   styleUrls: ['./crear-consultor.component.scss'],
-  providers: [FacilitadorService]
+  providers: [FacilitadorService, LoginService]
 })
 export class CrearConsultorComponent implements OnInit {
   public facilitador: Facilitador;
   public status: string;
+  public user:string;
 
   constructor(
-    private _facilitadorService : FacilitadorService
+    private _facilitadorService : FacilitadorService,
+    private _loginService: LoginService,
+    private _router: Router,
+    private _route: ActivatedRoute,
   ) {
     this.facilitador= new Facilitador(0,"","","","",0,"","","facilitador","");
     this.status = "success"
    }
 
   ngOnInit() {
+    this.user = this._loginService.getCurrentUser().replace('"', '').replace('"', '');
     const $button  = document.querySelector('#sidebar-toggle');
     const $wrapper = document.querySelector('#wrapper');
     
@@ -43,6 +50,11 @@ export class CrearConsultorComponent implements OnInit {
    }) 
 /*     this._loginService.logout(); */
  }
+ logOut(){
+  this._loginService.logoutUser();
+  this._router.navigate(['/login']); 
+}
+
 
   
   onSubmit(form){

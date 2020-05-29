@@ -3,6 +3,7 @@ import { Emprendimiento } from "../../models/emprendimiento";
 import { Emprendedor } from "../../models/emprendedor";
 import { EmprendedorService } from "../../services/emprendedor.service";
 import { EmprendimientoService } from "../../services/emprendimiento.service";
+import { LoginService } from "../../services/login.service";
 import { HttpHeaders } from '@angular/common/http';
 import { Router, ActivatedRoute, Params } from "@angular/router";
 import Swal from 'sweetalert2';
@@ -11,16 +12,18 @@ import Swal from 'sweetalert2';
   selector: 'app-crear-emprendimiento',
   templateUrl: './crear-emprendimiento.component.html',
   styleUrls: ['./crear-emprendimiento.component.scss'],
-  providers:[EmprendimientoService, EmprendedorService]
+  providers:[EmprendimientoService, EmprendedorService, LoginService]
 })
 export class CrearEmprendimientoComponent implements OnInit {
   public emprendedores:Emprendedor[];
   public emprendimiento: Emprendimiento;
   public status:string;
+  public user: string;
 
   constructor(
     private _emprendimientoService: EmprendimientoService,
     private _emprededorService: EmprendedorService,
+    private _loginService: LoginService,
     private _router: Router,
     private _route: ActivatedRoute,
   ) { 
@@ -30,6 +33,7 @@ export class CrearEmprendimientoComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.user = this._loginService.getCurrentUser().replace('"', '').replace('"', '');
     this.getEmprendedores();
     const $button  = document.querySelector('#sidebar-toggle');
     const $wrapper = document.querySelector('#wrapper');
@@ -53,6 +57,11 @@ export class CrearEmprendimientoComponent implements OnInit {
    }) 
 /*     this._loginService.logout(); */
  }
+ logOut(){
+  this._loginService.logoutUser();
+  this._router.navigate(['/login']); 
+}
+
 
   getEmprendedores(){
     this._emprededorService.getEmprendedores().subscribe(

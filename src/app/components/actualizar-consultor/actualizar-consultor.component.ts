@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Facilitador } from "../../models/facilitador";
 import { FacilitadorService } from "../../services/facilitador.service";
+import { LoginService } from "../../services/login.service";
 import { Router, ActivatedRoute, Params } from "@angular/router";
 import { Global } from "../../services/global";
 import Swal from 'sweetalert2';
@@ -9,16 +10,18 @@ import Swal from 'sweetalert2';
   selector: 'app-actualizar-consultor',
   templateUrl: './actualizar-consultor.component.html',
   styleUrls: ['./actualizar-consultor.component.scss'],
-  providers:[FacilitadorService]
+  providers:[FacilitadorService, LoginService]
 })
 export class ActualizarConsultorComponent implements OnInit {
   public facilitador: Facilitador;
   public save_facilitador;
   public status: string;
   public url: string;
+  public user: string;
 
   constructor(
     private _facilitadorService: FacilitadorService,
+    private _loginService: LoginService,
     private _router: Router,
     private _route: ActivatedRoute,
   ) { 
@@ -28,6 +31,7 @@ export class ActualizarConsultorComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.user = this._loginService.getCurrentUser().replace('"', '').replace('"', '');
     this._route.params.subscribe(params=>{
       let cedula= params.cedula;
       this.getFacilitador(cedula);  
@@ -55,6 +59,10 @@ export class ActualizarConsultorComponent implements OnInit {
    }) 
 /*     this._loginService.logout(); */
  }
+ logOut(){
+  this._loginService.logoutUser();
+  this._router.navigate(['/login']); 
+}
 
   getFacilitador(cedula){
     this._facilitadorService.getFacilitador(cedula).subscribe(

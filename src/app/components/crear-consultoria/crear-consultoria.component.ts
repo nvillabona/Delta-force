@@ -6,6 +6,7 @@ import { EmprendedorService } from "../../services/emprendedor.service";
 import { Facilitador } from "../../models/facilitador";
 import { FacilitadorService } from "../../services/facilitador.service";
 import { HttpHeaders } from '@angular/common/http';
+import { LoginService } from "../../services/login.service";
 import { Router, ActivatedRoute, Params } from "@angular/router";
 import Swal from 'sweetalert2';
 
@@ -13,18 +14,20 @@ import Swal from 'sweetalert2';
   selector: 'app-crear-consultoria',
   templateUrl: './crear-consultoria.component.html',
   styleUrls: ['./crear-consultoria.component.scss'],
-  providers:[ConsultoriaService, EmprendedorService, FacilitadorService]
+  providers:[ConsultoriaService, EmprendedorService, FacilitadorService, LoginService]
 })
 export class CrearConsultoriaComponent implements OnInit {
   public emprendedores:Emprendedor[];
   public facilitadores: Facilitador[];
   public consultoria: Consultoria;
   public status:string;
+  public user: string;
 
   constructor(
     private _consultoriasService: ConsultoriaService,
     private _emprededorService: EmprendedorService,
     private _facilitadorService: FacilitadorService,
+    private _loginService: LoginService,
     private _router: Router,
     private _route: ActivatedRoute,
   ) { 
@@ -33,6 +36,7 @@ export class CrearConsultoriaComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.user = this._loginService.getCurrentUser().replace('"', '').replace('"', '');
     this.getEmprendedores();
     this.getFacilitador();
     const $button  = document.querySelector('#sidebar-toggle');
@@ -57,6 +61,11 @@ export class CrearConsultoriaComponent implements OnInit {
    }) 
 /*     this._loginService.logout(); */
  }
+ logOut(){
+  this._loginService.logoutUser();
+  this._router.navigate(['/login']); 
+}
+
 
   getEmprendedores(){
     this._emprededorService.getEmprendedores().subscribe(

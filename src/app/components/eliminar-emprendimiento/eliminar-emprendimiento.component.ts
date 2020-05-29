@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Emprendimiento } from "../../models/emprendimiento";
 import { EmprendimientoService } from "../../services/emprendimiento.service";
+import { LoginService } from "../../services/login.service";
 import { Router, ActivatedRoute, Params } from "@angular/router";
 import Swal from 'sweetalert2';
 
@@ -8,19 +9,22 @@ import Swal from 'sweetalert2';
   selector: 'app-eliminar-emprendimiento',
   templateUrl: './eliminar-emprendimiento.component.html',
   styleUrls: ['./eliminar-emprendimiento.component.scss'],
-  providers:[EmprendimientoService]
+  providers:[EmprendimientoService, LoginService]
 })
 export class EliminarEmprendimientoComponent implements OnInit {
   public titulo: string;
   public consecutivo: number;
+  public user: string;
 
   constructor(
     private _emprendimientoService: EmprendimientoService,
+    private _loginService: LoginService,
     private _router: Router,
     private _route: ActivatedRoute,
   ) { }
 
   ngOnInit() {
+    this.user = this._loginService.getCurrentUser().replace('"', '').replace('"', '');
     this._route.params.subscribe((params:Params)=>{
       this.titulo= params.titulo;
       this.consecutivo = params.consecutivo;
@@ -48,6 +52,11 @@ exit(){
  }) 
 /*     this._loginService.logout(); */
 }
+logOut(){
+  this._loginService.logoutUser();
+  this._router.navigate(['/login']); 
+}
+
 
   deleteEmprendimiento(consecutivo){
     this._emprendimientoService.deleteEmprendimiento(consecutivo).subscribe(

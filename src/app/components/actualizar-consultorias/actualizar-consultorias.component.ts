@@ -5,6 +5,7 @@ import { Emprendedor } from "../../models/emprendedor";
 import { EmprendedorService } from "../../services/emprendedor.service";
 import { Facilitador } from "../../models/facilitador";
 import { FacilitadorService } from "../../services/facilitador.service";
+import { LoginService } from "../../services/login.service";
 import { HttpHeaders } from '@angular/common/http';
 import { Router, ActivatedRoute, Params } from "@angular/router";
 import { Global } from "../../services/global";
@@ -14,7 +15,7 @@ import Swal from 'sweetalert2';
   selector: 'app-actualizar-consultorias',
   templateUrl: './actualizar-consultorias.component.html',
   styleUrls: ['./actualizar-consultorias.component.scss'],
-  providers:[ConsultoriaService, EmprendedorService, FacilitadorService]
+  providers:[ConsultoriaService, EmprendedorService, FacilitadorService, LoginService]
 })
 export class ActualizarConsultoriasComponent implements OnInit {
   public save_consultoria;
@@ -23,13 +24,14 @@ export class ActualizarConsultoriasComponent implements OnInit {
   public consultoria: Consultoria;
   public status:string;
   public url: string;
-
+  public user: string;
 
   
   constructor(
     private _consultoriasService: ConsultoriaService,
     private _emprededorService: EmprendedorService,
     private _facilitadorService: FacilitadorService,
+    private _loginService: LoginService,
     private _router: Router,
     private _route: ActivatedRoute,
   ) { 
@@ -38,6 +40,7 @@ export class ActualizarConsultoriasComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.user = this._loginService.getCurrentUser().replace('"', '').replace('"', '');
     this._route.params.subscribe(params=>{
       let consecutivo= params.consecutivo;
       this.getConsultoria(consecutivo);
@@ -66,6 +69,10 @@ export class ActualizarConsultoriasComponent implements OnInit {
    }) 
 /*     this._loginService.logout(); */
  }
+ logOut(){
+  this._loginService.logoutUser();
+  this._router.navigate(['/login']); 
+}
 
   getConsultoria(consecutivo){
     this._consultoriasService.getConsultoria(consecutivo).subscribe(

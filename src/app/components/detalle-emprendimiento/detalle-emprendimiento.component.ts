@@ -4,6 +4,7 @@ import { EmprendimientoList } from "../../models/emprendimiento";
 import { Emprendedor } from "../../models/emprendedor";
 import { EmprendedorService } from "../../services/emprendedor.service";
 import { EmprendimientoService } from "../../services/emprendimiento.service";
+import { LoginService } from "../../services/login.service";
 import { HttpHeaders } from '@angular/common/http';
 import { Router, ActivatedRoute, Params } from "@angular/router";
 import { Global } from "../../services/global";
@@ -14,16 +15,18 @@ import Swal from 'sweetalert2';
   selector: 'app-detalle-emprendimiento',
   templateUrl: './detalle-emprendimiento.component.html',
   styleUrls: ['./detalle-emprendimiento.component.scss'],
-  providers:[EmprendimientoService, EmprendedorService]
+  providers:[EmprendimientoService, EmprendedorService,LoginService]
 })
 export class DetalleEmprendimientoComponent implements OnInit {
   public emprendimiento: EmprendimientoList;
   public emprendedores:Emprendedor;
   public url: string;
+  public user: string;
 
   constructor(
     private _emprendimientoService: EmprendimientoService,
     private _emprededorService: EmprendedorService,
+    private _loginService: LoginService,
     private _router: Router,
     private _route: ActivatedRoute,
   ) { 
@@ -31,6 +34,7 @@ export class DetalleEmprendimientoComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.user = this._loginService.getCurrentUser().replace('"', '').replace('"', '');
     this._route.params.subscribe(params=>{
       let consecutivo= params.consecutivo;
       this.getEmprendimiento(consecutivo);
@@ -57,6 +61,10 @@ export class DetalleEmprendimientoComponent implements OnInit {
    }) 
 /*     this._loginService.logout(); */
  }
+ logOut(){
+  this._loginService.logoutUser();
+  this._router.navigate(['/login']); 
+}
 
   getEmprendimiento(consecutivo){
     this._emprendimientoService.getEmprendimientoE(consecutivo).subscribe(
