@@ -31,7 +31,10 @@ export class ActualizarConsultorComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.user = this._loginService.getCurrentUser().replace('"', '').replace('"', '');
+    this.user = this._loginService.getCurrentUser();
+    if (!this.user) {
+      this._router.navigate(['/login']); 
+    }
     this._route.params.subscribe(params=>{
       let cedula= params.cedula;
       this.getFacilitador(cedula);  

@@ -26,7 +26,10 @@ export class EliminarConsultorComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.user = this._loginService.getCurrentUser().replace('"', '').replace('"', '');
+    this.user = this._loginService.getCurrentUser();
+    if (!this.user) {
+      this._router.navigate(['/login']); 
+    }
     this._route.params.subscribe((params:Params)=>{
       this.nombre = params.nombres;
       this.apellido= params.apellidos;

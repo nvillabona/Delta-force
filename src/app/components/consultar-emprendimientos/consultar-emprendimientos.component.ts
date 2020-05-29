@@ -23,8 +23,11 @@ export class ConsultarEmprendimientosComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.user = this._loginService.getCurrentUser();
+    if (!this.user) {
+      this._router.navigate(['/login']); 
+    }
     this.getEmprendimientos();
-    this.user = this._loginService.getCurrentUser().replace('"', '').replace('"', '');
     const $button  = document.querySelector('#sidebar-toggle');
     const $wrapper = document.querySelector('#wrapper');
     

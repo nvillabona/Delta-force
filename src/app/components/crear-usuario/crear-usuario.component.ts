@@ -25,7 +25,10 @@ export class CrearUsuarioComponent implements OnInit {
   }
   
   ngOnInit() {
-    this.user = this._loginService.getCurrentUser().replace('"', '').replace('"', '');
+    this.user = this._loginService.getCurrentUser();
+    if (!this.user) {
+      this._router.navigate(['/login']); 
+    }
     const $button  = document.querySelector('#sidebar-toggle');
     const $wrapper = document.querySelector('#wrapper');
     

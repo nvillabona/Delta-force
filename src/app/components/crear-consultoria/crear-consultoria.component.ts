@@ -36,7 +36,10 @@ export class CrearConsultoriaComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.user = this._loginService.getCurrentUser().replace('"', '').replace('"', '');
+    this.user = this._loginService.getCurrentUser();
+    if (!this.user) {
+      this._router.navigate(['/login']); 
+    }
     this.getEmprendedores();
     this.getFacilitador();
     const $button  = document.querySelector('#sidebar-toggle');

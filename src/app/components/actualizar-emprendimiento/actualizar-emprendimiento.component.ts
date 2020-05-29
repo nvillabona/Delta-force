@@ -35,7 +35,10 @@ export class ActualizarEmprendimientoComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.user = this._loginService.getCurrentUser().replace('"', '').replace('"', '');
+    this.user = this._loginService.getCurrentUser();
+    if (!this.user) {
+      this._router.navigate(['/login']); 
+    }
     this.getEmprendedores();
     this._route.params.subscribe(params=>{
       let consecutivo= params.consecutivo;

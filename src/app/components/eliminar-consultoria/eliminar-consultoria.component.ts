@@ -23,7 +23,10 @@ export class EliminarConsultoriaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.user = this._loginService.getCurrentUser().replace('"', '').replace('"', '');
+    this.user = this._loginService.getCurrentUser();
+    if (!this.user) {
+      this._router.navigate(['/login']); 
+    }
     this._route.params.subscribe((params:Params)=>{
       this.titulo= params.titulo;
       this.consecutivo = params.consecutivo;

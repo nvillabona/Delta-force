@@ -23,7 +23,10 @@ export class ConsultarUsuariosComponent implements OnInit {
     }
 
   ngOnInit() {
-    this.user = this._atencinoService.getCurrentUser().replace('"', '').replace('"', '');
+    this.user = this._atencinoService.getCurrentUser();
+    if (!this.user) {
+      this._router.navigate(['/login']); 
+    }
     this.getAtencion();
     const $button  = document.querySelector('#sidebar-toggle');
     const $wrapper = document.querySelector('#wrapper');

@@ -29,7 +29,7 @@ export class CalendarioComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.user = this._loginService.getCurrentUser().replace('"', '').replace('"', '');
+    this.user = this._loginService.getCurrentUser();
  
     
     if (!this.user) {
